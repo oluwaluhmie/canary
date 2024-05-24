@@ -5,11 +5,11 @@ import ArrowRight from "../assets/arrowrighttwo.svg";
 const TextSlider = () => {
   const text1 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
-        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
+      <div className="flex flex-col gap-2 w-97.5">
+        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl">
           Your Path to Prosperity Starts Here
         </h1>
-        <p className="text-searchBoxText text-lg lg:text-xl">
+        <p className="text-searchBoxText text-lg">
           Explore our curated investment options tailored for individuals and
           corporations alike, guided by expert advice and market insights.
         </p>
@@ -23,11 +23,11 @@ const TextSlider = () => {
   );
   const text2 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
-        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
+      <div className="flex flex-col gap-2 w-97.5">
+        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl">
           Empowering Growth through Flexible Financing
         </h1>
-        <p className="text-searchBoxText text-lg lg:text-xl">
+        <p className="text-searchBoxText text-lg">
           Access bespoke loan solutions designed to fuel growth for both
           individuals and corporate entities, supported by streamlined processes
           and personalized service.
@@ -42,11 +42,11 @@ const TextSlider = () => {
   );
   const text3 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
-        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
+      <div className="flex flex-col gap-2 w-97.5">
+        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl">
           Strategic Guidance for Financial Success
         </h1>
-        <p className="text-searchBoxText text-lg lg:text-xl">
+        <p className="text-searchBoxText text-lg">
           Benefit from personalized financial advisory services tailored to your
           unique needs, helping individuals and corporate firms alike navigate
           the complexities of the financial landscape with confidence.
@@ -61,11 +61,11 @@ const TextSlider = () => {
   );
   const text4 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
-        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
+      <div className="flex flex-col gap-2 w-97.5">
+        <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl">
           Effortless Transactions for Individuals and Businesses
         </h1>
-        <p className="text-searchBoxText text-lg lg:text-xl">
+        <p className="text-searchBoxText text-lg">
           Streamline your financial transactions with our seamless payment
           solutions, delivering efficiency and reliability for individuals and
           corporate entities alike.
@@ -100,7 +100,7 @@ const TextSlider = () => {
       {sliderText.map((text, index) => (
         <div
           key={index}
-          className={`absolute bottom-12 md:bottom-12 lg:bottom-32 transition-opacity duration-1000 ease-out ${
+          className={`absolute top-0 left-0 transition-opacity duration-1000 ease-out ${
             sliderNumber === index && !isFadingOut ? "opacity-100" : "opacity-0"
           } ${isFadingOut && sliderNumber === index ? "opacity-0" : ""}`}
         >

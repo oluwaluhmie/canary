@@ -1,6 +1,6 @@
 import React from "react";
-import guidanceimage from "../assets/guidanceimage.png";
-import orangearrowright from "../assets/arrowrightone.svg";
+import guidanceimage from "../../assets/guidanceimage.png";
+import orangearrowright from "../../assets/arrowrightone.svg";
 import { Link } from "react-router-dom";
 
 const Guidance = () => {
@@ -12,7 +12,7 @@ const Guidance = () => {
             <img
               src={guidanceimage}
               alt="guidanceimage"
-              className="w-97.5 md:w-176 lg:w-144 lg:h-112"
+              className="w-97.5 md:w-176 lg:w-144"
             />
             <div className="flex flex-col gap-6 lg:py-6 lg:justify-between">
               <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-176 lg:w-144">

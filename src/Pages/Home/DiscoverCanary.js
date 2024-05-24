@@ -1,6 +1,6 @@
 import React from "react";
-import discovermobile from "../assets/discovermobile.png";
-import arrowright from "../assets/arrowrightone.svg";
+import discovermobile from "../../assets/discovermobile.png";
+import arrowright from "../../assets/arrowrightone.svg";
 import { Link } from "react-router-dom";
 
 const DiscoverCanary = () => {
@@ -11,10 +11,10 @@ const DiscoverCanary = () => {
           <img
             src={discovermobile}
             alt="discovermobile"
-            className="w-97.5 md:w-84 lg:w-138 md:h-90 drop-shadow-sm"
+            className="w-97.5 md:w-84 lg:w-138 drop-shadow-sm"
           />
           <div className="flex flex-col gap-6 md:gap-10 w-97.5 md:w-176 lg:w-138">
-            <div className="flex flex-col gap-1 md:gap-2 lg:gap-3 md:py-6 lg:py-6">
+            <div className="flex flex-col gap-1 md:gap-2 lg:gap-3 lg:py-6">
               <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-orangeTextGradient-start to-orangeTextGradient-end">
                 Discover Canary Point Finance
               </span>

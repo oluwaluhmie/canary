@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Navbar from './Navbar';
-import Hero from './Hero';
 import Footer from './Footer';
-import Products from './Products';
-import DiscoverCanary from './DiscoverCanary';
-import BusinessGrowth from './BusinessGrowth';
-import Investor from './Investor';
-import Guidance from './Guidance';
-import CTASection from './CTASection';
+import Hero from './Home/Hero';
+import Products from './Home/Products';
+import DiscoverCanary from './Home/DiscoverCanary';
+import BusinessGrowth from './Home/BusinessGrowth';
+import Investor from './Home/Investor';
+import Guidance from './Home/Guidance';
+import CTASection from './Home/CTASection';
 
 const Home = () => {
   const [showNavbar, setShowNavbar] = useState(false);

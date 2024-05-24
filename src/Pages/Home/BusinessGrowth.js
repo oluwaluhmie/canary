@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import arrowright from "../assets/arrowrightone.svg";
+import arrowright from "../../assets/arrowrightone.svg";
 import { Link } from "react-router-dom";
-import OrangeWhiteButton from "../Components/orangeWhiteButton";
+import OrangeWhiteButton from "../../Components/orangeWhiteButton";
 
 const BusinessGrowth = () => {
   const [isProductsHovered, setIsProductsHovered] = useState(false);

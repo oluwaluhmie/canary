@@ -1,6 +1,6 @@
 import React from "react";
-import ArrowRight from "../assets/arrowrighttwo.svg";
-import ctaline from "../assets/ctaline.svg";
+import ArrowRight from "../../assets/arrowrighttwo.svg";
+import ctaline from "../../assets/ctaline.svg";
 
 const CTASection = () => {
   return (
@@ -10,7 +10,7 @@ const CTASection = () => {
           <div className="flex flex-col gap-5 md:gap-8 lg:gap-12 px-5 md:px-12 lg:px-12 py-5 md:py-10 lg:py-12 lg:items-center bg-investorBg/50 backdrop-blur-lg">
             <div className="flex flex-col gap-5 md:gap-6 lg:gap-8 lg:w-300">
               <div className="flex flex-col lg:flex-row gap-3 md:gap-6 items-center md:items-center lg:items-start lg:justify-between">
-                <span className="font-gotham text-2xl md:text-3xl lg:text-4xl w-64 md:w-176 text-center lg:text-left text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end">
+                <span className="font-gotham text-2xl md:text-3xl lg:text-4xl w-64 md:w-176 text-center lg:text-left text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end lg:h-12">
                   Ready to begin your journey with us?
                 </span>
                 <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-60 lg:w-66 gap-2 md:gap-1.5 lg:gap-2 px-9 md:px-8 lg:px-9 py-3 h-12 md:h-11 lg:h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
