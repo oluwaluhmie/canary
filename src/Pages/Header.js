@@ -54,10 +54,6 @@ const Header = () => {
     setShowMobileAbout(false);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -197,17 +193,15 @@ const Header = () => {
           </div>
           {/* Search icon and Get Started button */}
           <div className="hidden lg:flex lg:items-center lg:gap-5">
-            <div>
+            <Link to="/">
               <img src={search} alt="search" />
-            </div>
-            <div>
-              <button className="text-base text-white border px-8 py-3 hover:bg-menuHover">
-                Get Started
-              </button>
-            </div>
+            </Link>
+            <button className="text-base text-white border px-8 py-3 hover:bg-menuHover">
+              Get Started
+            </button>
           </div>
           <div className="ml-auto lg:hidden">
-            <button onClick={toggleMenu}>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <img
                 src={isMenuOpen ? closeIcon : menu}
                 alt={isMenuOpen ? "Close" : "Menu"}
@@ -218,18 +212,16 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 lg:hidden ${
+          className={`fixed inset-0 z-40 bg-white lg:hidden ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col px-5 gap-4 mt-28 h-full bg-white">
-            <div>
-              <TextBoxWithIcon
-                placeholder="What can we help you with"
-                imageSrc={search}
-                alt="search"
-              />
-            </div>
+          <div className="flex flex-col px-5 gap-4 mt-28 h-full">
+            <TextBoxWithIcon
+              placeholder="What can we help you with"
+              imageSrc={search}
+              alt="search"
+            />
             <div className="flex flex-col h-full">
               <div className="px-2 py-5 border-b-2 hover:border-menuHover">
                 <Link to="/" className="text-base text-mobileMenuColor">

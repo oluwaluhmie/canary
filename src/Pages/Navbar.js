@@ -54,10 +54,6 @@ const Navbar = () => {
     setShowMobileAbout(false);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -197,17 +193,15 @@ const Navbar = () => {
           </div>
           {/* Search icon and Get Started button */}
           <div className="hidden lg:flex lg:items-center gap-5">
-            <div>
+            <Link to="/">
               <img src={search} alt="search" />
-            </div>
-            <div>
-              <button className="text-base text-transparent bg-clip-text bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end border border-menuHover px-8 py-3 hover:text-gradientColor">
-                Get Started
-              </button>
-            </div>
+            </Link>
+            <button className="text-base text-transparent bg-clip-text bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end border border-menuHover px-8 py-3 hover:text-gradientColor">
+              Get Started
+            </button>
           </div>
           <div className="ml-auto lg:hidden">
-            <button onClick={toggleMenu}>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <img
                 src={isMenuOpen ? closeIcon : menu}
                 alt={isMenuOpen ? "Close" : "Menu"}
@@ -218,11 +212,11 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 lg:hidden ${
+          className={`fixed inset-0 z-40 bg-white lg:hidden ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col px-5 gap-4 mt-28 h-full bg-white">
+          <div className="flex flex-col px-5 gap-4 mt-28 h-full">
             <div>
               <TextBoxWithIcon
                 placeholder="What can we help you with"
