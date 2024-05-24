@@ -1,0 +1,12 @@
+<svg width="120" height="4" viewBox="0 0 120 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.4">
+<rect width="24" height="4" rx="2" fill="white"/>
+</g>
+<rect x="32" width="24" height="4" rx="2" fill="#DD6C38"/>
+<g opacity="0.4">
+<rect x="64" width="24" height="4" rx="2" fill="white"/>
+</g>
+<g opacity="0.4">
+<rect x="96" width="24" height="4" rx="2" fill="white"/>
+</g>
+</svg>
