@@ -97,7 +97,7 @@ const Header = () => {
               </Link>
             </div>
             {/* Menus */}
-            <div className="hidden md:hidden lg:flex lg:justify-between lg:items-center lg:gap-3 lg:left-0 text-white text-base">
+            <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-3 lg:left-0 text-white text-base">
               <div className="lg:p-2 lg:hover:text-menuHover lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover">
                 <Link to="/" className="">
                   Home
@@ -212,11 +212,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 z-40 bg-white lg:hidden ${
+          className={`fixed inset-0 z-40 lg:hidden ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col px-5 gap-4 mt-28 h-full">
+          <div className="flex flex-col px-5 gap-4 mt-28 h-full bg-white">
             <TextBoxWithIcon
               placeholder="What can we help you with"
               imageSrc={search}

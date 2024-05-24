@@ -217,13 +217,11 @@ const Navbar = () => {
           }`}
         >
           <div className="flex flex-col px-5 gap-4 mt-28 h-full">
-            <div>
-              <TextBoxWithIcon
-                placeholder="What can we help you with"
-                imageSrc={search}
-                alt="search"
-              />
-            </div>
+            <TextBoxWithIcon
+              placeholder="What can we help you with"
+              imageSrc={search}
+              alt="search"
+            />
             <div className="flex flex-col h-full">
               <div className="px-2 py-5 border-b-2 hover:border-menuHover">
                 <Link to="/" className="text-base text-mobileMenuColor">
