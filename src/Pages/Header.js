@@ -10,6 +10,8 @@ import TextBoxWithIcon from "../Components/textboxWithIcon";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolledText, setIsScrolledText] = useState(false);
+  const [isScrolledButton, setIsScrolledButton] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
   const [showAboutDropdown, setShowAboutDropdown] = useState(false);
@@ -58,6 +60,8 @@ const Header = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 300);
+      setIsScrolledText(scrollPosition > 300);
+      setIsScrolledButton(scrollPosition > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -81,7 +85,9 @@ const Header = () => {
     <>
       <div
         className={`fixed left-0 right-0 z-50 bg-gradient-to-b from-gradientColor-start to-gradientColor-end ${
-          isScrolled ? "shadow-md bg-gradient-to-b from-bgGradientColor-start to-bgGradientColor-end" : ""
+          isScrolled
+            ? "shadow-md bg-gradient-to-b from-white to-white"
+            : ""
         }`}
       >
         <div className="flex items-center justify-between h-18 md:h-20 lg:h-25 lg:pt-3 px-5 md:px-12 lg:px-32">
@@ -98,17 +104,25 @@ const Header = () => {
             </div>
             {/* Menus */}
             <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-3 lg:left-0 text-white text-base">
-              <div className="lg:p-2 lg:hover:text-menuHover lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover">
+              <div
+                className={`lg:p-2 lg:hover:text-menuHover lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover ${
+                  isScrolledText ? "text-mobileMenuColor" : ""
+                }`}
+              >
                 <Link to="/" className="">
                   Home
                 </Link>
               </div>
-              <div className="lg:p-2 lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover lg:hover:text-menuHover lg:hover:fill-menuHover relative">
+              <div
+                className={`lg:p-2 lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover lg:hover:text-menuHover lg:hover:fill-menuHover relative ${
+                  isScrolledText ? "text-mobileMenuColor" : ""
+                }`}
+              >
                 <Link to="/" onClick={toggleProductsDropdown}>
                   <TextWithIcon text="Our Products" alt="arrowdown" />
                 </Link>
                 {showProductsDropdown && (
-                  <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white">
+                  <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white shadow-md">
                     <Link
                       to="/"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
@@ -130,12 +144,16 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <div className="lg:p-2 lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover lg:hover:text-menuHover lg:hover:fill-menuHover relative">
+              <div
+                className={`lg:p-2 lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover lg:hover:text-menuHover lg:hover:fill-menuHover relative ${
+                  isScrolledText ? "text-mobileMenuColor" : ""
+                }`}
+              >
                 <Link to="/" onClick={toggleAboutDropdown}>
                   <TextWithIcon text="About us" alt="arrowdown" />
                 </Link>
                 {showAboutDropdown && (
-                  <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white">
+                  <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white shadow-md">
                     <Link
                       to="/"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
@@ -157,12 +175,16 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <div className="lg:p-2 lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover lg:hover:text-menuHover lg:hover:fill-menuHover relative">
+              <div
+                className={`lg:p-2 lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover lg:hover:text-menuHover lg:hover:fill-menuHover relative ${
+                  isScrolledText ? "text-mobileMenuColor" : ""
+                }`}
+              >
                 <Link to="/" onClick={toggleResourcesDropdown}>
                   <TextWithIcon text="Resources" alt="arrowdown" />
                 </Link>
                 {showResourcesDropdown && (
-                  <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white">
+                  <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white shadow-md">
                     <Link
                       to="/"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
@@ -184,7 +206,11 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <div className="lg:p-2 lg:hover:text-menuHover lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover">
+              <div
+                className={`lg:p-2 lg:hover:text-menuHover lg:hover:border-b-2 lg:hover:border-menuHover lg:hover:stroke-menuHover ${
+                  isScrolledText ? "text-mobileMenuColor" : ""
+                }`}
+              >
                 <Link to="/" className="">
                   Contact Us
                 </Link>
@@ -196,7 +222,11 @@ const Header = () => {
             <Link to="/">
               <img src={search} alt="search" />
             </Link>
-            <button className="text-base text-white border px-8 py-3 hover:bg-menuHover">
+            <button
+                className={`text-base text-white border px-8 py-3 hover:bg-menuHover ${
+                  isScrolledButton ? "text-menuHover border-menuHover hover:text-buttonHover hover:bg-transparent" : ""
+                }`}
+              >
               Get Started
             </button>
           </div>
@@ -238,7 +268,7 @@ const Header = () => {
                   <img src={arrow} alt="arrow" />
                 </Link>
                 {showMobileProducts && (
-                  <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t-2 z-40 border-borderStroke hover:border-menuHover">
+                  <div className="absolute top-full left-0 w-full bg-white shadow-md border-t-2 z-40 border-borderStroke hover:border-menuHover">
                     <Link
                       to="/"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:border-menuHover"
@@ -270,7 +300,7 @@ const Header = () => {
                   <img src={arrow} alt="arrow" />
                 </Link>
                 {showMobileAbout && (
-                  <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t-2 z-50 border-borderStroke hover:border-menuHover">
+                  <div className="absolute top-full left-0 w-full bg-white shadow-md border-t-2 z-50 border-borderStroke hover:border-menuHover">
                     <Link
                       to="/"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:border-menuHover"
@@ -302,7 +332,7 @@ const Header = () => {
                   <img src={arrow} alt="arrow" />
                 </Link>
                 {showMobileResources && (
-                  <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t-2 z-50 border-borderStroke hover:border-menuHover">
+                  <div className="absolute top-full left-0 w-full bg-white shadow-md border-t-2 z-50 border-borderStroke hover:border-menuHover">
                     <Link
                       to="/"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:border-menuHover"
