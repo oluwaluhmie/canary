@@ -57,7 +57,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
+      setIsScrolled(scrollPosition > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -80,8 +80,8 @@ const Header = () => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-gradientColor-start to-gradientColor-end ${
-          isScrolled ? "shadow-md" : ""
+        className={`fixed left-0 right-0 z-50 bg-gradient-to-b from-gradientColor-start to-gradientColor-end ${
+          isScrolled ? "shadow-md bg-gradient-to-b from-bgGradientColor-start to-bgGradientColor-end" : ""
         }`}
       >
         <div className="flex items-center justify-between h-18 md:h-20 lg:h-25 lg:pt-3 px-5 md:px-12 lg:px-32">
@@ -212,11 +212,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 z-40 lg:hidden ${
+          className={`relative inset-0 z-40 bg-white lg:hidden ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col px-5 gap-4 mt-28 h-full bg-white">
+          <div className="flex flex-col px-5 gap-4 mt-6 h-screen">
             <TextBoxWithIcon
               placeholder="What can we help you with"
               imageSrc={search}

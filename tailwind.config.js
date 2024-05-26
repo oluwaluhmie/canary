@@ -65,6 +65,8 @@ module.exports = {
       gradientColorStops: {
         'gradientColor-start': 'rgba(31, 41, 64, 0.5)', // 50% opacity
         'gradientColor-end': 'rgba(31, 41, 64, 0)',    // 0% opacity
+        'bgGradientColor-start': 'rgba(255, 255, 255, 1)', // 50% opacity
+        'bgGradientColor-end': 'rgba(255, 255, 255, 1)',    // 0% opacity
         'productsColor-start': 'rgba(31, 41, 64, 1)',    // 100% opacity
         'productsColor-end': 'rgba(31, 41, 64, 1)', // 100% opacity
         'buttonGradient-start': 'rgba(237, 153, 50, 1)', //100% opacity
