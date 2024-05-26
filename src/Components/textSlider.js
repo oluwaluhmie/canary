@@ -100,7 +100,7 @@ const TextSlider = () => {
       {sliderText.map((text, index) => (
         <div
           key={index}
-          className={`absolute bottom-12 md:bottom-12 lg:bottom-32 transition-opacity duration-1000 ease-out ${
+          className={`absolute bottom-12 md:bottom-12 lg:bottom-24 transition-opacity duration-1000 ease-out ${
             sliderNumber === index && !isFadingOut ? "opacity-100" : "opacity-0"
           } ${isFadingOut && sliderNumber === index ? "opacity-0" : ""}`}
         >
