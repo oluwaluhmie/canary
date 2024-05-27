@@ -13,6 +13,7 @@ module.exports = {
         'businessbg': 'url(/src/assets/businessbg.png)',
         'investorbg': 'url(/src/assets/investorbg.png)',
         'guidancebg': 'url(/src/assets/guidancebg.png)',
+        'timelinebg': 'url(/src/assets/timelinebg.png)',
         'projectimage': 'url(/src/assets/projectimage.png)',
         'tradeimage': 'url(/src/assets/tradeimage.png)',
         'contractimage': 'url(/src/assets/contractimage.png)',
@@ -57,6 +58,8 @@ module.exports = {
         productsText: '#B4C0DF',
         investorBg: '#EEF1F8',
         buttonHover: '#B1562D',
+        timelineText: '#CECECE',
+        pressText: '#B1562D',
      },
       fontFamily: {
         gotham : ['Gotham', 'sans-serif'],
@@ -93,6 +96,8 @@ module.exports = {
         'linkBlueButtonText-end': 'rgba(88, 116, 183, 1)', //100% opacity
         'ctaGradient-start': 'rgba(96, 96, 98, 0.2)', //100% opacity
         'ctaGradient-end': 'rgba(255, 255, 255, 0.3)', //100% opacity
+        'timelineText-start': 'rgba(99, 49, 25, 1)', //100% opacity
+        'timelineText-end': 'rgba(221, 108, 56, 1)', //100% opacity
       },
       height: {
         '9.5': '38px',
@@ -123,6 +128,7 @@ module.exports = {
         '74.5': '298px',
         '75': '300px',
         '76': '304px',
+        '77.5': '310px',
         '78': '312px',
         '82': '328px',
         '86': '344px',
@@ -143,6 +149,7 @@ module.exports = {
         '169': '676px',
         '170': '680px',
         '180': '720px',
+        '200': '800px',
       },
       margin: {
         '22.5': '90px',
@@ -190,6 +197,7 @@ module.exports = {
         '210': '840px',
       },
       padding: {
+        '17': '68px',
         '20': '80px',
         '20.75': '83px',
         '25': '100px',
@@ -207,22 +215,27 @@ module.exports = {
         '56.25': '225px',
         '58': '232px',
         '66': '264px',
+        '75': '300px',
         '76': '304px',
         '76.5': '306px',
         '84': '336px',
         '86.5': '346px',
         '87.5': '350px',
         '88': '352px',
+        '90': '360px',
         '96.6675': '386.37px',
         '97.5': '390px',
         '98': '392px',
         '100': '400px',
         '106.5': '426px',
         '107.5': '430px',
+        '112': '448px',
         '128': '512px',
         '135.5': '542px',
         '138': '552px',
+        '138.9375': '555.75px',
         '144': '576px',
+        '147': '588px',
         '150': '600px',
         '160': '640px',
         '166': '664px',

@@ -155,7 +155,7 @@ const Header = () => {
                 {showAboutDropdown && (
                   <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white shadow-md">
                     <Link
-                      to="/"
+                      to="/ourstory"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Our Story

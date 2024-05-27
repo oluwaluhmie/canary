@@ -104,7 +104,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <hr />
+          <hr className="opacity-10" />
           <div className="flex flex-col gap-4 text-footerText text-sm md:text-base lg:text-base">
             <div className="flex gap-4">
               <img src={instagram} alt="instagram" />

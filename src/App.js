@@ -11,10 +11,11 @@ function App() {
           path="/"
           element={
             <>
-              <Home />
+              <Story />
             </>
           }
         />
+        <Route path="/ourstory" element={<Story />} />
       </Routes>
     </BrowserRouter>
   );
