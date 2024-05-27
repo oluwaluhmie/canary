@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import arrow from "../assets/arrowdownorange.svg";
 import arrowwhite from "../assets/arrowdownwhite.svg";
 
 function TextWithIcon({ text, alt }) {
   const [hovered, setHovered] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -13,6 +15,19 @@ function TextWithIcon({ text, alt }) {
     setHovered(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
       className="flex items-center hover:fill-menuHover"
@@ -21,8 +36,8 @@ function TextWithIcon({ text, alt }) {
     >
       <span>{text}</span>
       <img
-        src={hovered ? arrow : arrowwhite}
-        alt={hovered ? "arrow" : "arrowwhite"}
+        src={hovered || isScrolled ? arrow : arrowwhite}
+        alt={hovered || isScrolled ? "arrow" : "arrowwhite"}
       />
     </div>
   );
