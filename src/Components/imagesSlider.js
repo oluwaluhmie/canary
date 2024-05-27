@@ -56,7 +56,7 @@ const ImageSlider = () => {
           key={index}
           src={image}
           alt=""
-          className={`absolute inset-0 w-full object-cover transition-none duration-2000 ease-out ${
+          className={`absolute inset-0 w-full object-cover transition-none duration-1000 ease-out ${
             sliderNumber === index ? "opacity-100" : "opacity-0"
           }`}
         />
