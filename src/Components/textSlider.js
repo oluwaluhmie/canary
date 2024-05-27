@@ -5,7 +5,7 @@ import ArrowRight from "../assets/arrowrighttwo.svg";
 const TextSlider = () => {
   const text1 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
+      <div className="flex flex-col gap-2 lg:gap-3 w-full md:w-128 lg:w-150">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
           Your Path to Prosperity Starts Here
         </h1>
@@ -23,7 +23,7 @@ const TextSlider = () => {
   );
   const text2 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
+      <div className="flex flex-col gap-2 lg:gap-3 w-full md:w-128 lg:w-150">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
           Empowering Growth through Flexible Financing
         </h1>
@@ -42,7 +42,7 @@ const TextSlider = () => {
   );
   const text3 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
+      <div className="flex flex-col gap-2 lg:gap-3 w-full md:w-128 lg:w-150">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
           Strategic Guidance for Financial Success
         </h1>
@@ -61,7 +61,7 @@ const TextSlider = () => {
   );
   const text4 = (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2 lg:gap-3 w-97.5 md:w-128 lg:w-150">
+      <div className="flex flex-col gap-2 lg:gap-3 w-full md:w-128 lg:w-150">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-3xl md:text-4xl lg:text-5xl">
           Effortless Transactions for Individuals and Businesses
         </h1>

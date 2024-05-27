@@ -7,7 +7,7 @@ import DiscoverCanary from './Home/DiscoverCanary';
 import BusinessGrowth from './Home/BusinessGrowth';
 import Investor from './Home/Investor';
 import Guidance from './Home/Guidance';
-import CTASection from './Home/CTASection';
+import CTASection from './CTASection';
 
 const Home = () => {
   return (

@@ -35,6 +35,9 @@ module.exports = {
         'lpowebdark': 'url(/src/assets/lpowebdark.png)',
         'invoicewebdark': 'url(/src/assets/invoicewebdark.png)',
         'ctabg': 'url(/src/assets/ctabg.png)',
+        'story-sm': 'url(/src/assets/storybgmobile.png)',
+        'story-md': 'url(/src/assets/storybgtab.png)',
+        'story-lg': 'url(/src/assets/storybg.png)',
       },
       colors: {
         menuHover : '#DD6C38',
@@ -92,6 +95,7 @@ module.exports = {
         'ctaGradient-end': 'rgba(255, 255, 255, 0.3)', //100% opacity
       },
       height: {
+        '9.5': '38px',
         '17.5': '70px',
         '18': '72px',
         '19': '76px',
@@ -229,6 +233,7 @@ module.exports = {
         '240': '960px',
         '300': '1200px',
         '341.5': '1366px',
+        '480': '1920px',
       }
     },
   },
