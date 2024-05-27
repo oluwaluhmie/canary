@@ -85,7 +85,7 @@ const Header = () => {
     <>
       <div
         className={`fixed left-0 right-0 z-50 bg-gradient-to-b from-gradientColor-start to-gradientColor-end ${
-          isScrolled
+          isScrolled || isMenuOpen
             ? "shadow-md bg-gradient-to-b from-white to-white"
             : ""
         }`}
@@ -223,8 +223,8 @@ const Header = () => {
               <img src={search} alt="search" />
             </Link>
             <button
-                className={`text-base text-white border px-8 py-3 hover:bg-menuHover ${
-                  isScrolledButton ? "text-menuHover border-menuHover hover:text-buttonHover hover:bg-transparent" : ""
+                className={`text-base border px-8 py-3 hover:bg-menuHover ${
+                  isScrolledButton ? "text-menuHover border-menuHover hover:text-buttonHover hover:bg-transparent" : "text-white"
                 }`}
               >
               Get Started
