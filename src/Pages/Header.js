@@ -302,7 +302,7 @@ const Header = () => {
                 {showMobileAbout && (
                   <div className="absolute top-full left-0 w-full bg-white shadow-md border-t-2 z-50 border-borderStroke hover:border-menuHover">
                     <Link
-                      to="/"
+                      to="/ourstory"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:border-menuHover"
                     >
                       Our Story
