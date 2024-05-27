@@ -45,7 +45,7 @@ const ImageSlider = () => {
   }
 
   useEffect(() => {
-    const interval = setInterval(increaseSlider, 8000);
+    const interval = setInterval(increaseSlider, 9000);
     return () => clearInterval(interval);
   }, [sliderNumber, sliderImages]);
 
@@ -56,7 +56,7 @@ const ImageSlider = () => {
           key={index}
           src={image}
           alt=""
-          className={`absolute inset-0 w-full object-cover transition-none duration-1000 ease-out ${
+          className={`absolute inset-0 w-full object-cover transition-none ${
             sliderNumber === index ? "opacity-100" : "opacity-0"
           }`}
         />
