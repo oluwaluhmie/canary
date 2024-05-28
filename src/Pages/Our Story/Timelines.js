@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import timelinemobileone from "../../assets/timelinemobileone.png";
 import timelinemobiletwo from "../../assets/timelinemobiletwo.png";
 import timelinemobilethree from "../../assets/timelinemobilethree.png";
@@ -7,6 +7,10 @@ import two from "../../assets/two.svg";
 import three from "../../assets/three.svg";
 
 const Timelines = () => {
+  const [isHoveredOne, setIsHoveredOne] = useState(false);
+  const [isHoveredTwo, setIsHoveredTwo] = useState(false);
+  const [isHoveredThree, setIsHoveredThree] = useState(false);
+
   return (
     <div className="flex flex-col items-center bg-timelinebg bg-cover">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
@@ -16,7 +20,13 @@ const Timelines = () => {
               Timelines
             </span>
             <div className="grid grid-cols-1 gap-12 md:gap-6 md:w-176 lg:w-300">
-              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 md:hover:opacity-100">
+              <div
+                className={`flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 transition-opacity duration-300 ${
+                  isHoveredOne ? "md:opacity-100" : ""
+                }`}
+                onMouseEnter={() => setIsHoveredOne(true)}
+                onMouseLeave={() => setIsHoveredOne(true)}
+              >
                 <div className="hidden md:block pt-6 pl-2">
                   <img src={one} alt="one" />
                 </div>
@@ -41,7 +51,13 @@ const Timelines = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 md:hover:opacity-100">
+              <div
+                className={`flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 transition-opacity duration-300 ${
+                  isHoveredTwo ? "md:opacity-100" : ""
+                }`}
+                onMouseEnter={() => setIsHoveredTwo(true)}
+                onMouseLeave={() => setIsHoveredTwo(true)}
+              >
                 <div className="hidden md:block pt-6 pl-2">
                   <img src={two} alt="two" />
                 </div>
@@ -66,7 +82,13 @@ const Timelines = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 md:hover:opacity-100">
+              <div
+                className={`flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 transition-opacity duration-300 ${
+                  isHoveredThree ? "md:opacity-100" : ""
+                }`}
+                onMouseEnter={() => setIsHoveredThree(true)}
+                onMouseLeave={() => setIsHoveredThree(true)}
+              >
                 <div className="hidden md:block pt-6 pl-2">
                   <img src={three} alt="three" />
                 </div>
