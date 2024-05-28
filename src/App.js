@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Story from "./Pages/Story";
 import Terms from "./Pages/Terms";
+import Policy from "./Pages/Policy";
 
 function App() {
   return (
@@ -12,12 +13,13 @@ function App() {
           path="/"
           element={
             <>
-              <Terms />
+              <Home />
             </>
           }
         />
         <Route path="/ourstory" element={<Story />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/policy" element={<Policy />} />
       </Routes>
     </BrowserRouter>
   );

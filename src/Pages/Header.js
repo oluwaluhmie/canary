@@ -198,7 +198,7 @@ const Header = () => {
                       Terms of Use
                     </Link>
                     <Link
-                      to="/"
+                      to="/policy"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Privacy Policy
@@ -346,7 +346,7 @@ const Header = () => {
                       Terms of Use
                     </Link>
                     <Link
-                      to="/"
+                      to="/policy"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:stroke-menuHover hover:border-menuHover"
                     >
                       Privacy Policy

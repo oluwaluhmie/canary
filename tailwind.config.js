@@ -40,6 +40,9 @@ module.exports = {
         "terms-sm": "url(/src/assets/termsbgmobile.png)",
         "terms-md": "url(/src/assets/termsbgtab.png)",
         "terms-lg": "url(/src/assets/termsbg.png)",
+        "policy-sm": "url(/src/assets/policybgmobile.png)",
+        "policy-md": "url(/src/assets/policybgtab.png)",
+        "policy-lg": "url(/src/assets/policybg.png)",
       },
       boxShadow: {
         products: '0 8px 16px -8px rgba(221, 108, 56, 0.6)',
