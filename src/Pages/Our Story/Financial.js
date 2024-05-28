@@ -31,7 +31,7 @@ const Financial = () => {
                 products, and deliver best-in-class financial intermediation
                 services.
               </p>
-              <div className="hidden lg:block w-76 h-77.5">
+              <div className="hidden lg:block lg:w-76 lg:h-77.5 lg:overflow-visible">
                 <img src={financialicon} alt="financialicon" className="h-160 w-138.9375 overflow-visible" />
               </div>
             </div>
