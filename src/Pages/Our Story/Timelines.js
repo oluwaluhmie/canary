@@ -16,7 +16,7 @@ const Timelines = () => {
               Timelines
             </span>
             <div className="grid grid-cols-1 gap-12 md:gap-6 md:w-176 lg:w-300">
-              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10">
+              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 md:hover:opacity-100">
                 <div className="hidden md:block pt-6 pl-2">
                   <img src={one} alt="one" />
                 </div>
@@ -41,7 +41,7 @@ const Timelines = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10">
+              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 md:hover:opacity-100">
                 <div className="hidden md:block pt-6 pl-2">
                   <img src={two} alt="two" />
                 </div>
@@ -66,7 +66,7 @@ const Timelines = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10">
+              <div className="flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 md:opacity-20 md:hover:opacity-100">
                 <div className="hidden md:block pt-6 pl-2">
                   <img src={three} alt="three" />
                 </div>
