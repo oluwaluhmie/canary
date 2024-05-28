@@ -60,7 +60,7 @@ module.exports = {
         pressText: "#B1562D",
       },
       dropShadow: {
-        products: "0 2px 4px -2px rgb(221 108 56 / 0.6)",
+        products: "0 8px 16px -8px rgba(221 108 56, 0.6)",
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],
