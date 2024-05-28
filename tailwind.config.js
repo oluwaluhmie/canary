@@ -206,6 +206,7 @@ module.exports = {
       },
       transitionDuration: {
         '2000': '2000ms',
+        '3000': '3000ms',
       },
       width: {
         '4.1025': '16.41px',
