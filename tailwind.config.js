@@ -89,7 +89,7 @@ module.exports = {
         'blueButton-start': 'rgba(88, 116, 183, 1)', //100% opacity
         'blueButton-end': 'rgba(70, 93, 146, 1)', //100% opacity
         'productsHover-start': 'rgba(253, 248, 245, 1)', //100% opacity
-        'productsHover-end': 'rgba(244, 209, 193, 1)', //100% opacity
+        'productsHover-end': 'rgba(250, 233, 225, 1)', //100% opacity
         'linkOrangeButtonText-start': 'rgba(253, 198, 43, 1)', //100% opacity
         'linkOrangeButtonText-end': 'rgba(221, 108, 56, 1)', //100% opacity
         'linkBlueButtonText-start': 'rgba(48, 187, 236, 1)', //100% opacity
