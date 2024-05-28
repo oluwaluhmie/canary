@@ -1,5 +1,5 @@
 import React from "react";
-import financialicon from "../../assets/financialicon.svg";
+import financialicon from "../../assets/financialicon.png";
 import financialoneweb from "../../assets/financialoneweb.png";
 import financialtwoweb from "../../assets/financialtwoweb.png";
 import financialthreeweb from "../../assets/financialthreeweb.png";
@@ -31,8 +31,8 @@ const Financial = () => {
                 products, and deliver best-in-class financial intermediation
                 services.
               </p>
-              <div className="hidden lg:block lg:w-76 lg:h-77.5 lg:overflow-visible">
-                <img src={financialicon} alt="financialicon" className="h-160 w-138.9375 overflow-visible" />
+              <div className="hidden lg:flex lg:w-76 lg:h-77.5 overflow-visible">
+                <img src={financialicon} alt="financialicon" className="h-160 w-138.9375 max-h-none max-w-none" />
               </div>
             </div>
           </div>

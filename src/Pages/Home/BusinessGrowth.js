@@ -228,11 +228,11 @@ const BusinessGrowth = () => {
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col gap-1 w-87.5 mt-34.5 group-hover:mt-22.5">
-                    <span className="text-white font-gotham text-xl transition-all duration-1000 ease-in-out">
+                    <span className="text-white font-gotham text-xl">
                       Project Finance
                     </span>
                     <p
-                      className={`text-productsText text-base transition-opacity duration-1000 ease-in-out ${
+                      className={`text-productsText text-base ${
                         isProductsHovered ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -242,7 +242,7 @@ const BusinessGrowth = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute top-6 right-5 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-6 right-5 ${
                     isProductsHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -264,11 +264,11 @@ const BusinessGrowth = () => {
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col gap-1 w-87.5 mt-34.5 group-hover:mt-22.5">
-                    <span className="text-white font-gotham text-xl transition-all duration-1000 ease-in-out">
+                    <span className="text-white font-gotham text-xl">
                       Trade Finance
                     </span>
                     <p
-                      className={`text-productsText text-base transition-opacity duration-1000 ease-in-out ${
+                      className={`text-productsText text-base ${
                         isTradeHovered ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -278,7 +278,7 @@ const BusinessGrowth = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute top-6 right-5 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-6 right-5 ${
                     isTradeHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -300,11 +300,11 @@ const BusinessGrowth = () => {
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col gap-1 w-87.5 mt-34.5 group-hover:mt-22.5">
-                    <span className="text-white font-gotham text-xl transition-all duration-1000 ease-in-out">
+                    <span className="text-white font-gotham text-xl">
                       Contract Finance
                     </span>
                     <p
-                      className={`text-productsText text-base transition-opacity duration-1000 ease-in-out ${
+                      className={`text-productsText text-base ${
                         isContractHovered ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -314,7 +314,7 @@ const BusinessGrowth = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute top-6 right-5 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-6 right-5 ${
                     isContractHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -336,11 +336,11 @@ const BusinessGrowth = () => {
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col gap-1 w-87.5 mt-34.5 group-hover:mt-22.5">
-                    <span className="text-white font-gotham text-xl transition-all duration-1000 ease-in-out">
+                    <span className="text-white font-gotham text-xl">
                       Working Capital Finance
                     </span>
                     <p
-                      className={`text-productsText text-base transition-opacity duration-1000 ease-in-out ${
+                      className={`text-productsText text-base ${
                         isCapitalHovered ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -350,7 +350,7 @@ const BusinessGrowth = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute top-6 right-5 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-6 right-5 ${
                     isCapitalHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -372,11 +372,11 @@ const BusinessGrowth = () => {
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col gap-1 w-87.5 mt-34.5 group-hover:mt-22.5">
-                    <span className="text-white font-gotham text-xl transition-all duration-1000 ease-in-out">
+                    <span className="text-white font-gotham text-xl">
                       Real Estate Finance
                     </span>
                     <p
-                      className={`text-productsText text-base transition-opacity duration-1000 ease-in-out ${
+                      className={`text-productsText text-base ${
                         isRealHovered ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -386,7 +386,7 @@ const BusinessGrowth = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute top-6 right-5 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-6 right-5 ${
                     isRealHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -408,11 +408,11 @@ const BusinessGrowth = () => {
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col gap-1 w-87.5 mt-34.5 group-hover:mt-22.5">
-                    <span className="text-white font-gotham text-xl transition-all duration-1000 ease-in-out">
+                    <span className="text-white font-gotham text-xl">
                       LPO Finance
                     </span>
                     <p
-                      className={`text-productsText text-base transition-opacity duration-1000 ease-in-out ${
+                      className={`text-productsText text-base ${
                         isLpoHovered ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -422,7 +422,7 @@ const BusinessGrowth = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute top-6 right-5 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-6 right-5 ${
                     isLpoHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -444,11 +444,11 @@ const BusinessGrowth = () => {
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col gap-1 w-87.5 mt-34.5 group-hover:mt-22.5">
-                    <span className="text-white font-gotham text-xl transition-all duration-1000 ease-in-out">
+                    <span className="text-white font-gotham text-xl">
                       Invoice Discounting Finance
                     </span>
                     <p
-                      className={`text-productsText text-base transition-opacity duration-1000 ease-in-out ${
+                      className={`text-productsText text-base ${
                         isInvoiceHovered ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -458,7 +458,7 @@ const BusinessGrowth = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute top-6 right-5 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-6 right-5 ${
                     isInvoiceHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
