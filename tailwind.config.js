@@ -37,6 +37,9 @@ module.exports = {
         "story-sm": "url(/src/assets/storybgmobile.png)",
         "story-md": "url(/src/assets/storybgtab.png)",
         "story-lg": "url(/src/assets/storybg.png)",
+        "terms-sm": "url(/src/assets/termsbgmobile.png)",
+        "terms-md": "url(/src/assets/termsbgtab.png)",
+        "terms-lg": "url(/src/assets/termsbg.png)",
       },
       boxShadow: {
         products: '0 8px 16px -8px rgba(221, 108, 56, 0.6)',
