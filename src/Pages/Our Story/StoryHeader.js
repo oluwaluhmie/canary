@@ -10,13 +10,6 @@ const StoryHeader = () => {
               Our Story
             </span>
           </div>
-          {/* <div className="flex h-40 md:h-60 lg:h-90">
-            <div className="flex items-end md:py-3 lg:py-8 w-97.5">
-              <span className="font-gotham text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end">
-                Our Story
-              </span>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
