@@ -38,6 +38,9 @@ module.exports = {
         "story-md": "url(/src/assets/storybgtab.png)",
         "story-lg": "url(/src/assets/storybg.png)",
       },
+      boxShadow: {
+        products: '0 8px 16px -8px rgba(221, 108, 56, 0.6)',
+      },
       colors: {
         menuHover: "#DD6C38",
         gradientColor: "#1F2940",
@@ -58,9 +61,6 @@ module.exports = {
         buttonHover: "#B1562D",
         timelineText: "#CECECE",
         pressText: "#B1562D",
-      },
-      dropShadow: {
-        products: "0 8px 16px -8px rgba(221 108 56, 0.6)",
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],
