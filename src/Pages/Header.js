@@ -118,7 +118,7 @@ const Header = () => {
                   isScrolledText ? "text-mobileMenuColor" : ""
                 }`}
               >
-                <Link to="/" onClick={toggleProductsDropdown}>
+                <Link to="" onClick={toggleProductsDropdown}>
                   <TextWithIcon text="Our Products" alt="arrowdown" />
                 </Link>
                 {showProductsDropdown && (
@@ -149,7 +149,7 @@ const Header = () => {
                   isScrolledText ? "text-mobileMenuColor" : ""
                 }`}
               >
-                <Link to="/" onClick={toggleAboutDropdown}>
+                <Link to="" onClick={toggleAboutDropdown}>
                   <TextWithIcon text="About us" alt="arrowdown" />
                 </Link>
                 {showAboutDropdown && (
@@ -180,7 +180,7 @@ const Header = () => {
                   isScrolledText ? "text-mobileMenuColor" : ""
                 }`}
               >
-                <Link to="/" onClick={toggleResourcesDropdown}>
+                <Link to="" onClick={toggleResourcesDropdown}>
                   <TextWithIcon text="Resources" alt="arrowdown" />
                 </Link>
                 {showResourcesDropdown && (
@@ -211,7 +211,7 @@ const Header = () => {
                   isScrolledText ? "text-mobileMenuColor" : ""
                 }`}
               >
-                <Link to="/" className="">
+                <Link to="/contact" className="">
                   Contact Us
                 </Link>
               </div>
@@ -260,7 +260,7 @@ const Header = () => {
               </div>
               <div className="px-2 py-5 border-b-2 hover:border-menuHover relative">
                 <Link
-                  to="/"
+                  to=""
                   className="flex items-center justify-between text-base text-mobileMenuColor"
                   onClick={toggleMobileProducts}
                 >
@@ -292,7 +292,7 @@ const Header = () => {
               </div>
               <div className="px-2 py-5 border-b-2 hover:border-menuHover relative">
                 <Link
-                  to="/"
+                  to=""
                   className="flex items-center justify-between text-base text-mobileMenuColor"
                   onClick={toggleMobileAbout}
                 >
@@ -324,7 +324,7 @@ const Header = () => {
               </div>
               <div className="px-2 py-5 border-b-2 hover:border-menuHover relative">
                 <Link
-                  to="/"
+                  to=""
                   className="flex items-center justify-between text-base text-mobileMenuColor"
                   onClick={toggleMobileResources}
                 >
@@ -355,7 +355,7 @@ const Header = () => {
                 )}
               </div>
               <div className="px-2 py-5 border-b-2 hover:border-menuHover">
-                <Link to="/" className="text-base text-mobileMenuColor">
+                <Link to="/contact" className="text-base text-mobileMenuColor">
                   Contact Us
                 </Link>
               </div>

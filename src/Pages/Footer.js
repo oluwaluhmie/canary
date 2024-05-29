@@ -120,14 +120,14 @@ const Footer = () => {
               description of Canary Finance's offerings and services. By using
               this website, you accept our{" "}
               <Link
-                to=""
+                to="/terms"
                 className="text-menuHover underline underline-offset-2"
               >
                 Terms of Use
               </Link>{" "}
               and{" "}
               <Link
-                to=""
+                to="/policy"
                 className="text-menuHover underline underline-offset-2"
               >
                 Privacy Policy

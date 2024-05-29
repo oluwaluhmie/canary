@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const PrivacyContent = () => {
   return (
-    <div className="flex flex-col items-center bg-white lg:bg-productsbg lg:bg-cover">
+    <div className="flex flex-col items-center bg-white lg:bg-policybg lg:bg-cover">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
         <div className="px-5 md:px-12">
           <div className="flex flex-col gap-6 md:gap-6 pt-12 pb-16">
