@@ -5,7 +5,7 @@ import LineSlider from "../../Components/lineSlider";
 
 const Hero = () => {
   return (
-    <div className="h-full">
+    <div>
       <ImageSlider />
       <div className="px-5 md:px-12 lg:px-32 py-16 lg:py-24 relative">
         <div className="relative h-170 lg:h-132">
