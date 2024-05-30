@@ -24,7 +24,7 @@ const Timelines = () => {
           }
         });
       },
-      { threshold: 0.1 } // Adjust this value as needed
+      { threshold: 0.5 } // Adjust this value as needed
     );
 
     timelineRefs.current.forEach((ref) => {
