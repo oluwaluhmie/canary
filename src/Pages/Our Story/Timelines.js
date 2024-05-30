@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import timelinemobileone from "../../assets/timelinemobileone.png";
 import timelinemobiletwo from "../../assets/timelinemobiletwo.png";
 import timelinemobilethree from "../../assets/timelinemobilethree.png";
@@ -7,15 +7,36 @@ import two from "../../assets/two.svg";
 import three from "../../assets/three.svg";
 
 const Timelines = () => {
-  const [hoveredIndexes, setHoveredIndexes] = useState([false, false, false]);
+  const [visibleIndexes, setVisibleIndexes] = useState([false, false, false]);
+  const timelineRefs = useRef([]);
 
-  const handleMouseEnter = (index) => {
-    setHoveredIndexes((prevState) => {
-      const newState = [...prevState];
-      newState[index] = true;
-      return newState;
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = timelineRefs.current.indexOf(entry.target);
+            setVisibleIndexes((prevState) => {
+              const newState = [...prevState];
+              newState[index] = true;
+              return newState;
+            });
+          }
+        });
+      },
+      { threshold: 0.1 } // Adjust this value as needed
+    );
+
+    timelineRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
     });
-  };
+
+    return () => {
+      timelineRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
 
   const timelines = [
     {
@@ -56,10 +77,10 @@ const Timelines = () => {
               {timelines.map((timeline, index) => (
                 <div
                   key={index}
+                  ref={(el) => (timelineRefs.current[index] = el)}
                   className={`flex flex-col md:flex-row gap-3 md:gap-6 lg:gap-10 transition-opacity duration-300 ${
-                    hoveredIndexes[index] ? "md:opacity-100" : "md:opacity-20"
+                    visibleIndexes[index] ? "md:opacity-100" : "md:opacity-20"
                   }`}
-                  onMouseEnter={() => handleMouseEnter(index)}
                 >
                   <div className="hidden md:block pt-6 pl-2">
                     <img src={timeline.icon} alt={`icon-${index}`} />
