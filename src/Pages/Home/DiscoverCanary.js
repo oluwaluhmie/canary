@@ -1,5 +1,7 @@
 import React from "react";
 import discovermobile from "../../assets/discovermobile.png";
+import discovertab from "../../assets/discovertab.png";
+import discoverweb from "../../assets/discoverweb.png";
 import arrowright from "../../assets/arrowrightone.svg";
 import { Link } from "react-router-dom";
 
@@ -11,7 +13,17 @@ const DiscoverCanary = () => {
           <img
             src={discovermobile}
             alt="discovermobile"
-            className="w-97.5 md:w-84 lg:w-138 drop-shadow-sm"
+            className="block md:hidden lg:hidden drop-shadow-sm"
+          />
+          <img
+            src={discovertab}
+            alt="discovertab"
+            className="hidden md:block lg:hidden drop-shadow-sm"
+          />
+          <img
+            src={discoverweb}
+            alt="discoverweb"
+            className="hidden md:hidden lg:block drop-shadow-sm"
           />
           <div className="flex flex-col gap-6 md:gap-10 w-97.5 md:w-176 lg:w-138">
             <div className="flex flex-col gap-1 md:gap-2 lg:gap-3 lg:py-6">
@@ -26,7 +38,10 @@ const DiscoverCanary = () => {
                 and deliver top-tier services.
               </p>
             </div>
-            <Link to="/" className="flex items-center gap-1 hover:text-linkHover hover:gap-2">
+            <Link
+              to="/"
+              className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
+            >
               <p className="text-base md:text-base lg:text-lg text-menuHover">
                 Learn More About Canary Point Finance
               </p>
