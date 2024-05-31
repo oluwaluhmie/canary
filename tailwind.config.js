@@ -114,6 +114,9 @@ module.exports = {
         "ctaGradient-end": "rgba(255, 255, 255, 0.3)", //100% opacity
         "timelineText-start": "rgba(99, 49, 25, 1)", //100% opacity
         "timelineText-end": "rgba(221, 108, 56, 1)", //100% opacity
+        "productsBg-start": "rgba(253, 248, 245, 1)", //100% opacity
+        "productsBg-end": "rgba(253, 248, 245, 1)", //100% opacity
+        
       },
       height: {
         9.5: "38px",

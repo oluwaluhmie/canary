@@ -18,7 +18,7 @@ const Products = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 gap-5 md:gap-5 lg:gap-6 md:grid-cols-1 lg:grid-cols-3">
-          <div className="flex flex-col md:flex-row lg:flex-col md:w-176 lg:w-96 bg-menuTextHover shadow-products border-b-4 border-productsBorder hover:bg-gradient-to-b hover:from-productsHover-start hover:to-productsHover-end transition-all duration-300 ease-out">
+          <div className="flex flex-col md:flex-row lg:flex-col md:w-176 lg:w-96 bg-gradient-to-b from-productsBg-start to-productsBg-end shadow-products border-b-4 border-productsBorder hover:bg-gradient-to-b hover:from-productsHover-start hover:to-productsHover-end transition-all duration-300 ease-out">
             <img src={loan} alt="loan" className="md:w-88 lg:w-96" />
             <div className="flex flex-col gap-4 md:gap-5 lg:gap-5 px-4 md:px-6 lg:px-6 pt-5 md:pt-6 lg:pt-6 pb-6 md:pb-6 lg:pb-9">
               <div className="flex flex-col gap-1 w-87.5 md:w-76 lg:w-84">
@@ -31,7 +31,10 @@ const Products = () => {
                   repayment terms.
                 </p>
               </div>
-              <Link to="/" className="flex items-center gap-1 hover:text-linkHover hover:gap-2">
+              <Link
+                to="/"
+                className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
+              >
                 <p className="text-sm md:text-base lg:text-base text-menuHover">
                   Learn More
                 </p>
@@ -39,8 +42,12 @@ const Products = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row lg:flex-col md:w-176 lg:w-96 bg-menuTextHover shadow-products border-b-4 border-productsBorder hover:bg-gradient-to-b hover:from-productsHover-start hover:to-productsHover-end transition-all duration-300 ease-out">
-            <img src={investments} alt="investments" className="md:w-88 lg:w-96" />
+          <div className="flex flex-col md:flex-row lg:flex-col md:w-176 lg:w-96 bg-gradient-to-b from-productsBg-start to-productsBg-end shadow-products border-b-4 border-productsBorder hover:bg-gradient-to-b hover:from-productsHover-start hover:to-productsHover-end transition-all duration-300 ease-out">
+            <img
+              src={investments}
+              alt="investments"
+              className="md:w-88 lg:w-96"
+            />
             <div className="flex flex-col gap-4 md:gap-5 lg:gap-5 px-4 md:px-6 lg:px-6 pt-5 md:pt-6 lg:pt-6 pb-6 md:pb-6 lg:pb-9">
               <div className="flex flex-col gap-1 w-87.5 md:w-76 lg:w-84">
                 <span className="font-gotham text-xl md:text-xl lg:text-2xl text-menuTextColor">
@@ -52,7 +59,10 @@ const Products = () => {
                   financial goals and objectives.
                 </p>
               </div>
-              <Link to="/" className="flex items-center gap-1 hover:text-linkHover hover:gap-2">
+              <Link
+                to="/"
+                className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
+              >
                 <p className="text-sm md:text-base lg:text-base text-menuHover">
                   Learn More
                 </p>
@@ -60,7 +70,7 @@ const Products = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row lg:flex-col md:w-176 lg:w-96 bg-menuTextHover shadow-products border-b-4 border-productsBorder hover:bg-gradient-to-b hover:from-productsHover-start hover:to-productsHover-end transition-all duration-300 ease-out">
+          <div className="flex flex-col md:flex-row lg:flex-col md:w-176 lg:w-96 bg-gradient-to-b from-productsBg-start to-productsBg-end shadow-products border-b-4 border-productsBorder hover:bg-gradient-to-b hover:from-productsHover-start hover:to-productsHover-end transition-all duration-300 ease-out">
             <img src={services} alt="services" className="md:w-88 lg:w-96" />
             <div className="flex flex-col gap-4 md:gap-5 lg:gap-5 px-4 md:px-6 lg:px-6 pt-5 md:pt-6 lg:pt-6 pb-6 md:pb-6 lg:pb-9">
               <div className="flex flex-col gap-1 w-87.5 md:w-76 lg:w-84">
@@ -73,7 +83,10 @@ const Products = () => {
                   specialized solutions across diverse sectors of the economy.
                 </p>
               </div>
-              <Link to="/" className="flex items-center gap-1 hover:text-linkHover hover:gap-2">
+              <Link
+                to="/"
+                className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
+              >
                 <p className="text-sm md:text-base lg:text-base text-menuHover">
                   Learn More
                 </p>
