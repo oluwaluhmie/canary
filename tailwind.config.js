@@ -75,6 +75,7 @@ module.exports = {
         buttonHover: "#B1562D",
         timelineText: "#CECECE",
         pressText: "#B1562D",
+        teamsBg: "#F7F8FB",
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],
