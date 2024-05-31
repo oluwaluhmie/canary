@@ -7,6 +7,7 @@ import Policy from "./Pages/Policy";
 import Contact from "./Pages/Contact";
 import Teams from "./Pages/Teams";
 import TeamsContent from "./Pages/Teams/TeamsContent";
+import Blog from "./Pages/Blog";
 
 function App() {
   return (
