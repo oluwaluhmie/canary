@@ -186,7 +186,7 @@ const Header = () => {
                 {showResourcesDropdown && (
                   <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white shadow-md">
                     <Link
-                      to="/"
+                      to="/blog"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Blog
@@ -334,7 +334,7 @@ const Header = () => {
                 {showMobileResources && (
                   <div className="absolute top-full left-0 w-full bg-white shadow-md border-t-2 z-50 border-borderStroke hover:border-menuHover">
                     <Link
-                      to="/"
+                      to="/blog"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:border-menuHover"
                     >
                       Blog

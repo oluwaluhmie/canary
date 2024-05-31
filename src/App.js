@@ -17,7 +17,7 @@ function App() {
           path="/"
           element={
             <>
-              <Blog />
+              <Home />
             </>
           }
         />
@@ -29,6 +29,7 @@ function App() {
         <Route path="/management" element={<TeamsContent tab="management" />} />
         <Route path="/directors" element={<TeamsContent tab="directors" />} />
         <Route path="*" element={<Teams />} /> {/* Default Route */}
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );
