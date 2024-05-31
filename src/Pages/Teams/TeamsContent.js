@@ -31,7 +31,7 @@ const ManagementContent = () => (
     </div>
     <div className="flex flex-col gap-6 lg:gap-12 gap-x-3 md:gap-x-4 lg:gap-x-6 w-97.5 md:w-176 lg:w-300">
       <div className="grid grid-cols-2">
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img src={md} alt="md" className="block md:hidden lg:hidden" />
           <img src={mdtab} alt="mdtab" className="hidden md:block lg:hidden" />
           <img src={mdweb} alt="mdweb" className="hidden md:hidden lg:block" />
@@ -44,7 +44,7 @@ const ManagementContent = () => (
             </p>
           </div>
         </div>
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img src={cfo} alt="cfo" className="block md:hidden lg:hidden" />
           <img
             src={cfotab}
@@ -67,7 +67,7 @@ const ManagementContent = () => (
         </div>
       </div>
       <div className="grid grid-cols-2">
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img src={hrm} alt="hrm" className="block md:hidden lg:hidden" />
           <img
             src={hrmtab}
@@ -88,7 +88,7 @@ const ManagementContent = () => (
             </p>
           </div>
         </div>
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img src={hhr} alt="hhr" className="block md:hidden lg:hidden" />
           <img
             src={hhrtab}
@@ -111,7 +111,7 @@ const ManagementContent = () => (
         </div>
       </div>
       <div className="grid grid-cols-1">
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img src={hoo} alt="hoo" className="block md:hidden lg:hidden" />
           <img
             src={hootab}
@@ -149,7 +149,7 @@ const DirectorsContent = () => (
     </div>
     <div className="flex flex-col gap-6 lg:gap-12 gap-x-3 md:gap-x-4 lg:gap-x-6 w-97.5 md:w-176 lg:w-300">
       <div className="grid grid-cols-2">
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img src={md} alt="md" className="block md:hidden lg:hidden" />
           <img src={mdtab} alt="mdtab" className="hidden md:block lg:hidden" />
           <img src={mdweb} alt="mdweb" className="hidden md:hidden lg:block" />
@@ -162,7 +162,7 @@ const DirectorsContent = () => (
             </p>
           </div>
         </div>
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img
             src={defaultimage}
             alt="defaultimage"
@@ -189,7 +189,7 @@ const DirectorsContent = () => (
         </div>
       </div>
       <div className="grid grid-cols-2">
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img
             src={defaultimage}
             alt="defaultimage"
@@ -214,7 +214,7 @@ const DirectorsContent = () => (
             </p>
           </div>
         </div>
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img
             src={defaultimage}
             alt="defaultimage"
@@ -241,7 +241,7 @@ const DirectorsContent = () => (
         </div>
       </div>
       <div className="grid grid-cols-1">
-        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products w-43.5 md:w-85 lg:w-147">
+        <div className="flex flex-col bg-menuTextHover border-b-2 border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-opacity duration-300 w-43.5 md:w-85 lg:w-147">
           <img
             src={defaultimage}
             alt="defaultimage"
