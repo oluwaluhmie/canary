@@ -3,7 +3,7 @@ import targetinvestment from "../../assets/targetinvestment.svg";
 import fixedinvestment from "../../assets/fixedinvestment.svg";
 import canaryvault from "../../assets/canaryvault.svg";
 import { Link } from "react-router-dom";
-import arrowright from "../../assets/arrowrightone.svg";
+import arrowright from "../../assets/arrowright.svg";
 import bluearrowright from "../../assets/bluearrowright.svg";
 import BlueWhiteButton from "../../Components/blueWhiteButton";
 

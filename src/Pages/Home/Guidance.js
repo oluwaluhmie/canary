@@ -1,6 +1,6 @@
 import React from "react";
 import guidanceimage from "../../assets/guidanceimage.png";
-import orangearrowright from "../../assets/arrowrightone.svg";
+import orangearrowright from "../../assets/arrowright.svg";
 import { Link } from "react-router-dom";
 
 const Guidance = () => {
@@ -29,7 +29,7 @@ const Guidance = () => {
                 </p>
               </div>
               <Link to="/">
-                <button className="flex justify-center items-center gap-1.5 lg:gap-2 text-base md:text-lg lg:text-lg border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-97.5 md:w-56.25 lg:w-56.25 px-8 md:px-9 lg:px-9 h-11 md:h-12 lg:h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end hover:gap-2">
+                <button className="flex justify-center items-center gap-1.5 lg:gap-2 text-base md:text-lg lg:text-lg border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-97.5 md:w-57 lg:w-57 px-8 md:px-9 lg:px-9 h-11 md:h-12 lg:h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end hover:gap-2">
                   <p>Reach out to us</p>
                   <img src={orangearrowright} alt="arrowright" />
                 </button>
