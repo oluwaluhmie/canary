@@ -27,7 +27,9 @@ const Footer = () => {
         <div className="flex flex-col py-12 gap-12 md:gap-12 lg:gap-20">
           <div className="flex flex-col gap-6 md:gap-12 lg:flex-row lg:gap-12">
             <div className="flex flex-col gap-6 lg:w-80">
-              <img src={logo} alt="logo" className="w-40 h-12" />
+              <Link to="/">
+                <img src={logo} alt="logo" className="w-40 h-12" />
+              </Link>
               <span className="text-textColor text-base md:w-96 lg:w-64">
                 Canary Point Finance provides tailored financial solutions with
                 deep market expertise
@@ -40,15 +42,21 @@ const Footer = () => {
                     Products
                   </span>
                   <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Investments
-                    </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Loans
-                    </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Services
-                    </p>
+                    <Link to="">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Investments
+                      </p>
+                    </Link>
+                    <Link to="">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Loans
+                      </p>
+                    </Link>
+                    <Link to="">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Services
+                      </p>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-col w-1/2 gap-2 md:gap-3 lg:gap-6 lg:w-52">
@@ -56,15 +64,21 @@ const Footer = () => {
                     About Us
                   </span>
                   <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Our Story
-                    </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Our Culture
-                    </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Our Team
-                    </p>
+                    <Link to="/ourstory">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Our Story
+                      </p>
+                    </Link>
+                    <Link to="">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Our Culture
+                      </p>
+                    </Link>
+                    <Link to="/teams/*">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Our Team
+                      </p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -74,15 +88,21 @@ const Footer = () => {
                     Resources
                   </span>
                   <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Blog
-                    </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      FAQ
-                    </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
-                      Help Centre
-                    </p>
+                    <Link to="/blog">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Blog
+                      </p>
+                    </Link>
+                    <Link to="">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        FAQ
+                      </p>
+                    </Link>
+                    <Link to="">
+                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
+                        Help Centre
+                      </p>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-col w-1/2 gap-2 md:gap-3 lg:gap-6 lg:w-52">
@@ -90,13 +110,18 @@ const Footer = () => {
                     Contact Us
                   </span>
                   <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
+                    <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
                       01-6329481
                     </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
+                    <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
                       01-6329482
                     </p>
-                    <p className="text-textColor text-sm md:text-base lg:text-base">
+                    <p
+                      className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base"
+                      onClick={() =>
+                        (window.location = "mailto:info@canarypointcs.com")
+                      }
+                    >
                       info@canarypointcs.com
                     </p>
                   </div>
@@ -107,10 +132,18 @@ const Footer = () => {
           <hr className="opacity-10" />
           <div className="flex flex-col gap-4 text-footerText text-sm md:text-base lg:text-base">
             <div className="flex gap-4">
-              <img src={instagram} alt="instagram" />
-              <img src={facebook} alt="facebook" />
-              <img src={linkedin} alt="linkedin" />
-              <img src={twitter} alt="twitter" />
+              <Link to="">
+                <img src={instagram} alt="instagram" />
+              </Link>
+              <Link to="">
+                <img src={facebook} alt="facebook" />
+              </Link>
+              <Link to="">
+                <img src={linkedin} alt="linkedin" />
+              </Link>
+              <Link to="">
+                <img src={twitter} alt="twitter" />
+              </Link>
             </div>
             <span>
               The Perez, Block 3, Plot 3, Perez Drive, Lekki Phase 1, Lagos

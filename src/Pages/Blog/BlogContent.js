@@ -13,7 +13,7 @@ const BlogContent = () => {
         <div className="px-5 md:px-12 lg:px-0">
           <div className="flex flex-col gap-12 pt-12 pb-16 lg:py-24">
             <div className="flex flex-col gap-3 lg:gap-5">
-              <span className="font-gotham text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end">
+              <span className="font-gotham text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
                 Financial Insights from us
               </span>
               <p className="text-mobileMenuColor text-lg lg:text-xl">
@@ -54,7 +54,7 @@ const BlogContent = () => {
                     </p>
                   </div>
                   <Link
-                    to=""
+                    to="/article"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-base md:text-base lg:text-base text-menuHover">
@@ -93,7 +93,7 @@ const BlogContent = () => {
                     </p>
                   </div>
                   <Link
-                    to="/"
+                    to="/article"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-base md:text-base lg:text-base text-menuHover">
@@ -134,7 +134,7 @@ const BlogContent = () => {
                     </p>
                   </div>
                   <Link
-                    to="/"
+                    to="/article"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-base md:text-base lg:text-base text-menuHover">
@@ -173,7 +173,7 @@ const BlogContent = () => {
                     </p>
                   </div>
                   <Link
-                    to="/"
+                    to="/article"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-base md:text-base lg:text-base text-menuHover">
@@ -214,7 +214,7 @@ const BlogContent = () => {
                     </p>
                   </div>
                   <Link
-                    to="/"
+                    to="/article"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-base md:text-base lg:text-base text-menuHover">
@@ -253,7 +253,7 @@ const BlogContent = () => {
                     </p>
                   </div>
                   <Link
-                    to="/"
+                    to="/article"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-base md:text-base lg:text-base text-menuHover">
@@ -295,7 +295,7 @@ const BlogContent = () => {
                       </p>
                     </div>
                     <Link
-                      to=""
+                      to="/article"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base md:text-base lg:text-lg text-menuHover">
@@ -334,7 +334,7 @@ const BlogContent = () => {
                       </p>
                     </div>
                     <Link
-                      to="/"
+                      to="/article"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base md:text-base lg:text-lg text-menuHover">
@@ -373,7 +373,7 @@ const BlogContent = () => {
                       </p>
                     </div>
                     <Link
-                      to="/"
+                      to="/article"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base md:text-base lg:text-lg text-menuHover">
@@ -416,7 +416,7 @@ const BlogContent = () => {
                       </p>
                     </div>
                     <Link
-                      to=""
+                      to="/article"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base md:text-base lg:text-lg text-menuHover">
@@ -455,7 +455,7 @@ const BlogContent = () => {
                       </p>
                     </div>
                     <Link
-                      to="/"
+                      to="/article"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base md:text-base lg:text-lg text-menuHover">
@@ -494,7 +494,7 @@ const BlogContent = () => {
                       </p>
                     </div>
                     <Link
-                      to="/"
+                      to="/article"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base md:text-base lg:text-lg text-menuHover">

@@ -177,8 +177,8 @@ const PrivacyContent = () => {
                 If you have any questions or concerns about this Privacy Policy
                 or our data practices, please contact us at{" "}
                 <Link
-                  to=""
                   className="text-menuHover underline underline-offset-4"
+                  onClick={() => window.location = 'mailto:support@canaryfinance.com'}
                 >
                   support@canaryfinance.com
                 </Link>
