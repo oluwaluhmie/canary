@@ -132,7 +132,7 @@ const CultureContent = () => {
                     className="hidden md:hidden lg:block"
                   />
                 </div>
-                <p className="text-mobileMenuColor text-base lg:text-lg px-4 lg:px-6 pt-4 lg:pt-6 pb-6 lg:pb-8 border-x-2 border-borderStroke">
+                <p className="text-mobileMenuColor text-base lg:text-lg px-4 lg:px-6 pt-4 lg:pt-6 pb-6 lg:pb-8 md:h-34 border-x-2 border-borderStroke">
                   We embrace innovation and we are always looking for new and
                   better ways to serve our clients.
                 </p>
@@ -184,7 +184,7 @@ const CultureContent = () => {
                     className="hidden md:hidden lg:block"
                   />
                 </div>
-                <p className="text-mobileMenuColor text-base lg:text-lg px-4 lg:px-6 pt-4 lg:pt-6 pb-6 lg:pb-8 border-x-2 border-borderStroke">
+                <p className="text-mobileMenuColor text-base lg:text-lg px-4 lg:px-6 pt-4 lg:pt-6 pb-6 lg:pb-8 lg:h-43 border-x-2 border-borderStroke">
                   We strive for excellence in everything we do, and we are
                   committed to delivering the highest quality services to our
                   clients.
