@@ -69,7 +69,7 @@ const Footer = () => {
                         Our Story
                       </p>
                     </Link>
-                    <Link to="">
+                    <Link to="/culture">
                       <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
                         Our Culture
                       </p>

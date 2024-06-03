@@ -124,19 +124,19 @@ const Header = () => {
                 {showProductsDropdown && (
                   <div className="absolute lg:-left-10 lg:mt-3 lg:w-64 bg-white shadow-md">
                     <Link
-                      to="/"
+                      to=""
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Investments
                     </Link>
                     <Link
-                      to="/"
+                      to=""
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Loans
                     </Link>
                     <Link
-                      to="/"
+                      to=""
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Services
@@ -161,7 +161,7 @@ const Header = () => {
                       Our Story
                     </Link>
                     <Link
-                      to="/"
+                      to="/culture"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Our Culture
@@ -270,19 +270,19 @@ const Header = () => {
                 {showMobileProducts && (
                   <div className="absolute top-full left-0 w-full bg-white shadow-md border-t-2 z-40 border-borderStroke hover:border-menuHover">
                     <Link
-                      to="/"
+                      to=""
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:border-menuHover"
                     >
                       Investments
                     </Link>
                     <Link
-                      to="/"
+                      to=""
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:stroke-menuHover hover:border-menuHover"
                     >
                       Loans
                     </Link>
                     <Link
-                      to="/"
+                      to=""
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:stroke-menuHover hover:border-menuHover"
                     >
                       Services
@@ -308,7 +308,7 @@ const Header = () => {
                       Our Story
                     </Link>
                     <Link
-                      to="/"
+                      to="/culture"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:stroke-menuHover hover:border-menuHover"
                     >
                       Our Culture
