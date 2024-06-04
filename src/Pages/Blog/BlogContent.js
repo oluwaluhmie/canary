@@ -9,9 +9,9 @@ import arrowleft from "../../assets/arrowleft.svg";
 const BlogContent = () => {
   return (
     <div className="flex flex-col items-center bg-white lg:bg-blogbg lg:bg-cover">
-      <div className="flex flex-col w-107.5 md:w-200 lg:w-300">
-        <div className="px-5 md:px-12 lg:px-0 w-97.5 md:w-176 lg:w-300">
-          <div className="flex flex-col gap-12 pt-12 pb-16 lg:py-24">
+      <div className="flex flex-col items-center w-107.5 md:w-200 lg:w-300">
+        <div className="flex flex-col items-center px-5 md:px-12 lg:px-0 w-97.5 md:w-176 lg:w-300">
+          <div className="flex flex-col items-center gap-12 pt-12 pb-16 lg:py-24 w-97.5 md:w-176 lg:w-300">
             <div className="flex flex-col gap-3 lg:gap-5">
               <span className="font-gotham text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
                 Financial Insights from us
@@ -29,17 +29,17 @@ const BlogContent = () => {
                 <img
                   src={blogone}
                   alt="blogone"
-                  className="block md:hidden lg:hidden"
+                  className="block md:hidden lg:hidden object-cover"
                 />
                 <img
                   src={blogtab}
                   alt="blogtab"
-                  className="hidden md:block lg:hidden"
+                  className="hidden md:block lg:hidden object-cover"
                 />
                 <img
                   src={blogweb}
                   alt="blogweb"
-                  className="hidden md:hidden lg:block"
+                  className="hidden md:hidden lg:block object-cover"
                 />
                 <div className="flex flex-col gap-5 px-5 pt-5 pb-6 h-50 md:h-55">
                   <div className="flex flex-col gap-0.5 h-28 md:h-33">
@@ -68,19 +68,19 @@ const BlogContent = () => {
                 <img
                   src={blogone}
                   alt="blogone"
-                  className="block md:hidden lg:hidden"
+                  className="block md:hidden lg:hidden object-cover"
                 />
                 <img
                   src={blogtab}
                   alt="blogtab"
-                  className="hidden md:block lg:hidden"
+                  className="hidden md:block lg:hidden object-cover"
                 />
                 <img
                   src={blogweb}
                   alt="blogweb"
-                  className="hidden md:hidden lg:block"
+                  className="hidden md:hidden lg:block object-cover"
                 />
-                <div className="flex flex-col gap-5 px-5 pt-5 pb-6 h-50 md:h-55">
+                <div className="flex flex-col gap-2 px-5 pt-5 pb-6 h-50 md:h-55">
                   <div className="flex flex-col gap-0.5 h-28 md:h-33">
                     <p className="text-footerText text-sm">16 April, 2024</p>
                     <span className="font-gotham text-menuTextColor text-lg">
@@ -109,17 +109,17 @@ const BlogContent = () => {
                 <img
                   src={blogone}
                   alt="blogone"
-                  className="block md:hidden lg:hidden"
+                  className="block md:hidden lg:hidden object-cover"
                 />
                 <img
                   src={blogtab}
                   alt="blogtab"
-                  className="hidden md:block lg:hidden"
+                  className="hidden md:block lg:hidden object-cover"
                 />
                 <img
                   src={blogweb}
                   alt="blogweb"
-                  className="hidden md:hidden lg:block"
+                  className="hidden md:hidden lg:block object-cover"
                 />
                 <div className="flex flex-col gap-5 px-5 pt-5 pb-6 h-50 md:h-55">
                   <div className="flex flex-col gap-0.5 h-28 md:h-33">
@@ -148,17 +148,17 @@ const BlogContent = () => {
                 <img
                   src={blogone}
                   alt="blogone"
-                  className="block md:hidden lg:hidden"
+                  className="block md:hidden lg:hidden object-cover"
                 />
                 <img
                   src={blogtab}
                   alt="blogtab"
-                  className="hidden md:block lg:hidden"
+                  className="hidden md:block lg:hidden object-cover"
                 />
                 <img
                   src={blogweb}
                   alt="blogweb"
-                  className="hidden md:hidden lg:block"
+                  className="hidden md:hidden lg:block object-cover"
                 />
                 <div className="flex flex-col gap-5 px-5 pt-5 pb-6">
                   <div className="flex flex-col gap-0.5 h-28 md:h-33">
@@ -189,17 +189,17 @@ const BlogContent = () => {
                 <img
                   src={blogone}
                   alt="blogone"
-                  className="block md:hidden lg:hidden"
+                  className="block md:hidden lg:hidden object-cover"
                 />
                 <img
                   src={blogtab}
                   alt="blogtab"
-                  className="hidden md:block lg:hidden"
+                  className="hidden md:block lg:hidden object-cover"
                 />
                 <img
                   src={blogweb}
                   alt="blogweb"
-                  className="hidden md:hidden lg:block"
+                  className="hidden md:hidden lg:block object-cover"
                 />
                 <div className="flex flex-col gap-5 px-5 pt-5 pb-6">
                   <div className="flex flex-col gap-0.5 h-28 md:h-33">
@@ -270,17 +270,17 @@ const BlogContent = () => {
                   <img
                     src={blogone}
                     alt="blogone"
-                    className="block md:hidden lg:hidden"
+                    className="block md:hidden lg:hidden object-cover"
                   />
                   <img
                     src={blogtab}
                     alt="blogtab"
-                    className="hidden md:block lg:hidden"
+                    className="hidden md:block lg:hidden object-cover"
                   />
                   <img
                     src={blogweb}
                     alt="blogweb"
-                    className="hidden md:hidden lg:block"
+                    className="hidden md:hidden lg:block object-cover"
                   />
                   <div className="flex flex-col gap-5 lg:gap-6 px-5 lg:px-6 pt-5 lg:pt-6 pb-6 lg:pb-9 h-50 md:h-55 lg:h-68">
                     <div className="flex flex-col gap-0.5 lg:gap-1 h-28 md:h-33 lg:h-40">
@@ -391,17 +391,17 @@ const BlogContent = () => {
                   <img
                     src={blogone}
                     alt="blogone"
-                    className="block md:hidden lg:hidden"
+                    className="block md:hidden lg:hidden object-cover"
                   />
                   <img
                     src={blogtab}
                     alt="blogtab"
-                    className="hidden md:block lg:hidden"
+                    className="hidden md:block lg:hidden object-cover"
                   />
                   <img
                     src={blogweb}
                     alt="blogweb"
-                    className="hidden md:hidden lg:block"
+                    className="hidden md:hidden lg:block object-cover"
                   />
                   <div className="flex flex-col gap-5 lg:gap-6 px-5 lg:px-6 pt-5 lg:pt-6 pb-6 lg:pb-9 h-50 md:h-55 lg:h-68">
                     <div className="flex flex-col gap-0.5 lg:gap-1 h-28 md:h-33 lg:h-40">
@@ -430,17 +430,17 @@ const BlogContent = () => {
                   <img
                     src={blogone}
                     alt="blogone"
-                    className="block md:hidden lg:hidden"
+                    className="block md:hidden lg:hidden object-cover"
                   />
                   <img
                     src={blogtab}
                     alt="blogtab"
-                    className="hidden md:block lg:hidden"
+                    className="hidden md:block lg:hidden object-cover"
                   />
                   <img
                     src={blogweb}
                     alt="blogweb"
-                    className="hidden md:hidden lg:block"
+                    className="hidden md:hidden lg:block object-cover"
                   />
                   <div className="flex flex-col gap-5 lg:gap-6 px-5 lg:px-6 pt-5 lg:pt-6 pb-6 lg:pb-9 h-50 md:h-55 lg:h-68">
                     <div className="flex flex-col gap-0.5 lg:gap-1 h-28 md:h-33 lg:h-40">
@@ -469,17 +469,17 @@ const BlogContent = () => {
                   <img
                     src={blogone}
                     alt="blogone"
-                    className="block md:hidden lg:hidden"
+                    className="block md:hidden lg:hidden object-cover"
                   />
                   <img
                     src={blogtab}
                     alt="blogtab"
-                    className="hidden md:block lg:hidden"
+                    className="hidden md:block lg:hidden object-cover"
                   />
                   <img
                     src={blogweb}
                     alt="blogweb"
-                    className="hidden md:hidden lg:block"
+                    className="hidden md:hidden lg:block object-cover"
                   />
                   <div className="flex flex-col gap-5 lg:gap-6 px-5 lg:px-6 pt-5 lg:pt-6 pb-6 lg:pb-9 h-50 md:h-55 lg:h-68">
                     <div className="flex flex-col gap-0.5 lg:gap-1 h-28 md:h-33 lg:h-40">
