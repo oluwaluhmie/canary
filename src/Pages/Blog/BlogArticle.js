@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import arrowleft from "../../assets/arrowleft.svg";
-import blogone from "../../assets/blogarticlemobile.png";
+import blogone from "../../assets/blogarticlemob.png";
 import blogtab from "../../assets/blogarticletab.png";
 import blogweb from "../../assets/blogarticleweb.png";
+import blogmainone from "../../assets/blogmainmob.png";
+import blogmaintab from "../../assets/blogmaintab.png";
+import blogmainweb from "../../assets/blogmainweb.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import linkedin from "../../assets/linkedin.png";
@@ -56,18 +59,18 @@ const BlogArticle = ({ onFormChange }) => {
                   </p>
                 </div>
                 <img
-                  src={blogone}
-                  alt="blogone"
+                  src={blogmainone}
+                  alt="blogmainone"
                   className="block md:hidden lg:hidden"
                 />
                 <img
-                  src={blogtab}
-                  alt="blogtab"
+                  src={blogmaintab}
+                  alt="blogmaintab"
                   className="hidden md:block lg:hidden"
                 />
                 <img
-                  src={blogweb}
-                  alt="blogweb"
+                  src={blogmainweb}
+                  alt="blogmainweb"
                   className="hidden md:hidden lg:block"
                 />
               </div>
