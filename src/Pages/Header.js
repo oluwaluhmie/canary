@@ -84,13 +84,13 @@ const Header = () => {
   return (
     <>
       <div
-        className={`fixed left-0 right-0 z-50 px-5 md:px-12 lg:px-32 bg-gradient-to-b from-gradientColor-start to-gradientColor-end w-full ${
+        className={`fixed left-0 right-0 z-50 px-5 md:px-12 lg:px-32 items-center bg-gradient-to-b from-gradientColor-start to-gradientColor-end w-full ${
           isScrolled || isMenuOpen
             ? "shadow-md bg-gradient-to-b from-white to-white"
             : ""
         }`}
       >
-        <div className="flex items-center justify-between h-18 md:h-20 lg:h-25 lg:pt-3 w-full lg:min-w-300">
+        <div className="flex items-center justify-between h-18 md:h-20 lg:h-25 lg:pt-3 lg:min-w-300">
           <div className="flex items-center">
             {/* Canary Logo */}
             <div className="lg:pr-12">
