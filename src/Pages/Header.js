@@ -246,7 +246,7 @@ const Header = () => {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col px-5 gap-4 mt-6 h-screen w-full">
+          <div className="flex flex-col gap-4 mt-6 h-screen w-full">
             <TextBoxWithIcon
               placeholder="What can we help you with"
               imageSrc={search}
