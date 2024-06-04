@@ -242,11 +242,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`relative inset-0 z-40 bg-white lg:hidden ${
+          className={`relative flex flex-col w-full inset-0 z-40 bg-white lg:hidden ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col px-5 gap-4 mt-6 h-screen">
+          <div className="flex flex-col px-5 gap-4 mt-6 h-screen w-full">
             <TextBoxWithIcon
               placeholder="What can we help you with"
               imageSrc={search}
