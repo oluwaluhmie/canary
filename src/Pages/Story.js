@@ -9,7 +9,7 @@ import Press from "./Our Story/Press";
 
 const Story = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <StoryHeader />
       <Financial />
