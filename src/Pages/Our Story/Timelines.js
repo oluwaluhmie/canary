@@ -66,8 +66,8 @@ const Timelines = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center bg-timelinebg bg-cover overflow-hidden">
-      <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
+    <div className="flex flex-col items-center bg-timelinebg bg-cover">
+      <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5 overflow-hidden">
         <div className="px-5 md:px-12 w-97.5 md:w-176 lg:w-300">
           <div className="flex flex-col gap-8 md:gap-12 lg:gap-12 py-12 md:py-16 lg:py-24">
             <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-timelineText-start to-timelineText-end">
