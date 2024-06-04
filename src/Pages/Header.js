@@ -84,7 +84,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`fixed flex flex-col items-center left-0 right-0 z-50 px-5 md:px-12 lg:px-32 bg-gradient-to-b from-gradientColor-start to-gradientColor-end w-full ${
+        className={`fixed flex flex-col items-center left-0 right-0 z-50 px-5 md:px-12 lg:px-32 bg-gradient-to-b from-gradientColor-start to-gradientColor-end w-full overflow-hidden ${
           isScrolled || isMenuOpen
             ? "shadow-md bg-gradient-to-b from-white to-white"
             : ""
