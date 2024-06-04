@@ -6,15 +6,15 @@ import financialthreeweb from "../../assets/financialthreeweb.png";
 
 const Financial = () => {
   return (
-    <div className="flex flex-col items-center bg-white">
+    <div className="flex flex-col items-center bg-white overflow-hidden">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
-        <div className="flex flex-col md:gap-16 lg:gap-24 pt-12 lg:pt-24 pb-17 lg:pb-0 w-97.5 md:w-176 lg:w-300 overflow-hidden">
-          <div className="flex flex-col gap-2 md:gap-3 lg:gap-5 px-5 md:px-12">
+        <div className="flex flex-col items-center md:gap-16 lg:gap-24 pt-12 lg:pt-24 pb-17 lg:pb-0">
+          <div className="flex flex-col  gap-2 md:gap-3 lg:gap-5 px-5 md:px-12">
             <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end">
               Empowering Financial Futures
             </span>
             <div className="lg:flex lg:gap-24 lg:w-300">
-              <p className="text-mobileMenuColor text-lg lg:text-xl lg:w-200">
+              <p className="text-mobileMenuColor text-lg lg:text-xl">
                 Canary Point Finance Limited is a Central Bank of Nigeria (CBN)
                 licensed Finance House offering financial solutions that assist
                 clients in achieving their objectives. Our Finance House is led
@@ -36,7 +36,7 @@ const Financial = () => {
               </div>
             </div>
           </div>
-          <div className="hidden md:grid md:grid-cols-3 md:px-4 md:py-4 md:gap-x-4 lg:px-6 lg:py-6 lg:gap-x-6">
+          <div className="hidden md:grid md:grid-cols-3 md:px-4 md:py-4 md:gap-x-4 lg:px-6 lg:py-6 lg:gap-x-6 w-full">
             <div><img src={financialoneweb} alt="financialone" /></div>
             <div><img src={financialtwoweb} alt="financialtwo" /></div>
             <div><img src={financialthreeweb} alt="financialthree" /></div>

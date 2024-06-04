@@ -90,7 +90,7 @@ const Header = () => {
             : ""
         }`}
       >
-        <div className="flex items-center justify-between h-18 md:h-20 lg:h-25 lg:pt-3 px-5 md:px-12 lg:px-32 lg:min-w-300">
+        <div className="flex items-center justify-between h-18 md:h-20 lg:h-25 lg:pt-3 px-5 md:px-12 lg:px-32 w-full lg:min-w-300">
           <div className="flex items-center">
             {/* Canary Logo */}
             <div className="lg:pr-12">
