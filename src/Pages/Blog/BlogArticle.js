@@ -199,7 +199,7 @@ const BlogArticle = ({ onFormChange }) => {
             </div>
           </div>
           <div className="flex flex-col items-center bg-latestbg bg-cover px-5 pt-12 pb-16 w-full">
-            <div className="flex flex-col gap-8 px-5 lg:px-0 w-97.5 md:w-176 lg:w-300">
+            <div className="flex flex-col gap-8 w-97.5 md:w-176 lg:w-300">
               <span className="font-gotham text-2xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end">
                 Latest Articles
               </span>
