@@ -84,7 +84,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`fixed flex flex-col items-center left-0 right-0 z-50 px-5 md:px-12 lg:px-32 bg-gradient-to-b from-gradientColor-start to-gradientColor-end w-full overflow-hidden ${
+        className={`fixed flex flex-col items-center left-0 right-0 z-50 px-5 md:px-12 lg:px-32 bg-gradient-to-b from-gradientColor-start to-gradientColor-end w-full ${
           isScrolled || isMenuOpen
             ? "shadow-md bg-gradient-to-b from-white to-white"
             : ""
@@ -242,7 +242,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`relative flex flex-col w-full inset-0 z-40 bg-white lg:hidden ${
+          className={`relative flex flex-col w-full inset-0 z-40 bg-white lg:hidden overflow-hidden ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
