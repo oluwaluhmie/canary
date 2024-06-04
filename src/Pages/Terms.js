@@ -6,7 +6,7 @@ import TermsContent from "./Terms/TermsContent";
 
 const Terms = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <TermsHeader />
       <TermsContent />

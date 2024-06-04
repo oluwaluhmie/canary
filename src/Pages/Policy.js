@@ -6,7 +6,7 @@ import PrivacyContent from "./Privacy/PrivacyContent";
 
 const Policy = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <PrivacyHeader />
       <PrivacyContent />

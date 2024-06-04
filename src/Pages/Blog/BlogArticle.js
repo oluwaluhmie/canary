@@ -204,7 +204,7 @@ const BlogArticle = ({ onFormChange }) => {
                 Latest Articles
               </span>
               <div className="grid md:grid-cols-2 lg:hidden gap-6 md:gap-x-6">
-                <div className="md:flex md:flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder/0 shadow-blog hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-97.5 md:w-85">
+                <div className="md:flex md:flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder/0 shadow-blog hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out">
                   <img
                     src={blogone}
                     alt="blogone"
@@ -214,11 +214,6 @@ const BlogArticle = ({ onFormChange }) => {
                     src={blogtab}
                     alt="blogtab"
                     className="hidden md:block lg:hidden"
-                  />
-                  <img
-                    src={blogweb}
-                    alt="blogweb"
-                    className="hidden md:hidden lg:block"
                   />
                   <div className="flex flex-col gap-5 px-5 pt-5 pb-6 h-50 md:h-55">
                     <div className="flex flex-col gap-0.5 h-28 md:h-33">
@@ -254,11 +249,6 @@ const BlogArticle = ({ onFormChange }) => {
                     alt="blogtab"
                     className="hidden md:block lg:hidden"
                   />
-                  <img
-                    src={blogweb}
-                    alt="blogweb"
-                    className="hidden md:hidden lg:block"
-                  />
                   <div className="flex flex-col gap-5 px-5 pt-5 pb-6">
                     <div className="flex flex-col gap-0.5 h-28 md:h-33">
                       <p className="text-footerText text-sm">16 April, 2024</p>
@@ -286,16 +276,6 @@ const BlogArticle = ({ onFormChange }) => {
               <div className="hidden lg:grid lg:grid-cols-3">
                 <div className="flex gap-x-6 w-300">
                   <div className="md:flex md:flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder/0 shadow-blog hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out">
-                    <img
-                      src={blogone}
-                      alt="blogone"
-                      className="block md:hidden lg:hidden"
-                    />
-                    <img
-                      src={blogtab}
-                      alt="blogtab"
-                      className="hidden md:block lg:hidden"
-                    />
                     <img
                       src={blogweb}
                       alt="blogweb"
@@ -328,16 +308,6 @@ const BlogArticle = ({ onFormChange }) => {
                   </div>
                   <div className="md:flex md:flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder/0 shadow-blog hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out">
                     <img
-                      src={blogone}
-                      alt="blogone"
-                      className="block md:hidden lg:hidden"
-                    />
-                    <img
-                      src={blogtab}
-                      alt="blogtab"
-                      className="hidden md:block lg:hidden"
-                    />
-                    <img
                       src={blogweb}
                       alt="blogweb"
                       className="hidden md:hidden lg:block"
@@ -368,16 +338,6 @@ const BlogArticle = ({ onFormChange }) => {
                     </div>
                   </div>
                   <div className="md:flex md:flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder/0 shadow-blog hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out">
-                    <img
-                      src={blogone}
-                      alt="blogone"
-                      className="block md:hidden lg:hidden"
-                    />
-                    <img
-                      src={blogtab}
-                      alt="blogtab"
-                      className="hidden md:block lg:hidden"
-                    />
                     <img
                       src={blogweb}
                       alt="blogweb"
