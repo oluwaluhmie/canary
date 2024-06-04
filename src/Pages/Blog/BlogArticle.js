@@ -24,7 +24,7 @@ const BlogArticle = ({ onFormChange }) => {
       <div className="flex flex-col w-full">
         <Header />
         <BlogHeader />
-        <div className="px-10 md:px-16 lg:px-36">
+        <div className="px-10 md:px-16 lg:px-36 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col gap-8 md:gap-12 pt-12 pb-16 lg:py-24">
             <div className="flex flex-col gap-3 pb-3 transition-all duration-300 ease-out">
               <div className="flex justify-between md:justify-normal md:gap-8">

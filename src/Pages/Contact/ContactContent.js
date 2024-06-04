@@ -9,7 +9,7 @@ const ContactContent = ({ onFormChange }) => {
   return (
     <div className="flex flex-col items-center bg-white lg:bg-contactsbg lg:bg-cover">
       <div className="flex flex-col lg:items-center w-107.5 md:w-200 lg:w-341.5">
-        <div className="px-5 md:px-12 pt-12 lg:pt-24 pb-16 lg:pb-32">
+        <div className="px-5 md:px-12 pt-12 lg:pt-24 pb-16 lg:pb-32 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="lg:flex lg:items-center lg:gap-x-24">
             <div className="flex flex-col gap-6 md:gap-12">
               <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end w-64 md:w-90 lg:w-120">

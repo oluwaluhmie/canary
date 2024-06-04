@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Products = () => {
   return (
     <div className="flex flex-col items-center bg-productsbg bg-cover relative">
-      <div className="flex flex-col w-97.5 md:w-176 lg:w-300 py-16 md:py-16 lg:py-32 gap-8 md:gap-12 lg:gap-16">
+      <div className="flex flex-col w-97.5 md:w-176 lg:w-300 py-16 md:py-16 lg:py-32 gap-8 md:gap-12 lg:gap-16 overflow-hidden">
         <div className="flex flex-col gap-2 md:gap-2 lg:gap-3 lg:w-240">
           <span className="text-base md:text-lg lg:text-xl text-blueBorderStroke">
             Our Products

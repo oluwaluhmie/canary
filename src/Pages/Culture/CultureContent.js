@@ -27,7 +27,7 @@ const CultureContent = () => {
   return (
     <div className="flex flex-col items-center bg-white md:bg-culturebg md:bg-cover">
       <div className="flex flex-col items-center w-full">
-        <div className="flex flex-col px-5 md:px-12 pt-12 pb-16 md:py-16 lg:py-24 gap-12 md:gap-16 lg:gap-24">
+        <div className="flex flex-col px-5 md:px-12 pt-12 pb-16 md:py-16 lg:py-24 gap-12 md:gap-16 lg:gap-24 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col md:flex-row gap-8 lg:gap-16 w-97.5 md:w-176 lg:w-300">
             <div className="flex flex-col gap-1 md:gap-3 md:w-84 lg:w-146">
               <span className="font-gotham text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end">
@@ -255,7 +255,7 @@ const CultureContent = () => {
           </div>
         </div>
         <div className="flex flex-col lg:items-center bg-menuTextHover md:bg-culturepoliciesbg w-full">
-          <div className="px-5 md:px-12 lg:px-0 py-12 md:py-16 lg:py-24 lg:w-300 lg:items-center">
+          <div className="px-5 md:px-12 lg:px-0 py-12 md:py-16 lg:py-24 w-97.5 md:w-176 lg:w-300 overflow-hidden lg:items-center">
             <div className="flex flex-col gap-6 md:gap-12 lg:gap-16 lg:w-300">
               <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-orangeTextGradient-start to-orangeTextGradient-end">
                 Practices and Policies

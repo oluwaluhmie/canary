@@ -14,7 +14,7 @@ const Footer = () => {
       id="footerSection"
       className="flex flex-col items-center bg-footer-sm md:bg-footer-md lg:bg-footer-lg bg-cover bg-center"
     >
-      <div className="flex flex-col w-97.5 md:w-176 lg:w-300">
+      <div className="flex flex-col w-97.5 md:w-176 lg:w-300 overflow-hidden">
         <div className="flex flex-col gap-6 py-12 md:py-16 lg:py-24 lg:gap-12 lg:flex-row lg:items-center lg:justify-between border-b border-white/5">
           <span className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-2xl md:text-3xl lg:text-4xl w-80 md:w-135.5 lg:w-135.5">
             Stay updated with our weekly newsletter

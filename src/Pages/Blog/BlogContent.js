@@ -10,7 +10,7 @@ const BlogContent = () => {
   return (
     <div className="flex flex-col items-center bg-white lg:bg-blogbg lg:bg-cover">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-300">
-        <div className="px-5 md:px-12 lg:px-0">
+        <div className="px-5 md:px-12 lg:px-0 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col gap-12 pt-12 pb-16 lg:py-24">
             <div className="flex flex-col gap-3 lg:gap-5">
               <span className="font-gotham text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">

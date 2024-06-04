@@ -254,6 +254,9 @@ module.exports = {
         204: "816px",
         210: "840px",
       },
+      minWidth: {
+        300: "1200px",
+      },
       padding: {
         17: "68px",
         20: "80px",

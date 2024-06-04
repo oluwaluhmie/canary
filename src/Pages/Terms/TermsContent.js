@@ -4,7 +4,7 @@ const TermsContent = () => {
   return (
     <div className="flex flex-col items-center bg-white lg:bg-termsbg lg:bg-cover">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
-        <div className="px-5 md:px-12">
+        <div className="px-5 md:px-12 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col gap-12 md:gap-12 lg:gap-16 pt-12 pb-16 md:py-12 lg:py-24">
             <div className="flex flex-col gap-1 md:gap-5 lg:gap-5">
               <span className="text-blueBorderStroke text-xl md:text-2xl">

@@ -6,7 +6,7 @@ const CTASection = () => {
   return (
     <div className="flex flex-col bg-cta-sm md:bg-cta-md lg:bg-cta-lg bg-cover bg-center">
       <div className="flex flex-col w-full">
-        <div className="flex flex-col gap-16 pt-32 md:pt-48 lg:pt-96">
+        <div className="flex flex-col gap-16 pt-32 md:pt-48 lg:pt-96 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col gap-5 md:gap-8 lg:gap-12 px-5 md:px-12 lg:px-12 py-5 md:py-10 lg:py-12 lg:items-center bg-investorBg/50 backdrop-blur-lg">
             <div className="flex flex-col gap-5 md:gap-6 lg:gap-8 lg:w-300">
               <div className="flex flex-col lg:flex-row gap-3 md:gap-6 items-center md:items-center lg:items-start lg:justify-between ">

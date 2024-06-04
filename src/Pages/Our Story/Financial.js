@@ -8,7 +8,7 @@ const Financial = () => {
   return (
     <div className="flex flex-col items-center bg-white">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
-        <div className="flex flex-col md:gap-16 lg:gap-24 pt-12 lg:pt-24 pb-17 lg:pb-0">
+        <div className="flex flex-col md:gap-16 lg:gap-24 pt-12 lg:pt-24 pb-17 lg:pb-0 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col gap-2 md:gap-3 lg:gap-5 px-5 md:px-12">
             <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end">
               Empowering Financial Futures

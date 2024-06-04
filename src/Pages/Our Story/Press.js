@@ -16,7 +16,7 @@ const Press = () => {
   return (
     <div className="flex flex-col items-center bg-menuTextHover">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
-        <div className="px-5 md:px-12 py-12 md:py-16 lg:py-24">
+        <div className="px-5 md:px-12 py-12 md:py-16 lg:py-24 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col gap-12 lg:gap-16">
             <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
               <p className="text-menuHover text-base md:text-lg lg:text-2xl">

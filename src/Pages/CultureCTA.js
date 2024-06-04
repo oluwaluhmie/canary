@@ -4,7 +4,7 @@ const CultureCTA = () => {
   return (
     <div className="flex flex-col bg-ctacul-sm md:bg-ctacul-md lg:bg-ctacul-lg bg-cover bg-center">
       <div className="flex flex-col w-full">
-        <div className="flex flex-col gap-16 pt-32 md:pt-48 lg:pt-96">
+        <div className="flex flex-col gap-16 pt-32 md:pt-48 lg:pt-96 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col px-5 md:px-12 lg:px-12 py-5 md:py-10 lg:py-16 lg:items-center bg-investorBg/50 backdrop-blur-lg">
             <div className="flex flex-col lg:w-300">
               <div className="flex flex-col gap-3 md:gap-6 lg:gap-10 items-center">

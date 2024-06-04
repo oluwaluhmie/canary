@@ -9,7 +9,6 @@ import Teams from "./Pages/Teams";
 import TeamsContent from "./Pages/Teams/TeamsContent";
 import Blog from "./Pages/Blog";
 import BlogArticle from "./Pages/Blog/BlogArticle";
-import BlogContent from "./Pages/Blog/BlogContent";
 import Culture from "./Pages/Culture";
 
 function App() {

@@ -7,7 +7,7 @@ const Guidance = () => {
   return (
     <div className="flex flex-col items-center bg-guidancebg bg-cover">
       <div className="flex flex-col w-97.5 md:w-176 lg:w-300">
-        <div className="flex flex-col py-16 md:py-16 lg:py-32 gap-16">
+        <div className="flex flex-col py-16 md:py-16 lg:py-32 gap-16 w-97.5 md:w-176 lg:w-300 overflow-hidden">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <img
               src={guidanceimage}
