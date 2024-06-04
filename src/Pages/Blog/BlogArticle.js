@@ -61,17 +61,17 @@ const BlogArticle = ({ onFormChange }) => {
                 <img
                   src={blogmainone}
                   alt="blogmainone"
-                  className="block md:hidden lg:hidden"
+                  className="block md:hidden lg:hidden object-cover"
                 />
                 <img
                   src={blogmaintab}
                   alt="blogmaintab"
-                  className="hidden md:block lg:hidden"
+                  className="hidden md:block lg:hidden object-cover"
                 />
                 <img
                   src={blogmainweb}
                   alt="blogmainweb"
-                  className="hidden md:hidden lg:block"
+                  className="hidden md:hidden lg:block object-cover"
                 />
               </div>
               <div className="flex flex-col lg:flex-row gap-16 lg:justify-between">
@@ -211,12 +211,12 @@ const BlogArticle = ({ onFormChange }) => {
                   <img
                     src={blogone}
                     alt="blogone"
-                    className="block md:hidden lg:hidden"
+                    className="block md:hidden lg:hidden object-cover"
                   />
                   <img
                     src={blogtab}
                     alt="blogtab"
-                    className="hidden md:block lg:hidden"
+                    className="hidden md:block lg:hidden object-cover"
                   />
                   <div className="flex flex-col gap-5 px-5 pt-5 pb-6 h-50 md:h-55">
                     <div className="flex flex-col gap-0.5 h-28 md:h-33">
@@ -245,12 +245,12 @@ const BlogArticle = ({ onFormChange }) => {
                   <img
                     src={blogone}
                     alt="blogone"
-                    className="block md:hidden lg:hidden"
+                    className="block md:hidden lg:hidden object-cover"
                   />
                   <img
                     src={blogtab}
                     alt="blogtab"
-                    className="hidden md:block lg:hidden"
+                    className="hidden md:block lg:hidden object-cover"
                   />
                   <div className="flex flex-col gap-5 px-5 pt-5 pb-6">
                     <div className="flex flex-col gap-0.5 h-28 md:h-33">
@@ -282,7 +282,7 @@ const BlogArticle = ({ onFormChange }) => {
                     <img
                       src={blogweb}
                       alt="blogweb"
-                      className="hidden md:hidden lg:block"
+                      className="hidden md:hidden lg:block object-cover"
                     />
                     <div className="flex flex-col gap-5 lg:gap-6 px-5 lg:px-6 pt-5 lg:pt-6 pb-6 lg:pb-9 h-50 md:h-55 lg:h-68">
                       <div className="flex flex-col gap-0.5 lg:gap-1 h-28 md:h-33 lg:h-40">
@@ -313,7 +313,7 @@ const BlogArticle = ({ onFormChange }) => {
                     <img
                       src={blogweb}
                       alt="blogweb"
-                      className="hidden md:hidden lg:block"
+                      className="hidden md:hidden lg:block object-cover"
                     />
                     <div className="flex flex-col gap-5 lg:gap-6 px-5 lg:px-6 pt-5 lg:pt-6 pb-6 lg:pb-9 h-50 md:h-55 lg:h-68">
                       <div className="flex flex-col gap-0.5 lg:gap-1 h-28 md:h-33 lg:h-40">
@@ -344,7 +344,7 @@ const BlogArticle = ({ onFormChange }) => {
                     <img
                       src={blogweb}
                       alt="blogweb"
-                      className="hidden md:hidden lg:block"
+                      className="hidden md:hidden lg:block object-cover"
                     />
                     <div className="flex flex-col gap-5 lg:gap-6 px-5 lg:px-6 pt-5 lg:pt-6 pb-6 lg:pb-9 h-50 md:h-55 lg:h-68">
                       <div className="flex flex-col gap-0.5 lg:gap-1 h-28 md:h-33 lg:h-40">
