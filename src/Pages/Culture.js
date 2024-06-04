@@ -7,7 +7,7 @@ import CultureCTA from "./CultureCTA";
 
 const Culture = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <CultureHeader />
       <CultureContent />
