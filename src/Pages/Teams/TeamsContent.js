@@ -292,7 +292,7 @@ const TeamsContent = () => {
   return (
     <div className="flex flex-col items-center bg-white md:bg-teamsbg md:bg-cover">
       <div className="flex flex-col lg:items-center w-107.5 md:w-200 lg:w-341.5">
-        <div className="px-5 md:px-12 w-97.5 md:w-176 lg:w-300 overflow-hidden">
+        <div className="px-5 md:px-12 lg:px-0 w-97.5 md:w-176 lg:w-300">
           <div className="flex flex-col gap-12 lg:gap-16 pt-12 lg:pt-24 pb-16 lg:pb-32">
             <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end w-78 md:w-176 lg:w-300">
               Meet the people at the helm of affairs

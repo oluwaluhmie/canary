@@ -7,7 +7,7 @@ import TeamsContent from "./Teams/TeamsContent";
 
 const Teams = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <TeamsHeader />
       <TeamsContent />
