@@ -21,10 +21,10 @@ import Footer from "../Footer";
 const BlogArticle = ({ onFormChange }) => {
   return (
     <div className="flex flex-col items-center bg-white lg:bg-articlebg lg:bg-cover">
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full overflow-hidden">
         <Header />
         <BlogHeader />
-        <div className="overflow-hidden">
+        <div>
           <div className="flex flex-col items-center">
             <div className="flex flex-col gap-8 md:gap-12 pt-12 pb-16 lg:py-24 w-97.5 md:w-176 lg:w-300">
               <div className="flex flex-col gap-3 pb-3 transition-all duration-300 ease-out">
