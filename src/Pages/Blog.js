@@ -6,7 +6,7 @@ import BlogContent from "./Blog/BlogContent";
 
 const Blog = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <BlogHeader />
       <BlogContent />
