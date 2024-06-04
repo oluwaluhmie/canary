@@ -11,8 +11,8 @@ const Investor = () => {
   return (
     <div className="flex flex-col items-center bg-investorbg bg-cover">
       <div className="flex flex-col w-97.5 md:w-200 lg:w-300">
-        <div className="flex flex-col items-center py-16 md:py-12 lg:py-24 gap-12 md:gap-12 lg:gap-16 w-97.5 md:w-176 lg:w-300 overflow-hidden">
-          <div className="flex flex-col gap-12 md:gap-12 lg:gap-12">
+        <div className="flex flex-col items-center py-16 md:py-12 lg:py-24 gap-12 md:gap-12 lg:gap-16">
+          <div className="flex flex-col gap-12 md:gap-12 lg:gap-12 w-97.5 md:w-176 lg:w-300 overflow-hidden">
             <div className="flex flex-col gap-2 lg:gap-3">
               <span className="text-blueBorderStroke text-base md:text-lg lg:text-xl">
                 The Investor's Suite
