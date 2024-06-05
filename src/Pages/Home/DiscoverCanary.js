@@ -39,7 +39,7 @@ const DiscoverCanary = () => {
               </p>
             </div>
             <Link
-              to="/"
+              to=""
               className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
             >
               <p className="text-base md:text-base lg:text-lg text-menuHover">

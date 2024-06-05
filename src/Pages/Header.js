@@ -219,7 +219,7 @@ const Header = () => {
           </div>
           {/* Search icon and Get Started button */}
           <div className="hidden lg:flex lg:items-center lg:gap-5">
-            <Link to="/">
+            <Link to="">
               <img src={search} alt="search" />
             </Link>
             <button

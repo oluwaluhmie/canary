@@ -87,7 +87,7 @@ const ServicesContent = ({ onFormChange }) => {
       </div>
       <div className="flex flex-col items-center bg-servicesbgblue bg-cover w-full">
         <div className="py-12 md:py-16 w-97.5 md:w-176 lg:w-300">
-          <div className="lg:flex lg:items-center lg:gap-x-24 lg:w-300">
+          <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-24 lg:w-300">
             <div className="flex flex-col justify-center gap-6 md:gap-12">
               <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end lg:w-120">
                 Our team would love to hear from you.

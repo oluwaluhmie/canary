@@ -47,7 +47,7 @@ const Investor = () => {
                   </div>
                   <div className="flex items-end">
                     <Link
-                      to="/"
+                      to=""
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base text-menuHover">
@@ -76,7 +76,7 @@ const Investor = () => {
                   </div>
                   <div className="flex items-end">
                     <Link
-                      to="/"
+                      to=""
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base text-menuHover">
@@ -106,7 +106,7 @@ const Investor = () => {
                   </div>
                   <div className="flex items-end">
                     <Link
-                      to="/"
+                      to=""
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base text-menuHover">
@@ -119,7 +119,7 @@ const Investor = () => {
               </div>
             </div>
           </div>
-          <Link to="/">
+          <Link to="">
             <BlueWhiteButton
               buttonText="Learn more"
               imageSrc={bluearrowright}
