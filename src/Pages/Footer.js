@@ -52,7 +52,7 @@ const Footer = () => {
                         Loans
                       </p>
                     </Link>
-                    <Link to="">
+                    <Link to="/services">
                       <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
                         Services
                       </p>

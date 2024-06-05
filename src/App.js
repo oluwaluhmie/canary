@@ -10,6 +10,7 @@ import TeamsContent from "./Pages/Teams/TeamsContent";
 import Blog from "./Pages/Blog";
 import BlogArticle from "./Pages/Blog/BlogArticle";
 import Culture from "./Pages/Culture";
+import Services from "./Pages/Services";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/article" element={<BlogArticle />} />
         <Route path="/culture" element={<Culture />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </BrowserRouter>
   );

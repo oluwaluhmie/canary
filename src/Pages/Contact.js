@@ -7,7 +7,7 @@ import CTASection from "./CTASection";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <ContactHeader />
       <ContactContent />
