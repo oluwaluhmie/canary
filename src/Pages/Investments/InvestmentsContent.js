@@ -4,6 +4,13 @@ import arrowright from "../../assets/arrowright.svg";
 import investmob from "../../assets/investmob.png";
 import investtab from "../../assets/investtab.png";
 import investweb from "../../assets/investweb.png";
+import inmob from "../../assets/inmob.png";
+import intab from "../../assets/intab.png";
+import inweb from "../../assets/inweb.png";
+import intwomob from "../../assets/intwomob.png";
+import intwotab from "../../assets/intwotab.png";
+import intwoweb from "../../assets/intwoweb.png";
+import inthreeweb from "../../assets/inthreeweb.png";
 import check from "../../assets/check.svg";
 import minus from "../../assets/minus.svg";
 import arrowrighttwo from "../../assets/arrowrighttwo.svg";
@@ -297,7 +304,93 @@ const InvestmentsContent = () => {
               </div>
             </div>
           </div>
-          <div></div>
+          <div className="flex flex-col items-center w-full bg-investmentsfive bg-cover">
+            <div className="flex flex-col gap-12 px-5 py-12">
+              <div className="flex flex-col gap-6 w-97.5 md:w-176 lg:w-300">
+                <div className="flex flex-col gap-1">
+                  <p className="text-menuHover text-base">
+                    Investment Insights
+                  </p>
+                  <span className="font-gotham text-xl text-transparent bg-clip-text bg-gradient-to-b from-timelineText-start to-timelineText-end leading-tight lg:leading-snug">
+                    Read our resources providing valuable insights into
+                    investment strategies, market trends, and financial
+                    planning.
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="flex flex-col shadow-culture">
+                    <div>
+                      <img
+                        src={inmob}
+                        alt="inmob"
+                        className="block md:hidden lg:hidden object-cover"
+                      />
+                      <img
+                        src={intab}
+                        alt="intab"
+                        className="hidden md:block lg:hidden object-cover"
+                      />
+                      <img
+                        src={inweb}
+                        alt="inweb"
+                        className="hidden md:hidden lg:block object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-between px-4 pt-4 pb-6 bg-teamsBg h-32">
+                      <p className="text-mobileMenuColor text-base">
+                        Canary Point Finance Launches Small Business Support
+                        Platform
+                      </p>
+                      <Link
+                        to=""
+                        className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
+                      >
+                        <p className="text-base text-menuHover">Read article</p>
+                        <img src={arrowright} alt="arrowright" />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="flex flex-col shadow-culture">
+                    <div>
+                      <img
+                        src={intwomob}
+                        alt="intwomob"
+                        className="block md:hidden lg:hidden object-cover"
+                      />
+                      <img
+                        src={intwotab}
+                        alt="intwotab"
+                        className="hidden md:block lg:hidden object-cover"
+                      />
+                      <img
+                        src={intwoweb}
+                        alt="intwoweb"
+                        className="hidden md:hidden lg:block object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-between px-4 pt-4 pb-6 bg-teamsBg h-32">
+                      <p className="text-mobileMenuColor text-base">
+                        Insights: Exploring Nigerian Financial Market Trends
+                      </p>
+                      <Link
+                        to=""
+                        className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
+                      >
+                        <p className="text-base text-menuHover">Read article</p>
+                        <img src={arrowright} alt="arrowright" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <Link>
+                  <button className="flex items-center justify-center gap-2 text-lg border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-full md:w-55.75 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                    Read more on our blog
+                    <img src={arrowright} alt="arrowright" />
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

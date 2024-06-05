@@ -49,6 +49,7 @@ module.exports = {
         investmentstwo: "url(/src/assets/investmentstwo.png)",
         investmentsthree: "url(/src/assets/investmentsthree.png)",
         investmentsfour: "url(/src/assets/investmentsfour.png)",
+        investmentsfive: "url(/src/assets/investmentsfive.png)",
         "story-sm": "url(/src/assets/storybgmobile.png)",
         "story-md": "url(/src/assets/storybgtab.png)",
         "story-lg": "url(/src/assets/storybg.png)",
