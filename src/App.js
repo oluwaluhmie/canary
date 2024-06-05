@@ -11,6 +11,7 @@ import Blog from "./Pages/Blog";
 import BlogArticle from "./Pages/Blog/BlogArticle";
 import Culture from "./Pages/Culture";
 import Services from "./Pages/Services";
+import Investments from "./Pages/Investments";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/article" element={<BlogArticle />} />
         <Route path="/culture" element={<Culture />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/investments" element={<Investments />} />
       </Routes>
     </BrowserRouter>
   );

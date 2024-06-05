@@ -42,7 +42,7 @@ const Footer = () => {
                     Products
                   </span>
                   <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-                    <Link to="">
+                    <Link to="/investments">
                       <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
                         Investments
                       </p>
