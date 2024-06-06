@@ -93,6 +93,7 @@ module.exports = {
         blog: '0 4px 16px -8px rgba(96, 96, 98, 0.4)',
         culture: '0 4px 8px -2px rgba(96, 96, 98, 0.1)',
         investment: '0 8px 16px -4px rgba(96, 96, 98, 0.08)',
+        loan: '0 2px 8px -2px rgba(96, 96, 98, 0.06)',
       },
       colors: {
         menuHover: "#DD6C38",
@@ -160,10 +161,13 @@ module.exports = {
         "timelineText-end": "rgba(221, 108, 56, 1)", //100% opacity
         "productsBg-start": "rgba(253, 248, 245, 1)", //100% opacity
         "productsBg-end": "rgba(253, 248, 245, 1)", //100% opacity
+        "loansOffers-start": "rgba(238, 241, 248, 1)", //100% opacity
+        "loansOffers-end": "rgba(230, 234, 244, 1)", //100% opacity
         
       },
       height: {
         9.5: "38px",
+        13: "52px",
         15.5: "62px",
         17.5: "70px",
         18: "72px",

@@ -66,6 +66,71 @@ const LoansContent = () => {
               </div>
             </div>
           </div>
+          {/* Fixed bar */}
+          <div className="hidden lg:flex lg:flex-col pt-25 w-full">
+            <div className="flex flex-col justify-center items-center w-full bg-investorBg py-8 gap-4">
+              <div className="flex justify-center gap-x-4 items-center w-300">
+                <Link
+                  to=""
+                  className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                >
+                  <button className="text-sm text-menuTextColor">
+                    Project Finance
+                  </button>
+                </Link>
+                <Link
+                  to=""
+                  className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                >
+                  <button className="text-sm text-menuTextColor">
+                    Trade Finance
+                  </button>
+                </Link>
+                <Link
+                  to=""
+                  className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                >
+                  <button className="text-sm text-menuTextColor">
+                    Contract Finance
+                  </button>
+                </Link>
+                <Link
+                  to=""
+                  className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                >
+                  <button className="text-sm text-menuTextColor">
+                    Working Capital Finance
+                  </button>
+                </Link>
+                <Link
+                  to=""
+                  className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                >
+                  <button className="text-sm text-menuTextColor">
+                    Real Estate Finance
+                  </button>
+                </Link>
+              </div>
+              <div className="flex justify-center gap-x-4 items-center w-300">
+              <Link
+                  to=""
+                  className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                >
+                  <button className="text-sm text-menuTextColor">
+                    LPO Finance
+                  </button>
+                </Link>
+                <Link
+                  to=""
+                  className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                >
+                  <button className="text-sm text-menuTextColor">
+                    Invoice Discount
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
           {/* Loans Offers */}
           <div className="flex flex-col items-center w-full">
             <div className="flex flex-col items-center w-full">
