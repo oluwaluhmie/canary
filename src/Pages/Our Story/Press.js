@@ -17,7 +17,7 @@ const Press = () => {
     <div className="flex flex-col items-center bg-menuTextHover">
       <div className="flex flex-col items-center w-107.5 md:w-200 lg:w-341.5">
         <div className="flex flex-col items-center px-5 md:px-12 lg:px-0 py-12 md:py-16 lg:py-24 w-97.5 md:w-176 lg:w-300">
-          <div className="flex flex-col gap-12 lg:gap-16">
+          <div className="flex flex-col gap-12 lg:gap-16 w-97.5 md:w-176 lg:w-300">
             <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
               <p className="text-menuHover text-base md:text-lg lg:text-2xl">
                 Press
@@ -26,7 +26,7 @@ const Press = () => {
                 What news outlets say about us
               </span>
             </div>
-            <div className="flex flex-col lg:flex-row gap-8">
+            <div className="flex flex-col lg:flex-row gap-8 w-97.5 md:w-176 lg:w-300">
               <div className="flex flex-col gap-6">
                 <div className="bg-white md:w-176 lg:w-147 md:flex">
                   <div className="flex flex-col justify-between px-4 md:px-8 lg:px-8 py-5 md:py-6 lg:py-6 h-40 lg:h-49 md:w-112 lg:w-98">
