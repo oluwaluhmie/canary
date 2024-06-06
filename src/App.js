@@ -12,11 +12,13 @@ import BlogArticle from "./Pages/Blog/BlogArticle";
 import Culture from "./Pages/Culture";
 import Services from "./Pages/Services";
 import Investments from "./Pages/Investments";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <ScrollToTop />
         <Route
           path="/"
           element={
