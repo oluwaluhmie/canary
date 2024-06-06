@@ -59,9 +59,9 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 300);
-      setIsScrolledText(scrollPosition > 300);
-      setIsScrolledButton(scrollPosition > 300);
+      setIsScrolled(scrollPosition > 200);
+      setIsScrolledText(scrollPosition > 200);
+      setIsScrolledButton(scrollPosition > 200);
     };
 
     window.addEventListener("scroll", handleScroll);

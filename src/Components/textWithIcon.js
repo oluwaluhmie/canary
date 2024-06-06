@@ -18,7 +18,7 @@ function TextWithIcon({ text, alt }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 300);
+      setIsScrolled(scrollPosition > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
