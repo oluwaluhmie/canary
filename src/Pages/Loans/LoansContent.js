@@ -19,7 +19,7 @@ const LoansContent = () => {
         <div className="flex flex-col items-center">
           {/* Unlock your Business Potential  */}
           <div className="flex flex-col items-center w-full bg-businesspotentialng bg-cover">
-            <div className="px-5 pt-12 pb-16">
+            <div className="px-5 md:px-12 pt-12 pb-16">
               <div className="flex flex-col gap-12 w-97.5 md:w-176 lg:w-300">
                 <div className="flex flex-col items-center lg:w-142">
                   <img
@@ -78,6 +78,7 @@ const LoansContent = () => {
               <InvoiceDiscounting />
             </div>
           </div>
+          {/* Finance Calculator */}
           <div>Finance Calculator</div>
         </div>
       </div>
