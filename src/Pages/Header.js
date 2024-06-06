@@ -130,7 +130,7 @@ const Header = () => {
                       Investments
                     </Link>
                     <Link
-                      to=""
+                      to="/loans"
                       className="lg:block lg:px-5 lg:py-6 text-menuTextColor lg:hover:border-l-2 lg:hover:border-menuHover lg:hover:bg-menuTextHover"
                     >
                       Loans
@@ -276,7 +276,7 @@ const Header = () => {
                       Investments
                     </Link>
                     <Link
-                      to=""
+                      to="/loans"
                       className="block px-5 py-3 text-menuTextColor hover:border-l-2 hover:bg-menuTextHover hover:stroke-menuHover hover:border-menuHover"
                     >
                       Loans

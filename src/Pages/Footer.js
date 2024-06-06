@@ -47,7 +47,7 @@ const Footer = () => {
                         Investments
                       </p>
                     </Link>
-                    <Link to="">
+                    <Link to="/loans">
                       <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
                         Loans
                       </p>

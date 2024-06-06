@@ -13,6 +13,7 @@ import Culture from "./Pages/Culture";
 import Services from "./Pages/Services";
 import Investments from "./Pages/Investments";
 import ScrollToTop from "./Components/ScrollToTop";
+import Loans from "./Pages/Loans";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/culture" element={<Culture />} />
         <Route path="/services" element={<Services />} />
         <Route path="/investments" element={<Investments />} />
+        <Route path="/loans" element={<Loans />} />
       </Routes>
     </BrowserRouter>
   );
