@@ -19,9 +19,13 @@ const LoansContent = () => {
   const unstickPoint = 5650;
 
   useEffect(() => {
-    if (barRef.current) {
-      setBarTop(barRef.current.offsetTop);
-    }
+    const updateBarTop = () => {
+      if (barRef.current) {
+        setBarTop(barRef.current.offsetTop);
+      }
+    };
+
+    updateBarTop();
 
     const handleScroll = () => {
       if (barRef.current) {
@@ -35,11 +39,14 @@ const LoansContent = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", updateBarTop);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateBarTop);
     };
   }, [barTop, unstickPoint]);
-  
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col w-full md:w-200 lg:w-full">
@@ -97,7 +104,7 @@ const LoansContent = () => {
           </div>
           {/* Fixed bar */}
           <div
-            className={`hidden lg:flex lg:flex-col w-full ${
+            className={`hidden lg:flex w-full ${
               isFixed ? "fixed top-0 pt-25" : ""
             }`}
             ref={barRef}

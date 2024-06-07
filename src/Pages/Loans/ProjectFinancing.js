@@ -9,7 +9,7 @@ import arrowright from "../../assets/arrowright.svg";
 const ProjectFinancing = () => {
   return (
     <div className="flex flex-col items-center w-97.5 md:w-176 lg:w-300">
-      <div className="py-12 md:py-16">
+      <div className="py-12 md:py-16 lg:">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col items-center">
             <img
