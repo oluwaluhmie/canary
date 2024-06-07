@@ -16,6 +16,7 @@ const LoansContent = () => {
   const barRef = useRef(null);
   const [isFixed, setIsFixed] = useState(false);
   const [barTop, setBarTop] = useState(0);
+  const unstickPoint = 5650;
 
   useEffect(() => {
     if (barRef.current) {
@@ -24,7 +25,8 @@ const LoansContent = () => {
 
     const handleScroll = () => {
       if (barRef.current) {
-        if (window.scrollY >= barTop) {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition >= barTop && scrollPosition < unstickPoint) {
           setIsFixed(true);
         } else {
           setIsFixed(false);
@@ -36,7 +38,7 @@ const LoansContent = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [barTop]);
+  }, [barTop, unstickPoint]);
   
   return (
     <div className="flex flex-col items-center">
