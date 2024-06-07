@@ -16,7 +16,7 @@ const LoansContent = () => {
   const barRef = useRef(null);
   const [isFixed, setIsFixed] = useState(false);
   const [barTop, setBarTop] = useState(0);
-  const unstickPoint = 5650;
+  const unstickPoint = 6200;
 
   useEffect(() => {
     const updateBarTop = () => {

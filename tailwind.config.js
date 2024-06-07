@@ -129,6 +129,11 @@ module.exports = {
         1.5: "6px",
         10.5: "42px",
         15.5: "62px",
+        22: "88px",
+        23: "92px",
+        24.5: "98px",
+        25: "100px",
+        25.5: "102px",
       },
       gradientColorStops: {
         "gradientColor-start": "rgba(31, 41, 64, 0.5)", // 50% opacity
