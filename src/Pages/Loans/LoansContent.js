@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import loanmob from "../../assets/loanmob.png";
 import loantab from "../../assets/loantab.png";
 import loanweb from "../../assets/loanweb.png";
@@ -13,15 +13,40 @@ import LPOFinancing from "./LPOFinancing";
 import InvoiceDiscounting from "./InvoiceDiscounting";
 
 const LoansContent = () => {
+  const barRef = useRef(null);
+  const [isFixed, setIsFixed] = useState(false);
+  const [barTop, setBarTop] = useState(0);
+
+  useEffect(() => {
+    if (barRef.current) {
+      setBarTop(barRef.current.offsetTop);
+    }
+
+    const handleScroll = () => {
+      if (barRef.current) {
+        if (window.scrollY >= barTop) {
+          setIsFixed(true);
+        } else {
+          setIsFixed(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [barTop]);
+  
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col w-full md:w-200 lg:w-full">
         <div className="flex flex-col items-center">
           {/* Unlock your Business Potential  */}
           <div className="flex flex-col items-center w-full bg-businesspotentialng bg-cover">
-            <div className="px-5 md:px-12 pt-12 pb-16">
-              <div className="flex flex-col gap-12 w-97.5 md:w-176 lg:w-300">
-                <div className="flex flex-col items-center lg:w-142">
+            <div className="px-5 md:px-12 pt-12 pb-16 lg:py-24">
+              <div className="flex flex-col lg:flex-row gap-12 lg:gap-x-16 w-97.5 md:w-176 lg:w-300">
+                <div className="flex flex-col items-center lg:hidden">
                   <img
                     src={loanmob}
                     alt="loanmob"
@@ -32,13 +57,8 @@ const LoansContent = () => {
                     alt="loantab"
                     className="hidden md:block lg:hidden object-cover"
                   />
-                  <img
-                    src={loanweb}
-                    alt="loanweb"
-                    className="hidden md:hidden lg:block object-cover"
-                  />
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 lg:w-142 lg:py-12 lg:justify-between">
                   <div className="flex flex-col gap-2 md:gap-3 lg:gap-5">
                     <span className="font-gotham text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
                       Unlock your Business Potential
@@ -63,11 +83,23 @@ const LoansContent = () => {
                     <img src={arrowright} alt="arrowright" />
                   </Link>
                 </div>
+                <div className="hidden lg:flex lg:flex-col items-center lg:w-142">
+                  <img
+                    src={loanweb}
+                    alt="loanweb"
+                    className="hidden md:hidden lg:block object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
           {/* Fixed bar */}
-          <div className="hidden lg:flex lg:flex-col pt-25 w-full">
+          <div
+            className={`hidden lg:flex lg:flex-col w-full ${
+              isFixed ? "fixed top-0 pt-25" : ""
+            }`}
+            ref={barRef}
+          >
             <div className="flex flex-col justify-center items-center w-full bg-investorBg py-8 gap-4">
               <div className="flex justify-center gap-x-4 items-center w-300">
                 <Link
@@ -112,7 +144,7 @@ const LoansContent = () => {
                 </Link>
               </div>
               <div className="flex justify-center gap-x-4 items-center w-300">
-              <Link
+                <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
                 >
