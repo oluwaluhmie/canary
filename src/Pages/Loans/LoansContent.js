@@ -49,14 +49,12 @@ const LoansContent = () => {
   };
 
   useEffect(() => {
-    const updateBarTop = () => {
-      if (barRef.current) {
-        setBarTop(barRef.current.offsetTop);
-      }
-    };
+    if (barRef.current) {
+      setBarTop(barRef.current.offsetTop);
+    }
+  }, []);
 
-    updateBarTop();
-
+  useEffect(() => {
     const handleScroll = () => {
       if (barRef.current) {
         const scrollPosition = window.scrollY;
@@ -69,11 +67,8 @@ const LoansContent = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", updateBarTop);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateBarTop);
     };
   }, [barTop, unstickPoint]);
 

@@ -32,7 +32,7 @@ const Products = () => {
                 </p>
               </div>
               <Link
-                to=""
+                to="/loans"
                 className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
               >
                 <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -60,7 +60,7 @@ const Products = () => {
                 </p>
               </div>
               <Link
-                to=""
+                to="/investments"
                 className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
               >
                 <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -84,7 +84,7 @@ const Products = () => {
                 </p>
               </div>
               <Link
-                to=""
+                to="/services"
                 className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
               >
                 <p className="text-sm md:text-base lg:text-base text-menuHover">
