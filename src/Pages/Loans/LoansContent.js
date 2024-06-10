@@ -48,6 +48,13 @@ const LoansContent = () => {
     setTotalInterest(totalInterestCalc.toFixed(2));
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     if (barRef.current) {
       setBarTop(barRef.current.offsetTop);
@@ -139,6 +146,9 @@ const LoansContent = () => {
                 <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                  onClick={() => {
+                    scrollToSection("projectSection");
+                  }}
                 >
                   <button className="text-sm text-menuTextColor">
                     Project Finance
@@ -147,6 +157,9 @@ const LoansContent = () => {
                 <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                  onClick={() => {
+                    scrollToSection("tradeSection");
+                  }}
                 >
                   <button className="text-sm text-menuTextColor">
                     Trade Finance
@@ -155,6 +168,9 @@ const LoansContent = () => {
                 <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                  onClick={() => {
+                    scrollToSection("contractSection");
+                  }}
                 >
                   <button className="text-sm text-menuTextColor">
                     Contract Finance
@@ -163,6 +179,9 @@ const LoansContent = () => {
                 <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                  onClick={() => {
+                    scrollToSection("workingSection");
+                  }}
                 >
                   <button className="text-sm text-menuTextColor">
                     Working Capital Finance
@@ -171,6 +190,9 @@ const LoansContent = () => {
                 <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                  onClick={() => {
+                    scrollToSection("realSection");
+                  }}
                 >
                   <button className="text-sm text-menuTextColor">
                     Real Estate Finance
@@ -181,6 +203,9 @@ const LoansContent = () => {
                 <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                  onClick={() => {
+                    scrollToSection("lpoSection");
+                  }}
                 >
                   <button className="text-sm text-menuTextColor">
                     LPO Finance
@@ -189,6 +214,9 @@ const LoansContent = () => {
                 <Link
                   to=""
                   className="flex items-center justify-center bg-gradient-to-b from-loansOffers-start to to-loansOffers-end border border-productsText w-48 h-13 shadow-loan"
+                  onClick={() => {
+                    scrollToSection("invoiceSection");
+                  }}
                 >
                   <button className="text-sm text-menuTextColor">
                     Invoice Discount

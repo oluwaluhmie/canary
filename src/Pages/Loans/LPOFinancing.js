@@ -8,7 +8,10 @@ import arrowright from "../../assets/arrowright.svg";
 
 const LPOFinancing = () => {
   return (
-    <div className="flex flex-col items-center w-97.5 md:w-176 lg:w-300">
+    <div
+      id="lpoSection"
+      className="flex flex-col items-center w-97.5 md:w-176 lg:w-300"
+    >
       <div className="py-12 md:py-16 lg:py-32">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-x-16 lg:w-300">
           <div className="flex flex-col items-center lg:w-142">
