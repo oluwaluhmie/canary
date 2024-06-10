@@ -51,7 +51,15 @@ const LoansContent = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const offset = barRef.current ? barRef.current.offsetHeight : 0;
+      const elementPosition =
+        section.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -78,7 +86,7 @@ const LoansContent = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [barTop, unstickPoint]);
-
+  
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col w-full">
@@ -228,13 +236,13 @@ const LoansContent = () => {
           {/* Loans Offers */}
           <div className="flex flex-col items-center w-full">
             <div className="flex flex-col items-center w-full">
-              <ProjectFinancing />
-              <TradeFinancing />
-              <ContractFinancing />
-              <WorkingCapitalFinancing />
-              <RealEstateFinancing />
-              <LPOFinancing />
-              <InvoiceDiscounting />
+              <ProjectFinancing id="projectSection" />
+              <TradeFinancing id="tradeSection" />
+              <ContractFinancing id="contractSection" />
+              <WorkingCapitalFinancing id="workingSection" />
+              <RealEstateFinancing id="realSection" />
+              <LPOFinancing id="lpoSection" />
+              <InvoiceDiscounting id="invoiceSection" />
             </div>
           </div>
           {/* Finance Calculator */}
