@@ -119,7 +119,7 @@ const Investor = () => {
               </div>
             </div>
           </div>
-          <Link to="">
+          <Link to="/investments">
             <BlueWhiteButton
               buttonText="Learn more"
               imageSrc={bluearrowright}

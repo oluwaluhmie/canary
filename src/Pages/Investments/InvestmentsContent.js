@@ -366,7 +366,7 @@ const InvestmentsContent = () => {
                         Platform
                       </p>
                       <Link
-                        to=""
+                        to="/article"
                         className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                       >
                         <p className="text-base text-menuHover">Read article</p>
@@ -397,7 +397,7 @@ const InvestmentsContent = () => {
                         Insights: Exploring Nigerian Financial Market Trends
                       </p>
                       <Link
-                        to=""
+                        to="/article"
                         className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                       >
                         <p className="text-base text-menuHover">Read article</p>
@@ -418,7 +418,7 @@ const InvestmentsContent = () => {
                         Canary Point Finance Partners for Financial Inclusion
                       </p>
                       <Link
-                        to=""
+                        to="/article"
                         className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                       >
                         <p className="text-base text-menuHover">Read article</p>
@@ -427,7 +427,7 @@ const InvestmentsContent = () => {
                     </div>
                   </div>
                 </div>
-                <Link>
+                <Link to="/blog">
                   <button className="flex items-center justify-center gap-2 text-lg border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-full md:w-70.25 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
                     Read more on our blog
                     <img src={arrowright} alt="arrowright" />
