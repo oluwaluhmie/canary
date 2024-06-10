@@ -19,6 +19,34 @@ const LoansContent = () => {
   const [isFixed, setIsFixed] = useState(false);
   const [barTop, setBarTop] = useState(0);
   const unstickPoint = 6200;
+  const [loanAmount, setLoanAmount] = useState("");
+  const [loanTerm, setLoanTerm] = useState(null);
+  const [monthlyPayment, setMonthlyPayment] = useState(0);
+  const [totalInterest, setTotalInterest] = useState(0);
+
+  const handleLoanAmountChange = (e) => {
+    setLoanAmount(e.target.value);
+  };
+
+  const handleLoanTermClick = (term) => {
+    setLoanTerm(term);
+    calculateLoan(loanAmount, term);
+  };
+
+  const calculateLoan = (amount, term) => {
+    const principal = parseFloat(amount);
+    const annualInterestRate = 0.1; // Example annual interest rate of 5%
+    const monthlyInterestRate = annualInterestRate / 12;
+    const numberOfPayments = term * 12;
+
+    const monthlyPaymentCalc =
+      (principal * monthlyInterestRate) /
+      (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+    const totalInterestCalc = monthlyPaymentCalc * numberOfPayments - principal;
+
+    setMonthlyPayment(monthlyPaymentCalc.toFixed(2));
+    setTotalInterest(totalInterestCalc.toFixed(2));
+  };
 
   useEffect(() => {
     const updateBarTop = () => {
@@ -192,7 +220,9 @@ const LoansContent = () => {
               <div className="flex flex-col lg:flex-row gap-12 lg:gap-x-16 w-97.5 md:w-176 lg:w-300">
                 <div className="flex flex-col gap-6 lg:justify-between lg:py-6 lg:w-139">
                   <div className="flex flex-col gap-2 lg:gap-3">
-                    <p className="text-blueBorderStroke md:text-lg lg:text-xl">Finance Calculator</p>
+                    <p className="text-blueBorderStroke md:text-lg lg:text-xl">
+                      Finance Calculator
+                    </p>
                     <span className="font-gotham text-2xl md:text-3xl lg:text-4xl lg:w-106 text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
                       Estimate your Financial Options
                     </span>
@@ -218,7 +248,11 @@ const LoansContent = () => {
                         Loan Amount
                       </p>
                       <div>
-                        <TextBox placeholder="Amount" />
+                        <TextBox
+                          placeholder="Amount"
+                          value={loanAmount}
+                          onChange={handleLoanAmountChange}
+                        />
                       </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-3 md:justify-between md:items-center">
@@ -226,24 +260,17 @@ const LoansContent = () => {
                         Loan Term (In Years)
                       </p>
                       <div className="flex gap-2">
-                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
-                          1
-                        </button>
-                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-menuHover bg-white border border-calculatorBorder ">
-                          2
-                        </button>
-                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
-                          3
-                        </button>
-                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
-                          4
-                        </button>
-                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
-                          5
-                        </button>
-                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
-                          6
-                        </button>
+                        {[1, 2, 3, 4, 5, 6].map((term) => (
+                          <button
+                            key={term}
+                            className={`flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ${
+                              loanTerm === term ? "text-menuHover" : ""
+                            }`}
+                            onClick={() => handleLoanTermClick(term)}
+                          >
+                            {term}
+                          </button>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -253,7 +280,7 @@ const LoansContent = () => {
                         Monthly Payment:
                       </p>
                       <p className="text-menuHover font-bold text-xl">
-                        NGN 22,125
+                        NGN {monthlyPayment}
                       </p>
                     </div>
                     <div className="flex justify-between">
@@ -261,7 +288,7 @@ const LoansContent = () => {
                         Total Interest
                       </p>
                       <p className="text-menuHover font-bold text-xl">
-                        NGN 50,125
+                        NGN {totalInterest}
                       </p>
                     </div>
                   </div>
