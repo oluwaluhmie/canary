@@ -4,6 +4,7 @@ import loantab from "../../assets/loantab.png";
 import loanweb from "../../assets/loanweb.png";
 import { Link } from "react-router-dom";
 import arrowright from "../../assets/arrowright.svg";
+import bluearrowright from "../../assets/bluearrowright.svg";
 import ProjectFinancing from "./ProjectFinancing";
 import TradeFinancing from "./TradeFinancing";
 import ContractFinancing from "./ContractFinancing";
@@ -11,6 +12,7 @@ import WorkingCapitalFinancing from "./WorkingCapitalFinancing";
 import RealEstateFinancing from "./RealEstateFinancing";
 import LPOFinancing from "./LPOFinancing";
 import InvoiceDiscounting from "./InvoiceDiscounting";
+import TextBox from "../../Components/textBox";
 
 const LoansContent = () => {
   const barRef = useRef(null);
@@ -49,7 +51,7 @@ const LoansContent = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col w-full md:w-200 lg:w-full">
+      <div className="flex flex-col w-full">
         <div className="flex flex-col items-center">
           {/* Unlock your Business Potential  */}
           <div className="flex flex-col items-center w-full bg-businesspotentialng bg-cover">
@@ -185,7 +187,98 @@ const LoansContent = () => {
             </div>
           </div>
           {/* Finance Calculator */}
-          <div>Finance Calculator</div>
+          <div className="flex flex-col items-center w-full bg-financecalculatorbg bg-cover">
+            <div className="px-5 md:px-12 py-12 md:py-16 lg:py-24">
+              <div className="flex flex-col lg:flex-row gap-12 lg:gap-x-16 w-97.5 md:w-176 lg:w-300">
+                <div className="flex flex-col gap-6 lg:justify-between lg:py-6 lg:w-139">
+                  <div className="flex flex-col gap-2 lg:gap-3">
+                    <p className="text-blueBorderStroke md:text-lg lg:text-xl">Finance Calculator</p>
+                    <span className="font-gotham text-2xl md:text-3xl lg:text-4xl lg:w-106 text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
+                      Estimate your Financial Options
+                    </span>
+                    <p className="text-mobileMenuColor lg:text-lg">
+                      Use our finance calculator to get a quick estimate of the
+                      financing options available for your business needs.
+                      Simply input your desired loan amount, term, and interest
+                      rate to discover potential repayment options and explore
+                      the best fit for your financial requirements.
+                    </p>
+                  </div>
+                  <Link to="" className="">
+                    <button className="flex items-center justify-center gap-2 text-lg md:text-base lg:text-lg border-2 border-blueBorderStroke text-transparent bg-clip-text bg-gradient-to-b from-linkBlueButtonText-start to-linkBlueButtonText-end bg-white w-full md:w-41.5 lg:w-47.25 h-12 hover:bg-gradient-to-b hover:from-linkBlueButtonText-start hover:to-linkBlueButtonText-end">
+                      Apply Now
+                      <img src={bluearrowright} alt="bluearrowright" />
+                    </button>
+                  </Link>
+                </div>
+                <div className="bg-white lg:w-145">
+                  <div className="flex flex-col gap-5 md:gap-6 px-5 md:px-6 lg:px-8 py-5 md:py-6 lg:py-8">
+                    <div className="flex flex-col gap-1.5 lg:gap-2">
+                      <p className="text-mobileMenuColor text-base">
+                        Loan Amount
+                      </p>
+                      <div>
+                        <TextBox placeholder="Amount" />
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-3 md:justify-between md:items-center">
+                      <p className="text-mobileMenuColor text-base">
+                        Loan Term (In Years)
+                      </p>
+                      <div className="flex gap-2">
+                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
+                          1
+                        </button>
+                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-menuHover bg-white border border-calculatorBorder ">
+                          2
+                        </button>
+                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
+                          3
+                        </button>
+                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
+                          4
+                        </button>
+                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
+                          5
+                        </button>
+                        <button className="flex justify-center items-center rounded-full h-11 w-11.6675 text-calculatorBorder bg-white border border-calculatorBorder ">
+                          6
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-5 md:gap-4 px-5 md:px-6 lg:px-8 py-5 md:py-6 lg:py-8">
+                    <div className="flex justify-between">
+                      <p className="text-mobileMenuColor text-base">
+                        Monthly Payment:
+                      </p>
+                      <p className="text-menuHover font-bold text-xl">
+                        NGN 22,125
+                      </p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-mobileMenuColor text-base">
+                        Total Interest
+                      </p>
+                      <p className="text-menuHover font-bold text-xl">
+                        NGN 50,125
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col text-center px-5 md:px-6 lg:px-8 py-5 md:py-6 lg:py-8">
+                    <p className="text-mobileMenuColor text-sm">
+                      Note: The Approximate Monthly Repayment figure for Canary
+                      Point Finance's Loan is indicative and is not meant to be
+                      final or binding on the Finance House. The Finance House
+                      reserves the right to determine the final interest rate in
+                      accordance with applicable laws and amount that can be
+                      borrowed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const TextBox = ({ value, onChange, placeholder }) => {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className="border border-textboxBorder px-3 py-3 text-searchBoxText w-97.5 md:w-72 lg:w-80 h-11"
+      className="border border-textboxBorder px-3 py-3 text-searchBoxText w-full h-11"
     />
   );
 };
