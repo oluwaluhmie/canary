@@ -28,7 +28,7 @@ const Account = () => {
 
   return (
     <div className="flex flex-col items-center bg-white w-full h-full overflow-hidden">
-      <div className="flex w-full lg:flex lg:flex-row lg:w-full lg:h-screen">
+      <div className="flex flex-col w-full lg:flex lg:flex-row lg:w-full lg:h-screen">
         {/* Image Slider */}
         <div className="relative hidden lg:block lg:w-1/2 lg:h-full">
           <AcctImageSlider />
