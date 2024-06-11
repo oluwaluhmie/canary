@@ -28,7 +28,7 @@ const Account = () => {
 
   return (
     <div className="flex flex-col items-center bg-white w-full h-full overflow-hidden">
-      <div className="lg:flex lg:flex-row lg:w-full lg:h-screen">
+      <div className="flex w-full lg:flex lg:flex-row lg:w-full lg:h-screen">
         {/* Image Slider */}
         <div className="relative hidden lg:block lg:w-1/2 lg:h-full">
           <AcctImageSlider />
@@ -42,7 +42,7 @@ const Account = () => {
         {/* Content */}
         <div className="flex flex-col md:gap-8 md:py-12 lg:py-20 items-center w-full lg:w-1/2 h-154 md:h-130 lg:h-139.5">
           {/* Header Section */}
-          <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
+          <div className="flex flex-row justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
             <img
               src={logomob}
               alt="logomob"
@@ -55,7 +55,7 @@ const Account = () => {
             />
           </div>
           {/* Content Section */}
-          <div className="flex flex-col gap-8 lg:gap-12 px-4 md:px-0 pt-12 md:pt-0 pb-16 md:w-160 lg:w-158">
+          <div className="flex flex-col gap-8 lg:gap-12 px-4 md:px-0 pt-12 md:pt-0 pb-16 w-full md:w-160 lg:w-158">
             <div className="flex justify-end gap-1 md:gap-2">
               <p className="text-mobileMenuColor text-sm md:text-base">
                 Having troubles?
@@ -68,13 +68,13 @@ const Account = () => {
               <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
                 Select Account Type
               </span>
-              <p className="text-mobileMenuColor text-base md:text-xl w-75 md:w-160 lg:w-158">
+              <p className="text-mobileMenuColor text-base md:text-xl w-full md:w-160 lg:w-158">
                 Choose the type of account you want to open at this time.
               </p>
             </div>
             <div className="flex flex-col md:flex-row gap-4 md:gap-6">
               <div
-                className={`flex flex-col justify-center h-20 md:h-24 w-99.5 md:w-77 lg:w-76 bg-teamsBg ${
+                className={`flex flex-col justify-center h-20 md:h-24 w-full md:w-77 lg:w-76 bg-teamsBg ${
                   activeLink === "individual"
                     ? "bg-menuTextHover shadow-products border-2 border-productsBorder"
                     : ""
@@ -93,7 +93,7 @@ const Account = () => {
                 </div>
               </div>
               <div
-                className={`flex flex-col justify-center h-20 md:h-24 w-99.5 md:w-77 lg:w-76 bg-teamsBg ${
+                className={`flex flex-col justify-center h-20 md:h-24 w-full md:w-77 lg:w-76 bg-teamsBg ${
                   activeLink === "corporate"
                     ? "bg-menuTextHover shadow-products border-2 border-productsBorder"
                     : ""
@@ -113,7 +113,7 @@ const Account = () => {
               </div>
             </div>
             {activeLink && (
-              <div className="md:flex md:justify-end md:w-160 lg:w-158">
+              <div className="md:flex md:justify-end w-full md:w-160 lg:w-158">
                 <AccountOrangeButton
                   buttonText="Next"
                   imgSrc={ArrowRight}
