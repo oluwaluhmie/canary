@@ -14,6 +14,7 @@ import Services from "./Pages/Services";
 import Investments from "./Pages/Investments";
 import ScrollToTop from "./Components/ScrollToTop";
 import Loans from "./Pages/Loans";
+import Account from "./Pages/Account";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/investments" element={<Investments />} />
         <Route path="/loans" element={<Loans />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </BrowserRouter>
   );
