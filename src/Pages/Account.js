@@ -40,9 +40,9 @@ const Account = () => {
           </div>
         </div>
         {/* Content */}
-        <div className="flex flex-col md:gap-8 md:py-12 lg:py-20 items-center w-full md:w-200 lg:w-1/2 h-154 md:h-130 lg:h-139.5">
+        <div className="flex flex-col md:gap-8 md:py-12 lg:py-20 items-center w-full lg:w-1/2 h-154 md:h-130 lg:h-139.5">
           {/* Header Section */}
-          <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full md:w-160 border-b border-textboxBorder md:border-b-0 lg:border-b-0">
+          <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
             <img
               src={logomob}
               alt="logomob"
