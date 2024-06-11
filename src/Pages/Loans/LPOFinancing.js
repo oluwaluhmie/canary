@@ -65,7 +65,7 @@ const LPOFinancing = () => {
                   </div>
                 </div>
               </div>
-              <Link to="" className="flex items-end">
+              <Link to="/account" className="flex items-end">
                 <button className="flex items-center justify-center gap-2 text-lg border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-full md:w-41.5 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
                   Apply Now
                   <img src={arrowright} alt="arrowright" />
@@ -108,7 +108,7 @@ const LPOFinancing = () => {
                 </div>
               </div>
             </div>
-            <Link to="" className="flex items-end">
+            <Link to="/account" className="flex items-end">
               <button className="flex items-center justify-center gap-2 text-lg border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-full md:w-41.5 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
                 Apply Now
                 <img src={arrowright} alt="arrowright" />

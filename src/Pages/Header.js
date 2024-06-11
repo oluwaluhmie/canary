@@ -222,13 +222,17 @@ const Header = () => {
             <Link to="">
               <img src={search} alt="search" />
             </Link>
-            <button
+            <Link to="/account">
+              <button
                 className={`text-base border px-8 py-3 hover:bg-menuHover ${
-                  isScrolledButton ? "text-menuHover border-menuHover hover:text-buttonHover hover:bg-transparent" : "text-white"
+                  isScrolledButton
+                    ? "text-menuHover border-menuHover hover:text-buttonHover hover:bg-transparent"
+                    : "text-white"
                 }`}
               >
-              Get Started
-            </button>
+                Get Started
+              </button>
+            </Link>
           </div>
           <div className="ml-auto lg:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>

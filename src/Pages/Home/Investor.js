@@ -47,7 +47,7 @@ const Investor = () => {
                   </div>
                   <div className="flex items-end">
                     <Link
-                      to=""
+                      to="/account"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base text-menuHover">
@@ -76,7 +76,7 @@ const Investor = () => {
                   </div>
                   <div className="flex items-end">
                     <Link
-                      to=""
+                      to="/account"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base text-menuHover">
@@ -106,7 +106,7 @@ const Investor = () => {
                   </div>
                   <div className="flex items-end">
                     <Link
-                      to=""
+                      to="/account"
                       className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                     >
                       <p className="text-base text-menuHover">

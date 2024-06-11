@@ -88,7 +88,9 @@ const InvestmentsContent = () => {
                   </div>
                   <div className="flex flex-col md:flex-row border border-textHeaderColor shadow-investment lg:w-256">
                     <div className="flex flex-col gap-2 md:gap-3 px-5 py-5 md:py-6 bg-white md:w-88 lg:w-128">
-                      <p className="text-menuHover text-lg lg:text-xl">Benefits</p>
+                      <p className="text-menuHover text-lg lg:text-xl">
+                        Benefits
+                      </p>
                       <div className="flex flex-col gap-1">
                         <div className="flex gap-3">
                           <img src={check} alt="check" />
@@ -149,10 +151,12 @@ const InvestmentsContent = () => {
                     </div>
                   </div>
                 </div>
-                <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
-                  <p>Invest Now</p>
-                  <img src={arrowrighttwo} alt="arrowrighttwo" />
-                </button>
+                <Link to="/account">
+                  <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                    <p>Invest Now</p>
+                    <img src={arrowrighttwo} alt="arrowrighttwo" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -175,7 +179,9 @@ const InvestmentsContent = () => {
                   </div>
                   <div className="flex flex-col md:flex-row border border-textHeaderColor shadow-investment lg:w-256">
                     <div className="flex flex-col gap-2 md:gap-3 px-5 py-5 md:py-6 bg-white md:w-88 lg:w-128">
-                      <p className="text-menuHover text-lg lg:text-xl">Benefits</p>
+                      <p className="text-menuHover text-lg lg:text-xl">
+                        Benefits
+                      </p>
                       <div className="flex flex-col gap-1">
                         <div className="flex gap-3">
                           <img src={check} alt="check" />
@@ -231,10 +237,12 @@ const InvestmentsContent = () => {
                     </div>
                   </div>
                 </div>
-                <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
-                  <p>Invest Now</p>
-                  <img src={arrowrighttwo} alt="arrowrighttwo" />
-                </button>
+                <Link to="/account">
+                  <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                    <p>Invest Now</p>
+                    <img src={arrowrighttwo} alt="arrowrighttwo" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -258,7 +266,9 @@ const InvestmentsContent = () => {
                   </div>
                   <div className="flex flex-col md:flex-row border border-textHeaderColor shadow-investment lg:w-256">
                     <div className="flex flex-col gap-2 md:gap-3 px-5 py-5 md:py-6 bg-white md:w-88 lg:w-128">
-                      <p className="text-menuHover text-lg lg:text-xl">Benefits</p>
+                      <p className="text-menuHover text-lg lg:text-xl">
+                        Benefits
+                      </p>
                       <div className="flex flex-col gap-1">
                         <div className="flex gap-3">
                           <img src={check} alt="check" />
@@ -320,10 +330,12 @@ const InvestmentsContent = () => {
                     </div>
                   </div>
                 </div>
-                <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
-                  <p>Invest Now</p>
-                  <img src={arrowrighttwo} alt="arrowrighttwo" />
-                </button>
+                <Link to="/account">
+                  <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                    <p>Invest Now</p>
+                    <img src={arrowrighttwo} alt="arrowrighttwo" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -373,7 +385,7 @@ const InvestmentsContent = () => {
                         <img src={arrowright} alt="arrowright" />
                       </Link>
                     </div>
-                  </div> 
+                  </div>
                   <div className="flex flex-col shadow-culture md:w-85 lg:w-96">
                     <div>
                       <img

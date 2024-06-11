@@ -32,9 +32,9 @@ const Account = () => {
         {/* Image Slider */}
         <div className="relative hidden lg:block lg:w-1/2 lg:h-full">
           <AcctImageSlider />
-          <div className="absolute top-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-12 h-37">
+          <Link to="/" className="absolute top-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-12 h-37">
             <img src={logoweb} alt="logoweb" className="hidden lg:block" />
-          </div>
+          </Link>
           <div className="absolute bottom-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-20 w-190 h-89.5">
             <AcctTextSlider />
           </div>

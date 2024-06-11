@@ -1,6 +1,7 @@
 import React from "react";
 import ArrowRight from "../assets/arrowrighttwo.svg";
 import ctaline from "../assets/ctaline.svg";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -13,10 +14,12 @@ const CTASection = () => {
                 <span className="font-gotham text-2xl md:text-3xl lg:text-4xl w-64 md:w-176 text-center lg:text-left text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end lg:h-12">
                   Ready to begin your journey with us?
                 </span>
-                <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-60 lg:w-66 gap-2 md:gap-1.5 lg:gap-2 px-9 md:px-8 lg:px-9 py-3 h-12 md:h-11 lg:h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
-                  <p>Create your account</p>
-                  <img src={ArrowRight} alt="arrowright" />
-                </button>
+                <Link to="/account">
+                  <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-60 lg:w-66 gap-2 md:gap-1.5 lg:gap-2 px-9 md:px-8 lg:px-9 py-3 h-12 md:h-11 lg:h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                    <p>Create your account</p>
+                    <img src={ArrowRight} alt="arrowright" />
+                  </button>
+                </Link>
               </div>
               <div className="hidden lg:flex lg:gap-8 lg:w-full lg:justify-center">
                 <img src={ctaline} alt="ctaline" />

@@ -45,7 +45,7 @@ const BusinessGrowth = () => {
                 </div>
                 <div className="text-menuHover">
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -70,7 +70,7 @@ const BusinessGrowth = () => {
                 </div>
                 <div className="text-menuHover">
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -95,7 +95,7 @@ const BusinessGrowth = () => {
                 </div>
                 <div className="text-menuHover">
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -120,7 +120,7 @@ const BusinessGrowth = () => {
                 </div>
                 <div className="text-menuHover">
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -145,7 +145,7 @@ const BusinessGrowth = () => {
                 </div>
                 <div className="text-menuHover">
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -170,7 +170,7 @@ const BusinessGrowth = () => {
                 </div>
                 <div className="text-menuHover">
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -195,7 +195,7 @@ const BusinessGrowth = () => {
                 </div>
                 <div className="text-menuHover">
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -247,7 +247,7 @@ const BusinessGrowth = () => {
                   }`}
                 >
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -283,7 +283,7 @@ const BusinessGrowth = () => {
                   }`}
                 >
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -319,7 +319,7 @@ const BusinessGrowth = () => {
                   }`}
                 >
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -355,7 +355,7 @@ const BusinessGrowth = () => {
                   }`}
                 >
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -391,7 +391,7 @@ const BusinessGrowth = () => {
                   }`}
                 >
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -427,7 +427,7 @@ const BusinessGrowth = () => {
                   }`}
                 >
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
@@ -463,7 +463,7 @@ const BusinessGrowth = () => {
                   }`}
                 >
                   <Link
-                    to=""
+                    to="/account"
                     className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
                   >
                     <p className="text-sm md:text-base lg:text-base text-menuHover">
