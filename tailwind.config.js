@@ -121,6 +121,7 @@ module.exports = {
         excelBorder: "#3E4095",
         canaryBorder: "#BFEAF9",
         calculatorBorder: "#C9C9CA",
+        formBg: "#00BF89",
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],

@@ -31,10 +31,10 @@ const ContactContent = ({ onFormChange }) => {
                     .required("Email Address is required"),
                   phoneNumber: Yup.string()
                     .matches(
-                      /^\d{11}&/,
+                      /^\d{11}$/,
                       "Phone number must be exactly 11 digits"
                     )
-                    .required("Email Address is required"),
+                    .required("Phone number is required"),
                   message: Yup.string().required("Message is required"),
                 })}
                 onSubmit={(values, { resetForm }) => {
