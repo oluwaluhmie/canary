@@ -11,7 +11,7 @@ const InputWithLabel = ({
 }) => {
   return (
     <div className="flex flex-col gap-1.5">
-      <span className="text-mobileMenuColor text-base">{labelName}</span>
+      <label className="text-mobileMenuColor text-base">{labelName}</label>
       {inputType === "textarea" ? (
         <textarea
           value={inputValue}
@@ -27,10 +27,10 @@ const InputWithLabel = ({
           name={inputName}
           placeholder={placeholder}
           onChange={inputOnChange}
-          className="h-11 border border-textboxBorder text-searchBoxText px-3 py-2 self-stretch"
+          className="h-11 border border-textboxBorder text-menuHover px-3 py-2 self-stretch"
         />
       )}
-      <code className="text-red-500 text-xs">{InputError}</code>
+      {InputError && <code className="text-red-500 text-xs">{InputError}</code>}
     </div>
   );
 };
