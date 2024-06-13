@@ -2,7 +2,6 @@ import React from "react";
 
 const AccountOrangeButton = ({ buttonText, imgSrc, alt, onClick }) => {
   const handleClick = () => {
-    console.log("Button inside AccountOrangeButton clicked"); // Debugging statement
     if (onClick) {
       onClick();
     }
