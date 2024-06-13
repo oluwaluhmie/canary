@@ -1,7 +1,7 @@
 import React from "react";
-import logomob from "../../assets/logomob.png";
-import logotab from "../../assets/logotab.png";
-import checkmob from "../../assets/checkmob.png";
+import logomob from "../../../assets/logomob.png";
+import logotab from "../../../assets/logotab.png";
+import checkmob from "../../../assets/checkmob.png";
 import { Link } from "react-router-dom";
 
 const Complete = () => {

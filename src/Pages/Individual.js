@@ -187,7 +187,7 @@ const Individual = () => {
           {/* Back Link */}
           <div className="flex flex-row justify-between">
             <Link
-              to=""
+              to="/account"
               className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
             >
               <img src={arrowleft} alt="arrowleft" />
@@ -296,7 +296,7 @@ const Individual = () => {
                 />
               )}
             </div>
-            {/* Next Button */}
+            {/* Next/Complete Buttons */}
             <div>
               {activeSection !== sections.length - 1 && (
                 <button

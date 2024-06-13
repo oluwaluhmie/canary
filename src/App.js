@@ -16,21 +16,16 @@ import ScrollToTop from "./Components/ScrollToTop";
 import Loans from "./Pages/Loans";
 import Account from "./Pages/Account";
 import Individual from "./Pages/Individual";
-import Complete from "./Pages/AccountOpening/Complete";
+import Complete from "./Pages/AccountOpening/Individual/Complete";
+import Corporate from "./Pages/Corporate";
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Home />
-            </>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Teams />} />
         <Route path="/ourstory" element={<Story />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/policy" element={<Policy />} />
@@ -38,7 +33,6 @@ function App() {
         <Route path="/teams/*" element={<Teams />} />
         <Route path="/management" element={<TeamsContent tab="management" />} />
         <Route path="/directors" element={<TeamsContent tab="directors" />} />
-        <Route path="*" element={<Teams />} /> {/* Default Route */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/article" element={<BlogArticle />} />
         <Route path="/culture" element={<Culture />} />
@@ -47,6 +41,8 @@ function App() {
         <Route path="/loans" element={<Loans />} />
         <Route path="/account" element={<Account />} />
         <Route path="/complete" element={<Complete />} />
+        <Route path="/individual-account" element={<Individual />} />
+        <Route path="/corporate-account" element={<Corporate />} />
       </Routes>
     </BrowserRouter>
   );
