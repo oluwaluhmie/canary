@@ -5,26 +5,165 @@ import { Link } from "react-router-dom";
 import arrowleft from "../assets/arrowleft.svg";
 import ArrowRight from "../assets/arrowrighttwo.svg";
 import AccountOrangeButton from "../Components/AccountOrangeButton";
+import Personal from "./AccountOpening/Individual/personal";
+import Work from "./AccountOpening/Individual/work";
+import NextKin from "./AccountOpening/Individual/nextKin";
+import Final from "./AccountOpening/Individual/final";
+import AcceptTerms from "../Components/AcceptTerms";
 
-const Individual = ({ formData, onFormChange }) => {
-  const [currentStep, setCurrentStep] = useState(1);
+const Individual = () => {
   const [clickedSteps, setClickedSteps] = useState([]);
+  const [activeSection, setActiveSection] = useState(0);
 
   const handleNextClick = () => {
-    if (currentStep < 4) {
-      setClickedSteps([...clickedSteps, currentStep]);
-      setCurrentStep(currentStep + 1);
+    window.scrollTo(0, 0);
+    if (activeSection < sections.length - 1) {
+      setClickedSteps([...clickedSteps, activeSection]);
+      setActiveSection(activeSection + 1);
     }
   };
 
   const getButtonClasses = (step) => {
-    if (step === currentStep) {
+    if (step === activeSection) {
       return "bg-white text-menuHover border-menuHover";
     } else if (clickedSteps.includes(step)) {
       return "bg-formBg text-white";
     } else {
       return "border-textboxBorder text-textboxBorder bg-white";
     }
+  };
+
+  const [formData, setFormData] = useState({
+    accountType: "",
+    title: "",
+    surname: "",
+    firstName: "",
+    middleName: "",
+    passportPhoto: null,
+    dob: "",
+    pob: "",
+    gender: "",
+    email: "",
+    phoneNumber: "",
+    homeAddress: "",
+    lga: "",
+    landmark: "",
+    bvn: "",
+    maritalStatus: "",
+    soo: "",
+    lgaoo: "",
+    occupation: "",
+    moi: "",
+    idNumber: "",
+    issueDate: "",
+    expiryDate: "",
+    ntitle: "",
+    nsurname: "",
+    nfirstName: "",
+    nmiddleName: "",
+    nphoneNumber: "",
+    relationship: "",
+    nemail: "",
+    noccupation: "",
+    signature: null,
+    secondSignature: null,
+    acceptedTerms: false,
+  });
+
+  const handleIndividualFormChange = (data) => {
+    setFormData({ ...formData, ...data });
+  };
+
+  const sections = [
+    {
+      id: 0,
+      component: (
+        <Personal
+          formData={formData}
+          onFormChange={handleIndividualFormChange}
+        />
+      ),
+    },
+    {
+      id: 1,
+      component: (
+        <Work formData={formData} onFormChange={handleIndividualFormChange} />
+      ),
+    },
+    {
+      id: 2,
+      component: (
+        <NextKin
+          formData={formData}
+          onFormChange={handleIndividualFormChange}
+        />
+      ),
+    },
+    {
+      id: 3,
+      component: (
+        <Final formData={formData} onFormChange={handleIndividualFormChange} />
+      ),
+    },
+  ];
+
+  const handleCheckboxChange = (value) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      acceptedTerms: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    // Handle form submission here
+    console.log("Form Data:", formData);
+
+    // Reset all form fields to initial values except acceptedTerms
+    setFormData({
+      accountType: "",
+      title: "",
+      surname: "",
+      firstName: "",
+      middleName: "",
+      passportPhoto: null,
+      dob: "",
+      pob: "",
+      gender: "",
+      email: "",
+      phoneNumber: "",
+      homeAddress: "",
+      lga: "",
+      landmark: "",
+      bvn: "",
+      maritalStatus: "",
+      soo: "",
+      lgaoo: "",
+      occupation: "",
+      moi: "",
+      idNumber: "",
+      issueDate: "",
+      expiryDate: "",
+      ntitle: "",
+      nsurname: "",
+      nfirstName: "",
+      nmiddleName: "",
+      nphoneNumber: "",
+      relationship: "",
+      nemail: "",
+      noccupation: "",
+      signature: null,
+      secondSignature: null,
+      acceptedTerms: formData.acceptedTerms, // Keep the acceptedTerms value
+    });
+
+    // Clear clickedSteps state
+    setClickedSteps([]);
+
+    // Show alert
+    alert("Form submitted successfully!");
+
+    // Set active section back to the first section
+    setActiveSection(0);
   };
 
   return (
@@ -88,15 +227,28 @@ const Individual = ({ formData, onFormChange }) => {
               <div className="flex flex-row gap-1">
                 <button
                   className={`flex justify-center items-center rounded-full h-6 w-6 border ${getButtonClasses(
-                    1
+                    0
                   )}`}
                 >
                   1
                 </button>
-                {currentStep === 1 && (
-                  <p className="text-mobileMenuColor text-base">
+                {activeSection === 0 && (
+                  <p className="text-menuHover text-base">
                     Personal Information
                   </p>
+                )}
+              </div>
+              <p className="text-mobileMenuColor">-</p>
+              <div className="flex flex-row gap-1">
+                <button
+                  className={`flex justify-center items-center rounded-full h-6 w-6 border ${getButtonClasses(
+                    1
+                  )}`}
+                >
+                  2
+                </button>
+                {activeSection === 1 && (
+                  <p className="text-menuHover text-base">Work Information</p>
                 )}
               </div>
               <p className="text-mobileMenuColor">-</p>
@@ -106,11 +258,11 @@ const Individual = ({ formData, onFormChange }) => {
                     2
                   )}`}
                 >
-                  2
+                  3
                 </button>
-                {currentStep === 2 && (
-                  <p className="text-mobileMenuColor text-base">
-                    Work Information
+                {activeSection === 2 && (
+                  <p className="text-menuHover text-base">
+                    Next of Kin Information
                   </p>
                 )}
               </div>
@@ -121,44 +273,53 @@ const Individual = ({ formData, onFormChange }) => {
                     3
                   )}`}
                 >
-                  3
-                </button>
-                {currentStep === 3 && (
-                  <p className="text-mobileMenuColor text-base">
-                    Next of Kin Information
-                  </p>
-                )}
-              </div>
-              <p className="text-mobileMenuColor">-</p>
-              <div className="flex flex-row gap-1">
-                <button
-                  className={`flex justify-center items-center rounded-full h-6 w-6 border ${getButtonClasses(
-                    4
-                  )}`}
-                >
                   4
                 </button>
-                {currentStep === 4 && (
-                  <p className="text-mobileMenuColor text-base">
-                    Final Information
-                  </p>
+                {activeSection === 3 && (
+                  <p className="text-menuHover text-base">Final Information</p>
                 )}
               </div>
             </div>
             {/* Forms */}
-            <div className="flex flex-col gap-6"></div>
+            <div className="flex flex-col gap-6">
+              {sections.map(
+                (section) =>
+                  activeSection === section.id && (
+                    <div key={section.id}>{section.component}</div>
+                  )
+              )}
+              {activeSection === sections.length - 1 && (
+                <AcceptTerms
+                  formData={formData}
+                  checked={formData.acceptedTerms}
+                  onChange={handleCheckboxChange} // Pass the handleCheckboxChange function
+                />
+              )}
+            </div>
             {/* Next Button */}
-            <Link
-              to=""
-              className="md:flex md:justify-end w-full md:w-160 lg:w-158"
-              onClick={handleNextClick}
-            >
-              <AccountOrangeButton
-                buttonText="Next"
-                imgSrc={ArrowRight}
-                alt="arrowright"
-              />
-            </Link>
+            <div>
+              {activeSection !== sections.length - 1 && (
+                <button
+                  className="md:flex md:justify-end w-full md:w-160 lg:w-158"
+                  onClick={handleNextClick}
+                >
+                  <AccountOrangeButton
+                    buttonText="Next"
+                    imgSrc={ArrowRight}
+                    alt="arrowright"
+                  />
+                </button>
+              )}
+
+              {activeSection === sections.length - 1 && (
+                <button
+                  className="md:flex md:justify-end w-full md:w-160 lg:w-158"
+                  onClick={handleSubmit}
+                >
+                  <AccountOrangeButton buttonText="Complete" />
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

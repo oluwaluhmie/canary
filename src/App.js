@@ -15,7 +15,6 @@ import Investments from "./Pages/Investments";
 import ScrollToTop from "./Components/ScrollToTop";
 import Loans from "./Pages/Loans";
 import Account from "./Pages/Account";
-import Individual from "./Pages/Individual";
 
 function App() {
   return (

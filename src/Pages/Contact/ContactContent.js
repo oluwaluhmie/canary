@@ -5,7 +5,7 @@ import InputWithLabel from "../../Components/inputWithLabel";
 import OrangeButtonWoutIcon from "../../Components/orangeButtonWoutIcon";
 import contactsimage from "../../assets/contactsimage.png";
 
-const ContactContent = ({ onFormChange }) => {
+const ContactContent = ({ onFormChange = () => {} }) => {
   return (
     <div className="flex flex-col items-center bg-white lg:bg-contactsbg lg:bg-cover">
       <div className="flex flex-col items-center w-107.5 md:w-200 lg:w-341.5">

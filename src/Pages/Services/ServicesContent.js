@@ -9,7 +9,7 @@ import InputWithLabel from "../../Components/inputWithLabel";
 import OrangeButtonWoutIcon from "../../Components/orangeButtonWoutIcon";
 import contactsimage from "../../assets/contactsimage.png";
 
-const ServicesContent = ({ onFormChange }) => {
+const ServicesContent = ({ onFormChange = () => {} }) => {
   return (
     <div className="flex flex-col items-center bg-servicesbgwhite bg-cover">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
