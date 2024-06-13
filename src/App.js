@@ -15,6 +15,8 @@ import Investments from "./Pages/Investments";
 import ScrollToTop from "./Components/ScrollToTop";
 import Loans from "./Pages/Loans";
 import Account from "./Pages/Account";
+import Individual from "./Pages/Individual";
+import Complete from "./Pages/AccountOpening/Complete";
 
 function App() {
   return (
@@ -44,6 +46,7 @@ function App() {
         <Route path="/investments" element={<Investments />} />
         <Route path="/loans" element={<Loans />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/complete" element={<Complete />} />
       </Routes>
     </BrowserRouter>
   );

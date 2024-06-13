@@ -168,7 +168,7 @@ const Individual = () => {
 
   return (
     <div className="flex flex-col items-center bg-white w-full overflow-hidden">
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col md:py-12 lg:py-20 w-full">
         {/* Header Section */}
         <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
           <img
@@ -312,12 +312,14 @@ const Individual = () => {
               )}
 
               {activeSection === sections.length - 1 && (
-                <button
-                  className="md:flex md:justify-end w-full md:w-160 lg:w-158"
-                  onClick={handleSubmit}
-                >
-                  <AccountOrangeButton buttonText="Complete" />
-                </button>
+                <Link to="/complete">
+                  <button
+                    className="md:flex md:justify-end w-full md:w-160 lg:w-158"
+                    onClick={handleSubmit}
+                  >
+                    <AccountOrangeButton buttonText="Complete" />
+                  </button>
+                </Link>
               )}
             </div>
           </div>
