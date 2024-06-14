@@ -3,7 +3,7 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FileInput from "../../../Components/FileInput";
 
-const Final = ({ formData }) => {
+const Cfinal = ({ formData }) => {
   return (
     <div className="overflow-hidden">
       <Formik
@@ -35,6 +35,19 @@ const Final = ({ formData }) => {
               (value) =>
                 value && ["image/jpeg", "image/png"].includes(value.type)
             ),
+          thirdSignature: Yup.mixed()
+            .required("A passport photo is required")
+            .test(
+              "fileSize",
+              "File too large",
+              (value) => value && value.size <= 1024 * 1024 // 1MB
+            )
+            .test(
+              "fileFormat",
+              "Unsupported format",
+              (value) =>
+                value && ["image/jpeg", "image/png"].includes(value.type)
+            ),
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values); // Handles form submission here
@@ -45,14 +58,14 @@ const Final = ({ formData }) => {
           <Form className="flex flex-col px-5 bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
               <FileInput
-                labelName="Upload your signature"
+                labelName="Upload Signature (Signatory 1)"
                 onChange={(event) => {
                   setFieldValue("signature", event.currentTarget.files[0]);
                 }}
                 inputError={touched.signature && errors.signature}
               />
               <FileInput
-                labelName="Upload Second Signature (For joint a/c)"
+                labelName="Upload Signature (Signatory 2)"
                 onChange={(event) => {
                   setFieldValue(
                     "secondSignature",
@@ -60,6 +73,16 @@ const Final = ({ formData }) => {
                   );
                 }}
                 inputError={touched.secondSignature && errors.secondSignature}
+              />
+              <FileInput
+                labelName="Upload Signature (Signatory 3)"
+                onChange={(event) => {
+                  setFieldValue(
+                    "thirdSignature",
+                    event.currentTarget.files[0]
+                  );
+                }}
+                inputError={touched.thirdSignature && errors.thirdSignature}
               />
             </div>
           </Form>
@@ -69,4 +92,4 @@ const Final = ({ formData }) => {
   );
 };
 
-export default Final;
+export default Cfinal;

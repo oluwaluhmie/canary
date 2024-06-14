@@ -17,6 +17,7 @@ import Loans from "./Pages/Loans";
 import Account from "./Pages/Account";
 import Individual from "./Pages/Individual";
 import Complete from "./Pages/AccountOpening/Individual/Complete";
+import Ccomplete from "./Pages/AccountOpening/Corporate/Ccomplete";
 import Corporate from "./Pages/Corporate";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/loans" element={<Loans />} />
         <Route path="/account" element={<Account />} />
         <Route path="/complete" element={<Complete />} />
+        <Route path="/corporatecomplete" element={<Ccomplete />} />
         <Route path="/individual-account" element={<Individual />} />
         <Route path="/corporate-account" element={<Corporate />} />
       </Routes>

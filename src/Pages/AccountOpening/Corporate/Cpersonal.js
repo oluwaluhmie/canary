@@ -5,28 +5,19 @@ import InputWithLabel from "../../../Components/inputWithLabel";
 import InputWithDropdown from "../../../Components/InputWithDropdown";
 import FileInput from "../../../Components/FileInput";
 
-const Personal = ({ formData, onFormChange }) => {
-  const accountType = [
-    { value: "single account", label: "Single Account" },
-    { value: "joint account", label: "Joint Account" },
-  ];
-
+const Cpersonal = ({ formData, onFormChange }) => {
   const title = [
     { value: "miss", label: "Miss." },
     { value: "mr", label: "Mr." },
     { value: "mrs", label: "Mrs." },
   ];
 
-  const gender = [
-    { value: "male", label: "Male" },
-    { value: "female", label: "Female" },
-  ];
-
-  const maritalStatus = [
-    { value: "single", label: "Single" },
-    { value: "married", label: "Married" },
-    { value: "divorced", label: "Divorced" },
-    { value: "in a relationship", label: "In a Relationship" },
+  const meansofID = [
+    { value: "international passport", label: "International Passport" },
+    { value: "driver's license", label: "Driver's License" },
+    { value: "voter's card", label: "Voter's Card" },
+    { value: "national ID", label: "National ID" },
+    { value: "nin", label: "NIN" },
   ];
 
   return (
@@ -34,7 +25,6 @@ const Personal = ({ formData, onFormChange }) => {
       <Formik
         initialValues={formData}
         validationSchema={Yup.object({
-          accountType: Yup.string().required("Select an option"),
           title: Yup.string().required("Select an option"),
           surname: Yup.string().required("Surname is required"),
           firstName: Yup.string().required("First name is required"),
@@ -69,7 +59,6 @@ const Personal = ({ formData, onFormChange }) => {
               }
             ),
           pob: Yup.string().required("Place of Birth is required"),
-          gender: Yup.string().required("Select an option"),
           email: Yup.string()
             .email("Invalid email address")
             .required("Email Address is required"),
@@ -82,11 +71,25 @@ const Personal = ({ formData, onFormChange }) => {
           bvn: Yup.string()
             .matches(/^\d{11}$/, "BVN must be exactly 11 digits")
             .required("BVN is required"),
-          maritalStatus: Yup.string().required("Select an option"),
-          soo: Yup.string().required("State of Origin is required"),
-          lgaoo: Yup.string().required(
-            "Local Government of Origin is required"
-          ),
+          meansofID: Yup.string().required("State of Origin is required"),
+          idNumber: Yup.string().required("ID number is required"),
+          issueDate: Yup.date()
+            .required("Issue Date is required")
+            .max(new Date(), "Issue Date cannot be in the future"),
+          expiryDate: Yup.date()
+            .required("Expiry Date is required")
+            .min(
+              Yup.ref("issueDate"),
+              "Expiry Date cannot be before Issue Date"
+            )
+            .test(
+              "isAfterToday",
+              "Expiry Date cannot be in the past",
+              function (value) {
+                const today = new Date();
+                return value >= today;
+              }
+            ),
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values); // Handles form submission here
@@ -96,21 +99,6 @@ const Personal = ({ formData, onFormChange }) => {
         {({ values, errors, setFieldValue, touched, handleChange }) => (
           <Form className="flex flex-col px-5 bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
-              <InputWithDropdown
-                labelName="Type of Account"
-                options={accountType}
-                selectedValue={values.accountType}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "accountType",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ accountType: event.target.value });
-                }}
-                inputError={errors.accountType}
-              />
               <InputWithDropdown
                 labelName="Title"
                 options={title}
@@ -192,32 +180,17 @@ const Personal = ({ formData, onFormChange }) => {
                 }}
                 inputError={errors.pob}
               />
-              <InputWithDropdown
-                labelName="Gender"
-                options={gender}
-                selectedValue={values.gender}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "gender",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ gender: event.target.value });
-                }}
-                inputError={errors.gender}
-              />
               <InputWithLabel
                 labelName="Email Address"
                 inputType="email"
-                inputName="email"
+                inputName="pemail"
                 placeholder="e.g. segun@gmail.com"
-                inputValue={values.email}
+                inputValue={values.pemail}
                 inputOnChange={(event) => {
                   handleChange(event);
-                  onFormChange({ email: event.target.value });
+                  onFormChange({ pemail: event.target.value });
                 }}
-                inputError={errors.email}
+                inputError={errors.pemail}
               />
               <InputWithLabel
                 labelName="Phone Number"
@@ -280,44 +253,56 @@ const Personal = ({ formData, onFormChange }) => {
                 inputError={errors.bvn}
               />
               <InputWithDropdown
-                labelName="Marital Status"
-                options={maritalStatus}
-                selectedValue={values.maritalStatus}
+                labelName="Means of Identification"
+                options={meansofID}
+                selectedValue={values.meansofID}
                 onChange={(event) => {
                   handleChange({
                     target: {
-                      name: "maritalStatus",
+                      name: "meansofID",
                       value: event.target.value,
                     },
                   });
-                  onFormChange({ maritalStatus: event.target.value });
+                  onFormChange({ meansofID: event.target.value });
                 }}
-                inputError={errors.maritalStatus}
+                inputError={errors.meansofID}
               />
               <InputWithLabel
-                labelName="State of Origin"
+                labelName="ID Card Number"
                 inputType="text"
-                inputName="soo"
-                placeholder="Enter your state of origin"
-                inputValue={values.soo}
+                inputName="idNumber"
+                placeholder="Enter your ID Card Number"
+                inputValue={values.idNumber}
                 inputOnChange={(event) => {
                   handleChange(event);
-                  onFormChange({ soo: event.target.value });
+                  onFormChange({ idNumber: event.target.value });
                 }}
-                inputError={errors.soo}
+                inputError={errors.idNumber}
               />
-              <InputWithLabel
-                labelName="LGA"
-                inputType="text"
-                inputName="lgaoo"
-                placeholder="Enter your local government of origin"
-                inputValue={values.lgaoo}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ lgaoo: event.target.value });
-                }}
-                inputError={errors.lgaoo}
-              />
+              <div className="grid grid-cols-2 gap-5">
+                <InputWithLabel
+                  labelName="Issue Date"
+                  inputType="date"
+                  inputName="issueDate"
+                  inputValue={values.issueDate}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ issueDate: event.target.value });
+                  }}
+                  inputError={errors.issueDate}
+                />
+                <InputWithLabel
+                  labelName="Expiry Date"
+                  inputType="date"
+                  inputName="expiryDate"
+                  inputValue={values.expiryDate}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ expiryDate: event.target.value });
+                  }}
+                  inputError={errors.expiryDate}
+                />
+              </div>
             </div>
           </Form>
         )}
@@ -326,4 +311,4 @@ const Personal = ({ formData, onFormChange }) => {
   );
 };
 
-export default Personal;
+export default Cpersonal;

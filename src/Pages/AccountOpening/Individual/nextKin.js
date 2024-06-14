@@ -12,7 +12,7 @@ const NextKin = ({ formData, onFormChange }) => {
   ];
 
   return (
-    <div id="nextKin-section" className="overflow-hidden">
+    <div className="overflow-hidden">
       <Formik
         initialValues={formData}
         validationSchema={Yup.object({
@@ -113,7 +113,7 @@ const NextKin = ({ formData, onFormChange }) => {
                 inputError={errors.relationship}
               />
               <InputWithLabel
-                labelName="Email"
+                labelName="Email Address"
                 inputType="email"
                 inputName="nemail"
                 placeholder="e.g. segun@gmail.com"

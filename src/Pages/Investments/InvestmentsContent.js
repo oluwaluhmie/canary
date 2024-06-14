@@ -331,7 +331,7 @@ const InvestmentsContent = () => {
                   </div>
                 </div>
                 <Link to="/account">
-                  <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                  <button className="flex items-center justify-center text-lg md:text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-97.5 md:w-47.75 lg:w-47.75 gap-2 h-12 hover:from-orangeButton-start hover:to-orangeButton-end">
                     <p>Invest Now</p>
                     <img src={arrowrighttwo} alt="arrowrighttwo" />
                   </button>

@@ -78,7 +78,7 @@ const Work = ({ formData, onFormChange }) => {
                 labelName="ID Card Number"
                 inputType="text"
                 inputName="idNumber"
-                placeholder="Enter your idNumber"
+                placeholder="Enter your ID Card Number"
                 inputValue={values.idNumber}
                 inputOnChange={(event) => {
                   handleChange(event);
