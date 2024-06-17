@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const AcctTextSlider = () => {
   const text1 = (
-    <div className="flex flex-col">
-      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160">
+    <div className="flex flex-col lg:w-full">
+      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160 h-fit">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end lg:text-4xl">
           Your Path to Prosperity Starts Here
         </h1>
@@ -15,8 +15,8 @@ const AcctTextSlider = () => {
     </div>
   );
   const text2 = (
-    <div className="flex flex-col">
-      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160">
+    <div className="flex flex-col lg:w-full">
+      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160 h-fit">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end lg:text-4xl">
           Empowering Growth through Flexible Financing
         </h1>
@@ -29,8 +29,8 @@ const AcctTextSlider = () => {
     </div>
   );
   const text3 = (
-    <div className="flex flex-col">
-      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160">
+    <div className="flex flex-col lg:w-full">
+      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160 h-fit">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end lg:text-4xl">
           Strategic Guidance for Financial Success
         </h1>
@@ -43,8 +43,8 @@ const AcctTextSlider = () => {
     </div>
   );
   const text4 = (
-    <div className="flex flex-col">
-      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160">
+    <div className="flex flex-col lg:w-full">
+      <div className="flex flex-col lg:gap-5 lg:w-full lg:max-w-160 h-fit">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end lg:text-4xl">
           Effortless Transactions for Individuals and Businesses
         </h1>
@@ -78,7 +78,7 @@ const AcctTextSlider = () => {
       {sliderText.map((text, index) => (
         <div
           key={index}
-          className={`absolute transition-opacity duration-1000 ease-out h-fit ${
+          className={`absolute transition-opacity duration-1000 ease-out ${
             sliderNumber === index && !isFadingOut ? "opacity-100" : "opacity-0"
           } ${isFadingOut && sliderNumber === index ? "opacity-0" : ""}`}
         >

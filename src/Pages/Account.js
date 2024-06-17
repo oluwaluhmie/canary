@@ -27,7 +27,7 @@ const Account = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-white w-full h-full overflow-hidden">
+    <div className="flex flex-col items-center bg-white w-full h-full">
       <div className="flex flex-col w-full lg:flex lg:flex-row lg:w-full lg:h-screen">
         {/* Image Slider */}
         <div className="relative hidden lg:block lg:w-1/2 h-full">
@@ -38,7 +38,7 @@ const Account = () => {
           >
             <img src={logoweb} alt="logoweb" className="hidden lg:block" />
           </Link>
-          <div className="absolute bottom-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-20 w-full h-89.5">
+          <div className="absolute bottom-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-20 w-full">
             <AcctTextSlider />
           </div>
         </div>
