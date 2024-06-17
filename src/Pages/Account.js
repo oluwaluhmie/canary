@@ -32,10 +32,10 @@ const Account = () => {
       <div className="relative hidden lg:flex lg:flex-col lg:justify-between lg:w-1/2 lg:px-16 lg:h-full">
         <AcctImageSlider />
         <div className="flex flex-col justify-between w-full h-screen relative">
-          <Link to="/" className="py-12 h-37">
+          <Link to="/" className="py-12">
             <img src={logoweb} alt="logoweb" />
           </Link>
-          <div className="py-20 h-89.5">
+          <div className="py-20">
             <AcctTextSlider />
           </div>
         </div>
