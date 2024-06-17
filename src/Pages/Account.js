@@ -69,7 +69,7 @@ const Account = () => {
             <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
               Select Account Type
             </span>
-            <p className="text-mobileMenuColor text-base md:text-xl w-full md:w-160 lg:w-158">
+            <p className="text-mobileMenuColor text-base md:text-xl w-full">
               Choose the type of account you want to open at this time.
             </p>
           </div>
@@ -114,7 +114,7 @@ const Account = () => {
             </div>
           </div>
           {activeLink && (
-            <div className="md:flex md:justify-end w-full md:w-160 lg:w-158">
+            <div className="md:flex md:justify-end w-full">
               <AccountOrangeButton
                 buttonText="Next"
                 imgSrc={ArrowRight}
