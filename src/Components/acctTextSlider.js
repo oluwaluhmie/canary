@@ -74,7 +74,7 @@ const AcctTextSlider = () => {
   }, [sliderNumber]);
 
   return (
-    <div className="overflow-hidden">
+    <div className="flex flex-col-reverse overflow-hidden">
       {sliderText.map((text, index) => (
         <div
           key={index}

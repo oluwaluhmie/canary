@@ -39,7 +39,9 @@ const Account = () => {
             <img src={logoweb} alt="logoweb" className="hidden lg:block" />
           </Link>
           <div className="absolute bottom-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-20 w-full">
-            <AcctTextSlider />
+            <div className="w-full">
+              <AcctTextSlider />
+            </div>
           </div>
         </div>
         {/* Content */}
