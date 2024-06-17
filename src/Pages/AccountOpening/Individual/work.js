@@ -45,7 +45,7 @@ const Work = ({ formData, onFormChange }) => {
         }}
       >
         {({ values, errors, setFieldValue, touched, handleChange }) => (
-          <Form className="flex flex-col px-5 bg-white w-full">
+          <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
               <InputWithLabel
                 labelName="Occupation"

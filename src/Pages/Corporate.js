@@ -269,7 +269,7 @@ const Corporate = () => {
             <div>
               {activeSection !== sections.length - 1 && (
                 <button
-                  className="md:flex md:justify-end w-full md:w-160 lg:w-158"
+                  className="md:flex md:justify-end w-full"
                   onClick={handleNextClick}
                 >
                   <AccountOrangeButton
@@ -283,7 +283,7 @@ const Corporate = () => {
               {activeSection === sections.length - 1 && (
                 <Link to="/corporatecomplete">
                   <button
-                    className="md:flex md:justify-end w-full md:w-160 lg:w-158"
+                    className="md:flex md:justify-end w-full"
                     onClick={handleSubmit}
                   >
                     <AccountOrangeButton buttonText="Complete" />

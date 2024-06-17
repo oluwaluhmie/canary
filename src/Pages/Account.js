@@ -44,19 +44,11 @@ const Account = () => {
       <div className="flex flex-col md:gap-8 md:py-12 lg:py-20 items-center w-full h-screen lg:w-1/2 bg-white">
         {/* Header Section */}
         <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
-          <img
-            src={logomob}
-            alt="logomob"
-            className="block md:hidden"
-          />
-          <img
-            src={logotab}
-            alt="logotab"
-            className="hidden md:block"
-          />
+          <img src={logomob} alt="logomob" className="block md:hidden" />
+          <img src={logotab} alt="logotab" className="hidden md:block" />
         </div>
         {/* Content Section */}
-        <div className="flex flex-col gap-8 lg:gap-12 px-4 md:px-16 pt-12 md:pt-0 pb-16 w-full max-w-160">
+        <div className="flex flex-col gap-8 lg:gap-12 px-4 md:px-12 lg:px-16 pt-12 md:pt-0 pb-16 w-full max-w-160">
           <div className="flex justify-end gap-1 md:gap-2">
             <p className="text-mobileMenuColor text-sm md:text-base">
               Having troubles?
@@ -77,7 +69,7 @@ const Account = () => {
             <div
               className={`flex flex-col justify-center h-20 md:h-24 w-full md:w-77 lg:w-76 bg-teamsBg ${
                 activeLink === "individual"
-                  ? "bg-accountSelected shadow-products border-2 border-productsBorder"
+                  ? "bg-menuTextHover shadow-products border-2 border-productsBorder"
                   : ""
               }`}
               onClick={() => handleClick("individual")}
@@ -96,7 +88,7 @@ const Account = () => {
             <div
               className={`flex flex-col justify-center h-20 md:h-24 w-full md:w-77 lg:w-76 bg-teamsBg ${
                 activeLink === "corporate"
-                  ? "bg-accountSelected shadow-products border-2 border-productsBorder"
+                  ? "bg-menuTextHover shadow-products border-2 border-productsBorder"
                   : ""
               }`}
               onClick={() => handleClick("corporate")}

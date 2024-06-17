@@ -300,7 +300,7 @@ const Individual = () => {
             <div>
               {activeSection !== sections.length - 1 && (
                 <button
-                  className="md:flex md:justify-end w-full md:w-160 lg:w-158"
+                  className="md:flex md:justify-end w-full"
                   onClick={handleNextClick}
                 >
                   <AccountOrangeButton
@@ -314,7 +314,7 @@ const Individual = () => {
               {activeSection === sections.length - 1 && (
                 <Link to="/complete">
                   <button
-                    className="md:flex md:justify-end w-full md:w-160 lg:w-158"
+                    className="md:flex md:justify-end w-full"
                     onClick={handleSubmit}
                   >
                     <AccountOrangeButton buttonText="Complete" />

@@ -122,7 +122,6 @@ module.exports = {
         canaryBorder: "#BFEAF9",
         calculatorBorder: "#C9C9CA",
         formBg: "#00BF89",
-        accountSelected: "#FDF8F5",
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],
