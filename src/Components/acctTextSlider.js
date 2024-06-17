@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const AcctTextSlider = () => {
   const text1 = (
     <>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 max-w-160">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end lg:text-4xl">
           Your Path to Prosperity Starts Here
         </h1>
@@ -16,7 +16,7 @@ const AcctTextSlider = () => {
   );
   const text2 = (
     <>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 max-w-160">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-4xl">
           Empowering Growth through Flexible Financing
         </h1>
@@ -30,7 +30,7 @@ const AcctTextSlider = () => {
   );
   const text3 = (
     <>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 max-w-160">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-4xl">
           Strategic Guidance for Financial Success
         </h1>
@@ -44,7 +44,7 @@ const AcctTextSlider = () => {
   );
   const text4 = (
     <>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 max-w-160">
         <h1 className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-4xl">
           Effortless Transactions for Individuals and Businesses
         </h1>
