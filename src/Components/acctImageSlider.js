@@ -18,7 +18,7 @@ const AcctImageSlider = () => {
   }, [sliderNumber, sliderImages]);
 
   return (
-    <div className="relative h-full">
+    <div className="h-full w-full">
       {sliderImages.map((image, index) => (
         <img
           key={index}
