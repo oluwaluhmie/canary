@@ -30,7 +30,7 @@ const Account = () => {
     <div className="flex flex-col items-center bg-white w-full h-full overflow-hidden">
       <div className="flex flex-col w-full lg:flex lg:flex-row lg:w-full lg:h-screen">
         {/* Image Slider */}
-        <div className="relative hidden lg:block lg:w-1/2 lg:h-full">
+        <div className="relative hidden lg:block lg:w-1/2 h-full">
           <AcctImageSlider />
           <Link
             to="/"
@@ -38,12 +38,12 @@ const Account = () => {
           >
             <img src={logoweb} alt="logoweb" className="hidden lg:block" />
           </Link>
-          <div className="absolute bottom-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-20 w-190 h-89.5">
+          <div className="absolute bottom-0 left-0 lg:flex lg:justify-start lg:items-start px-16 py-20 w-full h-89.5">
             <AcctTextSlider />
           </div>
         </div>
         {/* Content */}
-        <div className="flex flex-col md:gap-8 md:py-12 lg:py-20 items-center w-full lg:w-1/2 h-154 md:h-130 lg:h-139.5">
+        <div className="flex flex-col md:gap-8 md:py-12 lg:py-20 items-center w-full lg:w-1/2">
           {/* Header Section */}
           <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
             <img
@@ -79,7 +79,7 @@ const Account = () => {
               <div
                 className={`flex flex-col justify-center h-20 md:h-24 w-full md:w-77 lg:w-76 bg-teamsBg ${
                   activeLink === "individual"
-                    ? "bg-menuTextHover shadow-products border-2 border-productsBorder"
+                    ? "bg-accountSelected shadow-products border-2 border-productsBorder"
                     : ""
                 }`}
                 onClick={() => handleClick("individual")}
@@ -98,7 +98,7 @@ const Account = () => {
               <div
                 className={`flex flex-col justify-center h-20 md:h-24 w-full md:w-77 lg:w-76 bg-teamsBg ${
                   activeLink === "corporate"
-                    ? "bg-menuTextHover shadow-products border-2 border-productsBorder"
+                    ? "bg-accountSelected shadow-products border-2 border-productsBorder"
                     : ""
                 }`}
                 onClick={() => handleClick("corporate")}

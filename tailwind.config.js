@@ -122,6 +122,7 @@ module.exports = {
         canaryBorder: "#BFEAF9",
         calculatorBorder: "#C9C9CA",
         formBg: "#00BF89",
+        accountSelected: "#FDF8F5",
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],
@@ -152,8 +153,6 @@ module.exports = {
         "blueTextGradient-end": "rgba(88, 116, 183, 1)", //100% opacity
         "orangeTextGradient-start": "rgba(99, 49, 25, 1)", //100% opacity
         "orangeTextGradient-end": "rgba(221, 108, 56, 1)", //100% opacity
-        "orangeButton-start": "rgba(221, 108, 56, 1)", //100% opacity
-        "orangeButton-end": "rgba(177, 86, 45, 1)", //100% opacity
         "blueButton-start": "rgba(88, 116, 183, 1)", //100% opacity
         "blueButton-end": "rgba(70, 93, 146, 1)", //100% opacity
         "productsHover-start": "rgba(253, 248, 245, 1)", //100% opacity
@@ -170,7 +169,8 @@ module.exports = {
         "productsBg-end": "rgba(253, 248, 245, 1)", //100% opacity
         "loansOffers-start": "rgba(238, 241, 248, 1)", //100% opacity
         "loansOffers-end": "rgba(230, 234, 244, 1)", //100% opacity
-        
+        "orangeButton-start": "rgba(221, 108, 56, 1)", //100% opacity
+        "orangeButton-end": "rgba(177, 86, 45, 1)", //100% opacity
       },
       height: {
         9.5: "38px",
@@ -294,6 +294,9 @@ module.exports = {
       },
       minWidth: {
         300: "1200px",
+      },
+      maxWidth: {
+        160: "640px",
       },
       padding: {
         17: "68px",
