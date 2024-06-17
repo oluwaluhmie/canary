@@ -56,7 +56,7 @@ const Account = () => {
           />
         </div>
         {/* Content Section */}
-        <div className="flex flex-col gap-8 lg:gap-12 px-4 md:px-0 pt-12 md:pt-0 pb-16 w-full md:w-160 lg:w-158">
+        <div className="flex flex-col gap-8 lg:gap-12 px-4 md:px-0 pt-12 md:pt-0 pb-16 w-full max-w-160">
           <div className="flex justify-end gap-1 md:gap-2">
             <p className="text-mobileMenuColor text-sm md:text-base">
               Having troubles?
