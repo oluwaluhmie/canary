@@ -44,8 +44,12 @@ const Account = () => {
       <div className="flex flex-col md:gap-8 md:py-12 lg:py-20 items-center w-full h-screen lg:w-1/2 bg-white">
         {/* Header Section */}
         <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
-          <img src={logomob} alt="logomob" className="block md:hidden" />
-          <img src={logotab} alt="logotab" className="hidden md:block" />
+          <Link to="/">
+            <img src={logomob} alt="logomob" className="block md:hidden" />
+          </Link>
+          <Link to="/">
+            <img src={logotab} alt="logotab" className="hidden md:block" />
+          </Link>
         </div>
         {/* Content Section */}
         <div className="flex flex-col gap-8 lg:gap-12 px-4 md:px-12 lg:px-16 pt-12 md:pt-0 pb-16 w-full max-w-160">

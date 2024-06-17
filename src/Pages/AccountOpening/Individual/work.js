@@ -59,56 +59,58 @@ const Work = ({ formData, onFormChange }) => {
                 }}
                 inputError={errors.occupation}
               />
-              <InputWithDropdown
-                labelName="Means of Identification"
-                options={moi}
-                selectedValue={values.moi}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "moi",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ moi: event.target.value });
-                }}
-                inputError={errors.moi}
-              />
-              <InputWithLabel
-                labelName="ID Card Number"
-                inputType="text"
-                inputName="idNumber"
-                placeholder="Enter your ID Card Number"
-                inputValue={values.idNumber}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ idNumber: event.target.value });
-                }}
-                inputError={errors.idNumber}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithDropdown
+                  labelName="Means of Identification"
+                  options={moi}
+                  selectedValue={values.moi}
+                  onChange={(event) => {
+                    handleChange({
+                      target: {
+                        name: "moi",
+                        value: event.target.value,
+                      },
+                    });
+                    onFormChange({ moi: event.target.value });
+                  }}
+                  inputError={errors.moi}
+                />
+                <InputWithLabel
+                  labelName="ID Card Number"
+                  inputType="text"
+                  inputName="idNumber"
+                  placeholder="Enter your ID Card Number"
+                  inputValue={values.idNumber}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ idNumber: event.target.value });
+                  }}
+                  inputError={errors.idNumber}
+                />
+              </div>
               <div className="grid grid-cols-2 gap-5">
-              <InputWithLabel
-                labelName="Issue Date"
-                inputType="date"
-                inputName="issueDate"
-                inputValue={values.issueDate}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ issueDate: event.target.value });
-                }}
-                inputError={errors.issueDate}
-              />
-              <InputWithLabel
-                labelName="Expiry Date"
-                inputType="date"
-                inputName="expiryDate"
-                inputValue={values.expiryDate}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ expiryDate: event.target.value });
-                }}
-                inputError={errors.expiryDate}
-              />
+                <InputWithLabel
+                  labelName="Issue Date"
+                  inputType="date"
+                  inputName="issueDate"
+                  inputValue={values.issueDate}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ issueDate: event.target.value });
+                  }}
+                  inputError={errors.issueDate}
+                />
+                <InputWithLabel
+                  labelName="Expiry Date"
+                  inputType="date"
+                  inputName="expiryDate"
+                  inputValue={values.expiryDate}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ expiryDate: event.target.value });
+                  }}
+                  inputError={errors.expiryDate}
+                />
               </div>
             </div>
           </Form>

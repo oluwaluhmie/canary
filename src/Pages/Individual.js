@@ -183,7 +183,7 @@ const Individual = () => {
           />
         </div>
         {/* Content */}
-        <div className="flex flex-col gap-10 px-5 pt-12 pb-16">
+        <div className="flex flex-col gap-10 px-5 md:px-12 lg:px-16 pt-12 pb-16">
           {/* Back Link */}
           <div className="flex flex-row justify-between">
             <Link

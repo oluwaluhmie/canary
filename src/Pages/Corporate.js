@@ -165,7 +165,7 @@ const Corporate = () => {
           />
         </div>
         {/* Content */}
-        <div className="flex flex-col gap-10 px-5 pt-12 pb-16">
+        <div className="flex flex-col gap-10 px-5 md:px-12 lg:px-16 pt-12 pb-16">
           {/* Back Link */}
           <div className="flex flex-row justify-between">
             <Link
@@ -216,7 +216,7 @@ const Corporate = () => {
                 </button>
                 {activeSection === 0 && (
                   <p className="text-menuHover text-base">
-                    Company Information
+                    Company Details
                   </p>
                 )}
               </div>
@@ -231,7 +231,7 @@ const Corporate = () => {
                 </button>
                 {activeSection === 1 && (
                   <p className="text-menuHover text-base">
-                    Personal Information
+                    Signatory Information
                   </p>
                 )}
               </div>
@@ -245,7 +245,7 @@ const Corporate = () => {
                   3
                 </button>
                 {activeSection === 2 && (
-                  <p className="text-menuHover text-base">Final Information</p>
+                  <p className="text-menuHover text-base">Final Confirmation</p>
                 )}
               </div>
             </div>

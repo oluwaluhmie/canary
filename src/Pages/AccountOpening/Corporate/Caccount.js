@@ -48,36 +48,38 @@ const Caccount = ({ formData, onFormChange }) => {
         {({ values, errors, handleChange }) => (
           <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
-              <InputWithDropdown
-                labelName="Type of Account"
-                options={caccountType}
-                selectedValue={values.caccountType}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "caccountType",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ caccountType: event.target.value });
-                }}
-                inputError={errors.caccountType}
-              />
-              <InputWithDropdown
-                labelName="Type of Institution"
-                options={institutionType}
-                selectedValue={values.institutionType}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "institutionType",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ institutionType: event.target.value });
-                }}
-                inputError={errors.institutionType}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithDropdown
+                  labelName="Type of Account"
+                  options={caccountType}
+                  selectedValue={values.caccountType}
+                  onChange={(event) => {
+                    handleChange({
+                      target: {
+                        name: "caccountType",
+                        value: event.target.value,
+                      },
+                    });
+                    onFormChange({ caccountType: event.target.value });
+                  }}
+                  inputError={errors.caccountType}
+                />
+                <InputWithDropdown
+                  labelName="Type of Institution"
+                  options={institutionType}
+                  selectedValue={values.institutionType}
+                  onChange={(event) => {
+                    handleChange({
+                      target: {
+                        name: "institutionType",
+                        value: event.target.value,
+                      },
+                    });
+                    onFormChange({ institutionType: event.target.value });
+                  }}
+                  inputError={errors.institutionType}
+                />
+              </div>
               <InputWithLabel
                 labelName="Name of Organization"
                 inputType="text"
@@ -90,30 +92,32 @@ const Caccount = ({ formData, onFormChange }) => {
                 }}
                 inputError={errors.organization}
               />
-              <InputWithLabel
-                labelName="RC No./Business Reg No."
-                inputType="text"
-                inputName="businessNo"
-                placeholder="Enter RC No."
-                inputValue={values.businessNo}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ businessNo: event.target.value });
-                }}
-                inputError={errors.businessNo}
-              />
-              <InputWithLabel
-                labelName="Tax ID Number"
-                inputType="text"
-                inputName="taxNo"
-                placeholder="Enter tax ID number"
-                inputValue={values.taxNo}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ taxNo: event.target.value });
-                }}
-                inputError={errors.taxNo}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="RC No./Business Reg No."
+                  inputType="text"
+                  inputName="businessNo"
+                  placeholder="Enter RC No."
+                  inputValue={values.businessNo}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ businessNo: event.target.value });
+                  }}
+                  inputError={errors.businessNo}
+                />
+                <InputWithLabel
+                  labelName="Tax ID Number"
+                  inputType="text"
+                  inputName="taxNo"
+                  placeholder="Enter tax ID number"
+                  inputValue={values.taxNo}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ taxNo: event.target.value });
+                  }}
+                  inputError={errors.taxNo}
+                />
+              </div>
               <InputWithLabel
                 labelName="Business Address"
                 inputType="text"
@@ -126,30 +130,32 @@ const Caccount = ({ formData, onFormChange }) => {
                 }}
                 inputError={errors.businessAddress}
               />
-              <InputWithLabel
-                labelName="Email Address"
-                inputType="email"
-                inputName="email"
-                placeholder="e.g. segun@gmail.com"
-                inputValue={values.email}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ email: event.target.value });
-                }}
-                inputError={errors.email}
-              />
-              <InputWithLabel
-                labelName="Web Address"
-                inputType="text"
-                inputName="webAddress"
-                placeholder="e.g. www.yourbusiness.com"
-                inputValue={values.webAddress}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ webAddress: event.target.value });
-                }}
-                inputError={errors.webAddress}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="Email Address"
+                  inputType="email"
+                  inputName="email"
+                  placeholder="e.g. segun@gmail.com"
+                  inputValue={values.email}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ email: event.target.value });
+                  }}
+                  inputError={errors.email}
+                />
+                <InputWithLabel
+                  labelName="Web Address"
+                  inputType="text"
+                  inputName="webAddress"
+                  placeholder="e.g. www.yourbusiness.com"
+                  inputValue={values.webAddress}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ webAddress: event.target.value });
+                  }}
+                  inputError={errors.webAddress}
+                />
+              </div>
             </div>
           </Form>
         )}

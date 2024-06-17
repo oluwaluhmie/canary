@@ -111,57 +111,61 @@ const Personal = ({ formData, onFormChange }) => {
                 }}
                 inputError={errors.accountType}
               />
-              <InputWithDropdown
-                labelName="Title"
-                options={title}
-                selectedValue={values.title}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "title",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ title: event.target.value });
-                }}
-                inputError={errors.title}
-              />
-              <InputWithLabel
-                labelName="Surname"
-                inputType="text"
-                inputName="surname"
-                placeholder="Enter your surname"
-                inputValue={values.surname}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ surname: event.target.value });
-                }}
-                inputError={errors.surname}
-              />
-              <InputWithLabel
-                labelName="First Name"
-                inputType="text"
-                inputName="firstName"
-                placeholder="Enter your first name"
-                inputValue={values.firstName}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ firstName: event.target.value });
-                }}
-                inputError={errors.firstName}
-              />
-              <InputWithLabel
-                labelName="Middle Name"
-                inputType="text"
-                inputName="middleName"
-                placeholder="Enter your middle name"
-                inputValue={values.middleName}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ middleName: event.target.value });
-                }}
-                inputError={errors.middleName}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithDropdown
+                  labelName="Title"
+                  options={title}
+                  selectedValue={values.title}
+                  onChange={(event) => {
+                    handleChange({
+                      target: {
+                        name: "title",
+                        value: event.target.value,
+                      },
+                    });
+                    onFormChange({ title: event.target.value });
+                  }}
+                  inputError={errors.title}
+                />
+                <InputWithLabel
+                  labelName="Surname"
+                  inputType="text"
+                  inputName="surname"
+                  placeholder="Enter your surname"
+                  inputValue={values.surname}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ surname: event.target.value });
+                  }}
+                  inputError={errors.surname}
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="First Name"
+                  inputType="text"
+                  inputName="firstName"
+                  placeholder="Enter your first name"
+                  inputValue={values.firstName}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ firstName: event.target.value });
+                  }}
+                  inputError={errors.firstName}
+                />
+                <InputWithLabel
+                  labelName="Middle Name"
+                  inputType="text"
+                  inputName="middleName"
+                  placeholder="Enter your middle name"
+                  inputValue={values.middleName}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ middleName: event.target.value });
+                  }}
+                  inputError={errors.middleName}
+                />
+              </div>
               <FileInput
                 labelName="Upload Passport Photograph"
                 onChange={(event) => {
@@ -169,68 +173,72 @@ const Personal = ({ formData, onFormChange }) => {
                 }}
                 inputError={touched.passportPhoto && errors.passportPhoto}
               />
-              <InputWithLabel
-                labelName="Date of Birth"
-                inputType="date"
-                inputName="dob"
-                inputValue={values.dob}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ dob: event.target.value });
-                }}
-                inputError={errors.dob}
-              />
-              <InputWithLabel
-                labelName="Place of Birth"
-                inputType="text"
-                inputName="pob"
-                placeholder="Enter place of birth"
-                inputValue={values.pob}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ pob: event.target.value });
-                }}
-                inputError={errors.pob}
-              />
-              <InputWithDropdown
-                labelName="Gender"
-                options={gender}
-                selectedValue={values.gender}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "gender",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ gender: event.target.value });
-                }}
-                inputError={errors.gender}
-              />
-              <InputWithLabel
-                labelName="Email Address"
-                inputType="email"
-                inputName="email"
-                placeholder="e.g. segun@gmail.com"
-                inputValue={values.email}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ email: event.target.value });
-                }}
-                inputError={errors.email}
-              />
-              <InputWithLabel
-                labelName="Phone Number"
-                inputType="text"
-                inputName="phoneNumber"
-                placeholder="+234 (806) 000-0000"
-                inputValue={values.phoneNumber}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ phoneNumber: event.target.value });
-                }}
-                inputError={errors.phoneNumber}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-3 gap-6">
+                <InputWithLabel
+                  labelName="Date of Birth"
+                  inputType="date"
+                  inputName="dob"
+                  inputValue={values.dob}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ dob: event.target.value });
+                  }}
+                  inputError={errors.dob}
+                />
+                <InputWithLabel
+                  labelName="Place of Birth"
+                  inputType="text"
+                  inputName="pob"
+                  placeholder="Enter place of birth"
+                  inputValue={values.pob}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ pob: event.target.value });
+                  }}
+                  inputError={errors.pob}
+                />
+                <InputWithDropdown
+                  labelName="Gender"
+                  options={gender}
+                  selectedValue={values.gender}
+                  onChange={(event) => {
+                    handleChange({
+                      target: {
+                        name: "gender",
+                        value: event.target.value,
+                      },
+                    });
+                    onFormChange({ gender: event.target.value });
+                  }}
+                  inputError={errors.gender}
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="Email Address"
+                  inputType="email"
+                  inputName="email"
+                  placeholder="e.g. segun@gmail.com"
+                  inputValue={values.email}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ email: event.target.value });
+                  }}
+                  inputError={errors.email}
+                />
+                <InputWithLabel
+                  labelName="Phone Number"
+                  inputType="text"
+                  inputName="phoneNumber"
+                  placeholder="+234 (806) 000-0000"
+                  inputValue={values.phoneNumber}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ phoneNumber: event.target.value });
+                  }}
+                  inputError={errors.phoneNumber}
+                />
+              </div>
               <InputWithLabel
                 labelName="Home Address"
                 inputType="text"
@@ -243,81 +251,87 @@ const Personal = ({ formData, onFormChange }) => {
                 }}
                 inputError={errors.homeAddress}
               />
-              <InputWithLabel
-                labelName="LGA"
-                inputType="text"
-                inputName="lga"
-                placeholder="Enter your local government area"
-                inputValue={values.lga}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ lga: event.target.value });
-                }}
-                inputError={errors.lga}
-              />
-              <InputWithLabel
-                labelName="Landmark"
-                inputType="text"
-                inputName="landmark"
-                placeholder="Enter landmark"
-                inputValue={values.landmark}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ landmark: event.target.value });
-                }}
-                inputError={errors.landmark}
-              />
-              <InputWithLabel
-                labelName="BVN"
-                inputType="text"
-                inputName="bvn"
-                placeholder="Enter your BVN"
-                inputValue={values.bvn}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ bvn: event.target.value });
-                }}
-                inputError={errors.bvn}
-              />
-              <InputWithDropdown
-                labelName="Marital Status"
-                options={maritalStatus}
-                selectedValue={values.maritalStatus}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "maritalStatus",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ maritalStatus: event.target.value });
-                }}
-                inputError={errors.maritalStatus}
-              />
-              <InputWithLabel
-                labelName="State of Origin"
-                inputType="text"
-                inputName="soo"
-                placeholder="Enter your state of origin"
-                inputValue={values.soo}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ soo: event.target.value });
-                }}
-                inputError={errors.soo}
-              />
-              <InputWithLabel
-                labelName="LGA"
-                inputType="text"
-                inputName="lgaoo"
-                placeholder="Enter your local government of origin"
-                inputValue={values.lgaoo}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ lgaoo: event.target.value });
-                }}
-                inputError={errors.lgaoo}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="LGA"
+                  inputType="text"
+                  inputName="lga"
+                  placeholder="Enter your local government area"
+                  inputValue={values.lga}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ lga: event.target.value });
+                  }}
+                  inputError={errors.lga}
+                />
+                <InputWithLabel
+                  labelName="Landmark"
+                  inputType="text"
+                  inputName="landmark"
+                  placeholder="Enter landmark"
+                  inputValue={values.landmark}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ landmark: event.target.value });
+                  }}
+                  inputError={errors.landmark}
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="BVN"
+                  inputType="text"
+                  inputName="bvn"
+                  placeholder="Enter your BVN"
+                  inputValue={values.bvn}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ bvn: event.target.value });
+                  }}
+                  inputError={errors.bvn}
+                />
+                <InputWithDropdown
+                  labelName="Marital Status"
+                  options={maritalStatus}
+                  selectedValue={values.maritalStatus}
+                  onChange={(event) => {
+                    handleChange({
+                      target: {
+                        name: "maritalStatus",
+                        value: event.target.value,
+                      },
+                    });
+                    onFormChange({ maritalStatus: event.target.value });
+                  }}
+                  inputError={errors.maritalStatus}
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="State of Origin"
+                  inputType="text"
+                  inputName="soo"
+                  placeholder="Enter your state of origin"
+                  inputValue={values.soo}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ soo: event.target.value });
+                  }}
+                  inputError={errors.soo}
+                />
+                <InputWithLabel
+                  labelName="LGA"
+                  inputType="text"
+                  inputName="lgaoo"
+                  placeholder="Enter your local government of origin"
+                  inputValue={values.lgaoo}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ lgaoo: event.target.value });
+                  }}
+                  inputError={errors.lgaoo}
+                />
+              </div>
             </div>
           </Form>
         )}

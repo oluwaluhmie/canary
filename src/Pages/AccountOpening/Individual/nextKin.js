@@ -37,105 +37,113 @@ const NextKin = ({ formData, onFormChange }) => {
         {({ values, errors, setFieldValue, touched, handleChange }) => (
           <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
-              <InputWithDropdown
-                labelName="Title"
-                options={ntitle}
-                selectedValue={values.ntitle}
-                onChange={(event) => {
-                  handleChange({
-                    target: {
-                      name: "ntitle",
-                      value: event.target.value,
-                    },
-                  });
-                  onFormChange({ ntitle: event.target.value });
-                }}
-                inputError={errors.ntitle}
-              />
-              <InputWithLabel
-                labelName="Surname"
-                inputType="text"
-                inputName="nsurname"
-                placeholder="Enter surname"
-                inputValue={values.nsurname}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ nsurname: event.target.value });
-                }}
-                inputError={errors.nsurname}
-              />
-              <InputWithLabel
-                labelName="First Name"
-                inputType="text"
-                inputName="nfirstName"
-                placeholder="Enter first name"
-                inputValue={values.nfirstName}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ nfirstName: event.target.value });
-                }}
-                inputError={errors.nfirstName}
-              />
-              <InputWithLabel
-                labelName="Middle Name"
-                inputType="text"
-                inputName="nmiddleName"
-                placeholder="Enter middle name"
-                inputValue={values.nmiddleName}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ nmiddleName: event.target.value });
-                }}
-                inputError={errors.nmiddleName}
-              />
-              <InputWithLabel
-                labelName="Phone Number"
-                inputType="text"
-                inputName="nphoneNumber"
-                placeholder="+234 (806) 000-0000"
-                inputValue={values.nphoneNumber}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ nphoneNumber: event.target.value });
-                }}
-                inputError={errors.nphoneNumber}
-              />
-              <InputWithLabel
-                labelName="Relationship"
-                inputType="text"
-                inputName="relationship"
-                placeholder="Relationship with Next of Kin"
-                inputValue={values.relationship}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ relationship: event.target.value });
-                }}
-                inputError={errors.relationship}
-              />
-              <InputWithLabel
-                labelName="Email Address"
-                inputType="email"
-                inputName="nemail"
-                placeholder="e.g. segun@gmail.com"
-                inputValue={values.nemail}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ nemail: event.target.value });
-                }}
-                inputError={errors.nemail}
-              />
-              <InputWithLabel
-                labelName="Occupation"
-                inputType="text"
-                inputName="noccupation"
-                placeholder="Enter next of kin occupation here"
-                inputValue={values.noccupation}
-                inputOnChange={(event) => {
-                  handleChange(event);
-                  onFormChange({ noccupation: event.target.value });
-                }}
-                inputError={errors.noccupation}
-              />
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithDropdown
+                  labelName="Title"
+                  options={ntitle}
+                  selectedValue={values.ntitle}
+                  onChange={(event) => {
+                    handleChange({
+                      target: {
+                        name: "ntitle",
+                        value: event.target.value,
+                      },
+                    });
+                    onFormChange({ ntitle: event.target.value });
+                  }}
+                  inputError={errors.ntitle}
+                />
+                <InputWithLabel
+                  labelName="Surname"
+                  inputType="text"
+                  inputName="nsurname"
+                  placeholder="Enter surname"
+                  inputValue={values.nsurname}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ nsurname: event.target.value });
+                  }}
+                  inputError={errors.nsurname}
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="First Name"
+                  inputType="text"
+                  inputName="nfirstName"
+                  placeholder="Enter first name"
+                  inputValue={values.nfirstName}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ nfirstName: event.target.value });
+                  }}
+                  inputError={errors.nfirstName}
+                />
+                <InputWithLabel
+                  labelName="Middle Name"
+                  inputType="text"
+                  inputName="nmiddleName"
+                  placeholder="Enter middle name"
+                  inputValue={values.nmiddleName}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ nmiddleName: event.target.value });
+                  }}
+                  inputError={errors.nmiddleName}
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="Phone Number"
+                  inputType="text"
+                  inputName="nphoneNumber"
+                  placeholder="+234 (806) 000-0000"
+                  inputValue={values.nphoneNumber}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ nphoneNumber: event.target.value });
+                  }}
+                  inputError={errors.nphoneNumber}
+                />
+                <InputWithLabel
+                  labelName="Relationship"
+                  inputType="text"
+                  inputName="relationship"
+                  placeholder="Relationship with Next of Kin"
+                  inputValue={values.relationship}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ relationship: event.target.value });
+                  }}
+                  inputError={errors.relationship}
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
+                <InputWithLabel
+                  labelName="Email Address"
+                  inputType="email"
+                  inputName="nemail"
+                  placeholder="e.g. segun@gmail.com"
+                  inputValue={values.nemail}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ nemail: event.target.value });
+                  }}
+                  inputError={errors.nemail}
+                />
+                <InputWithLabel
+                  labelName="Occupation"
+                  inputType="text"
+                  inputName="noccupation"
+                  placeholder="Enter next of kin occupation here"
+                  inputValue={values.noccupation}
+                  inputOnChange={(event) => {
+                    handleChange(event);
+                    onFormChange({ noccupation: event.target.value });
+                  }}
+                  inputError={errors.noccupation}
+                />
+              </div>
             </div>
           </Form>
         )}
