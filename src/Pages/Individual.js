@@ -237,12 +237,13 @@ const Individual = () => {
                   </span>
                   <p className="text-mobileMenuColor text-base md:text-xl w-80 md:w-160 lg:w-158">
                     Complete all information or{" "}
-                    <Link
-                      to=""
+                    <a
+                      href={`${process.env.PUBLIC_URL}/Canary Point Individual Account Opening Form.pdf`}
+                      download="Canary Point Individual Account Opening Form.pdf"
                       className="text-menuHover underline underline-offset-2"
                     >
                       Download Form
-                    </Link>{" "}
+                    </a>{" "}
                     and fill offline.
                   </p>
                 </div>

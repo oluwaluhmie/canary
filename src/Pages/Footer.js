@@ -95,11 +95,6 @@ const Footer = () => {
                     </Link>
                     <Link to="">
                       <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
-                        FAQ
-                      </p>
-                    </Link>
-                    <Link to="">
-                      <p className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base">
                         Help Centre
                       </p>
                     </Link>
