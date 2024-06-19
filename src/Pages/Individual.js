@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logomob from "../assets/logomob.png";
 import logotab from "../assets/logotab.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import arrowleft from "../assets/arrowleft.svg";
 import ArrowRight from "../assets/arrowrighttwo.svg";
 import AccountOrangeButton from "../Components/AccountOrangeButton";
@@ -17,12 +17,23 @@ import logoweb from "../assets/logoweb.png";
 const Individual = () => {
   const [clickedSteps, setClickedSteps] = useState([]);
   const [activeSection, setActiveSection] = useState(0);
+  const navigate = useNavigate();
 
   const handleNextClick = () => {
     window.scrollTo(0, 0);
     if (activeSection < sections.length - 1) {
       setClickedSteps([...clickedSteps, activeSection]);
       setActiveSection(activeSection + 1);
+    }
+  };
+
+  const handleBackClick = () => {
+    window.scrollTo(0, 0);
+    if (activeSection > 0) {
+      setClickedSteps(clickedSteps.slice(0, -1)); // Remove the last clicked step
+      setActiveSection(activeSection - 1);
+    } else {
+      navigate(-1);
     }
   };
 
@@ -201,8 +212,8 @@ const Individual = () => {
               {/* Back Link */}
               <div className="flex flex-row justify-between">
                 <Link
-                  to="/account"
                   className="flex items-center gap-1 hover:text-linkHover hover:gap-2"
+                  onClick={handleBackClick}
                 >
                   <img src={arrowleft} alt="arrowleft" />
                   <p className="text-base text-menuHover">Back</p>

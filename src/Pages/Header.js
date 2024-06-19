@@ -363,11 +363,11 @@ const Header = () => {
                   Contact Us
                 </Link>
               </div>
-              <div className="pt-12">
+              <Link to="/account" className="pt-12">
                 <button className="text-lg border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-full px-8 py-4">
                   Get Started
                 </button>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
