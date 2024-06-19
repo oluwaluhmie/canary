@@ -295,6 +295,7 @@ module.exports = {
         300: "1200px",
       },
       maxWidth: {
+        107.5: "460px",
         160: "640px",
       },
       padding: {

@@ -25,24 +25,24 @@ const Ccomplete = () => {
         </div>
         {/* Content */}
         <div className="flex flex-col items-center bg-white w-full h-screen lg:w-1/2 overflow-hidden">
-          <div className="flex flex-col px-5 md:px-12 lg:px-16 md:gap-16 lg:gap-12 md:py-12 lg:py-20 w-full h-188">
+          <div className="flex flex-col px-5 md:px-12 lg:px-16 md:gap-16 lg:gap-12 md:py-12 lg:py-20">
             {/* Header Section */}
             <div className="flex flex-row md:justify-center lg:hidden px-4 py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
               <img
                 src={logomob}
                 alt="logomob"
-                className="block md:hidden lg:hidden"
+                className="block md:hidden"
               />
               <img
                 src={logotab}
                 alt="logotab"
-                className="hidden md:block lg:hidden"
+                className="hidden md:block"
               />
             </div>
             {/* Content */}
-            <div className="flex flex-col items-center gap-16 pt-12 md:pt-0 pb-16">
+            <div className="flex flex-col items-center gap-16 pt-12 md:pt-0 pb-16 md:pb-0">
               {/* Heading */}
-              <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 w-full">
+              <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 w-full max-w-160">
                 <div>
                   <img
                     src={checkmob}
@@ -77,9 +77,9 @@ const Ccomplete = () => {
               {/* Button */}
               <Link
                 to="/"
-                className="md:flex md:flex-col md:items-end md:w-160"
+                className="w-full md:flex md:flex-col md:items-end md:w-160"
               >
-                <button className="flex items-center justify-center text-lg border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end h-12 w-97.5 md:w-54.75 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                <button className="flex items-center justify-center text-lg border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end h-12 w-full md:w-54.75 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
                   Back to homepage
                 </button>
               </Link>
