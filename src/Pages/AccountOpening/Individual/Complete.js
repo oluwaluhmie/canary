@@ -24,7 +24,7 @@ const Complete = () => {
           </div>
         </div>
         {/* Content */}
-        <div className="flex flex-col items-center lg:justify-center bg-white w-full h-screen lg:w-1/2">
+        <div className="flex flex-col items-center lg:justify-center bg-white w-full h-screen lg:w-1/2 overflow-hidden">
           <div className="flex flex-col px-5 md:px-12 lg:px-16 md:gap-16 lg:gap-12">
             {/* Header Section */}
             <div className="flex flex-row md:justify-center lg:hidden py-4 md:py-0 w-full border-b border-textboxBorder md:border-b-0 lg:border-b-0">
