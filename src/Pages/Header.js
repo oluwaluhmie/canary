@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu.svg";
 import closeIcon from "../assets/closeicon.svg";
-import search from "../assets/search.svg";
 import arrow from "../assets/arrowdown.svg";
 import TextWithIcon from "../Components/textWithIcon";
-import TextBoxWithIcon from "../Components/textboxWithIcon";
-import TextBox from "../Components/textBox";
-import Blog from "./Blog";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,10 +17,6 @@ const Header = () => {
   const [showMobileProducts, setShowMobileProducts] = useState(false);
   const [showMobileAbout, setShowMobileAbout] = useState(false);
   const [showMobileResources, setShowMobileResources] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const navigate = useNavigate();
 
   const toggleProductsDropdown = () => {
     setShowProductsDropdown(!showProductsDropdown);
@@ -86,60 +78,6 @@ const Header = () => {
       document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-    if (!isSearchOpen) {
-      setSearchQuery("");
-      setSearchResults([]);
-    }
-  };
-
-  const handleSearch = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    fetchSearchResults(query);
-  };
-
-  const fetchSearchResults = (query) => {
-    // Replace this mock search results with actual search request to your API
-    // For example:
-    // fetch(`/api/search?q=${query}`)
-    //   .then(response => response.json())
-    //   .then(data => setSearchResults(data.results));
-
-    const results = [
-      {
-        title: "Building amazing businesses",
-        path: "/blog",
-        category: "Blog",
-      },
-      {
-        title: "Fixed Investment",
-        path: "/investments",
-        category: "Investment",
-      },
-      // Add more results as needed
-    ];
-
-    setSearchResults(
-      results.filter((result) =>
-        result.title.toLowerCase().includes(query.toLowerCase())
-      )
-    );
-  };
-
-  useEffect(() => {
-    // Fetch search results initially when the component mounts
-    fetchSearchResults(searchQuery);
-  }, []);
-
-  const handleSearchResultClick = (path) => {
-    setIsSearchOpen(false);
-    setSearchQuery("");
-    setSearchResults([]);
-    navigate(path);
-  };
 
   return (
     <>
