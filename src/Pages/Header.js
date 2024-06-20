@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu.svg";
 import closeIcon from "../assets/closeicon.svg";
@@ -7,6 +7,7 @@ import search from "../assets/search.svg";
 import arrow from "../assets/arrowdown.svg";
 import TextWithIcon from "../Components/textWithIcon";
 import TextBoxWithIcon from "../Components/textboxWithIcon";
+import TextBox from "../Components/textBox";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +20,10 @@ const Header = () => {
   const [showMobileProducts, setShowMobileProducts] = useState(false);
   const [showMobileAbout, setShowMobileAbout] = useState(false);
   const [showMobileResources, setShowMobileResources] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
   const toggleProductsDropdown = () => {
     setShowProductsDropdown(!showProductsDropdown);
@@ -56,6 +61,10 @@ const Header = () => {
     setShowMobileAbout(false);
   };
 
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -80,6 +89,35 @@ const Header = () => {
       document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    // Assume fetchSearchResults is a function that fetches search results based on the query
+    fetchSearchResults(e.target.value);
+  };
+
+  const fetchSearchResults = (query) => {
+    const results = [
+      {
+        title: "Building amazing businesses",
+        path: "/blog/building-amazing-businesses",
+        category: "Blog",
+      },
+      {
+        title: "Fixed Investment",
+        path: "/investment/fixed-investment",
+        category: "Investment",
+      },
+    ];
+    setSearchResults(results);
+  };
+
+  const handleSearchResultClick = (path) => {
+    setIsSearchOpen(false);
+    setSearchQuery("");
+    setSearchResults([]);
+    navigate(path);
+  };
 
   return (
     <>
@@ -219,9 +257,36 @@ const Header = () => {
           </div>
           {/* Search icon and Get Started button */}
           <div className="hidden lg:flex lg:items-center lg:gap-5">
-            <Link to="">
-              <img src={search} alt="search" />
-            </Link>
+            <div className="relative">
+              <Link onClick={toggleSearch}>
+                <img src={search} alt="search" />
+              </Link>
+              {isSearchOpen && (
+                <div className="absolute right-10 top-0 w-90 h-65 bg-white shadow-search px-5 py-6 z-50">
+                  <TextBox placeholder="Search Here" />
+                  <div className="py-5">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-menuTextColor">
+                        Building amazing businesses
+                      </span>
+                      <p className="text-footerText">
+                        Home / Blog / Building amazing businesses
+                      </p>
+                    </div>
+                  </div>
+                  <div className="py-5">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-menuTextColor">
+                        Building amazing businesses
+                      </span>
+                      <p className="text-footerText">
+                        Home / Investment / Fixed Investment
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
             <Link to="/account">
               <button
                 className={`text-base border px-8 py-3 hover:bg-menuHover ${

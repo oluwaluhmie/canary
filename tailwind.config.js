@@ -94,6 +94,7 @@ module.exports = {
         culture: '0 4px 8px -2px rgba(96, 96, 98, 0.1)',
         investment: '0 8px 16px -4px rgba(96, 96, 98, 0.08)',
         loan: '0 2px 8px -2px rgba(96, 96, 98, 0.06)',
+        search: '0 12px 16px -4px rgba(96, 96, 98, 0.08)',
       },
       colors: {
         menuHover: "#DD6C38",
@@ -205,6 +206,7 @@ module.exports = {
         61: "244px",
         62: "248px",
         63: "252px",
+        65: "260px",
         66: "264px",
         68: "272px",
         70.5: "282px",
