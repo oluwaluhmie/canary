@@ -8,6 +8,7 @@ import arrow from "../assets/arrowdown.svg";
 import TextWithIcon from "../Components/textWithIcon";
 import TextBoxWithIcon from "../Components/textboxWithIcon";
 import TextBox from "../Components/textBox";
+import Blog from "./Blog";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,10 +62,6 @@ const Header = () => {
     setShowMobileAbout(false);
   };
 
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -90,27 +87,52 @@ const Header = () => {
     }
   }, [isMenuOpen]);
 
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    if (!isSearchOpen) {
+      setSearchQuery("");
+      setSearchResults([]);
+    }
+  };
+
   const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-    // Assume fetchSearchResults is a function that fetches search results based on the query
-    fetchSearchResults(e.target.value);
+    const query = e.target.value;
+    setSearchQuery(query);
+    fetchSearchResults(query);
   };
 
   const fetchSearchResults = (query) => {
+    // Replace this mock search results with actual search request to your API
+    // For example:
+    // fetch(`/api/search?q=${query}`)
+    //   .then(response => response.json())
+    //   .then(data => setSearchResults(data.results));
+
     const results = [
       {
         title: "Building amazing businesses",
-        path: "/blog/building-amazing-businesses",
+        path: "/blog",
         category: "Blog",
       },
       {
         title: "Fixed Investment",
-        path: "/investment/fixed-investment",
+        path: "/investments",
         category: "Investment",
       },
+      // Add more results as needed
     ];
-    setSearchResults(results);
+
+    setSearchResults(
+      results.filter((result) =>
+        result.title.toLowerCase().includes(query.toLowerCase())
+      )
+    );
   };
+
+  useEffect(() => {
+    // Fetch search results initially when the component mounts
+    fetchSearchResults(searchQuery);
+  }, []);
 
   const handleSearchResultClick = (path) => {
     setIsSearchOpen(false);
@@ -257,36 +279,6 @@ const Header = () => {
           </div>
           {/* Search icon and Get Started button */}
           <div className="hidden lg:flex lg:items-center lg:gap-5">
-            <div className="relative">
-              <Link onClick={toggleSearch}>
-                <img src={search} alt="search" />
-              </Link>
-              {isSearchOpen && (
-                <div className="absolute right-10 top-0 w-90 h-65 bg-white shadow-search px-5 py-6 z-50">
-                  <TextBox placeholder="Search Here" />
-                  <div className="py-5">
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-menuTextColor">
-                        Building amazing businesses
-                      </span>
-                      <p className="text-footerText">
-                        Home / Blog / Building amazing businesses
-                      </p>
-                    </div>
-                  </div>
-                  <div className="py-5">
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-menuTextColor">
-                        Building amazing businesses
-                      </span>
-                      <p className="text-footerText">
-                        Home / Investment / Fixed Investment
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
             <Link to="/account">
               <button
                 className={`text-base border px-8 py-3 hover:bg-menuHover ${
@@ -316,11 +308,6 @@ const Header = () => {
           }`}
         >
           <div className="flex flex-col gap-4 mt-6 h-screen w-full">
-            <TextBoxWithIcon
-              placeholder="What can we help you with"
-              imageSrc={search}
-              alt="search"
-            />
             <div className="flex flex-col h-full">
               <div className="px-2 py-5 border-b-2 hover:border-menuHover">
                 <Link to="/" className="text-base text-mobileMenuColor">
