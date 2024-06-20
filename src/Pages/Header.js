@@ -150,6 +150,7 @@ const Header = () => {
             : ""
         }`}
       >
+        {/* Tab Menu */}
         <div className="flex items-center justify-between h-18 md:h-20 lg:h-25 lg:pt-3 w-full lg:min-w-300">
           <div className="flex items-center">
             {/* Canary Logo */}
