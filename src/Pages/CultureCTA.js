@@ -14,7 +14,7 @@ const CultureCTA = () => {
                 <p
                   className="text-menuHover text-sm md:text-base lg:text-lg cursor-pointer"
                   onClick={() =>
-                    (window.location = "mailto:info@canarypointcs.com")
+                    (window.location = "mailto:info@canarypointfcl.com")
                   }
                 >
                   Send us an email today

@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
 import Story from "./Pages/Story";
@@ -19,14 +20,23 @@ import Individual from "./Pages/Individual";
 import Complete from "./Pages/AccountOpening/Individual/Complete";
 import Ccomplete from "./Pages/AccountOpening/Corporate/Ccomplete";
 import Corporate from "./Pages/Corporate";
+import Admin from "./Pages/Admin";
+import CentralAdmin from "./Pages/CentralAdmin";
+import SubscriptionList from "./Pages/Admin/SubscriptionList";
+import AdminDashboard from "./Pages/Admin/AdminDashboard";
+import ContactPage from "./Pages/Admin/ContactPage";
+import ContactList from "./Pages/Admin/ContactList";
+import CorporatePage from "./Pages/Admin/CorporatePage";
+import CorporateList from "./Pages/Admin/CorporateList";
+import IndividualPage from "./Pages/Admin/IndividualPage";
+import IndividualList from "./Pages/Admin/IndividualList";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<Teams />} />
         <Route path="/ourstory" element={<Story />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/policy" element={<Policy />} />
@@ -45,8 +55,18 @@ function App() {
         <Route path="/corporatecomplete" element={<Ccomplete />} />
         <Route path="/individual-account" element={<Individual />} />
         <Route path="/corporate-account" element={<Corporate />} />
+        <Route path="/accesscontrol" element={<Admin />} />
+        <Route path="/adminaccess/*" element={<CentralAdmin />} />
+        <Route path="/subscriptions" element={<SubscriptionList />} />
+        <Route path="/contactus" element={<ContactList />} />
+        <Route path="/contactus/:id" element={<ContactPage />} />
+        <Route path="/individual" element={<IndividualList />} />
+        <Route path="/individual/:id" element={<IndividualPage />} />
+        <Route path="/corporate" element={<CorporateList />} />
+        <Route path="/corporate/:id" element={<CorporatePage />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

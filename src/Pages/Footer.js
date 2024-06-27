@@ -112,12 +112,12 @@ const Footer = () => {
                       01-6329482
                     </p>
                     <p
-                      className="text-textColor hover:text-menuTextHover text-sm md:text-base lg:text-base"
+                      className="text-textColor hover:text-menuTextHover cursor-pointer text-sm md:text-base lg:text-base"
                       onClick={() =>
                         (window.location = "mailto:info@canarypointcs.com")
                       }
                     >
-                      info@canarypointcs.com
+                      info@canarypointfcl.com
                     </p>
                   </div>
                 </div>

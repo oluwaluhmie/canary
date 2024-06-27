@@ -32,16 +32,26 @@ const CTASection = () => {
                     <span className="font-gotham text-menuHover text-xl">
                       Talk to sales
                     </span>
-                    <p className="text-mobileMenuColor text-base">
-                      sales@canaryfinance.com
+                    <p
+                      className="text-mobileMenuColor hover:text-menuHover text-base cursor-pointer"
+                      onClick={() =>
+                        (window.location = "mailto:sales@canarypointfcl.com")
+                      }
+                    >
+                      sales@canarypointfcl.com
                     </p>
                   </div>
                   <div className="flex flex-col gap-15.5 px-5 py-6 bg-white/50 w-96.6675">
                     <span className="font-gotham text-menuHover text-xl">
                       Contact our support
                     </span>
-                    <p className="text-mobileMenuColor text-base">
-                      support@canaryfinance.com
+                    <p
+                      className="text-mobileMenuColor hover:text-menuHover text-base cursor-pointer"
+                      onClick={() =>
+                        (window.location = "mailto:support@canarypointfcl.com")
+                      }
+                    >
+                      support@canarypointfcl.com
                     </p>
                   </div>
                   <div className="flex flex-col gap-10.5 px-5 py-6 bg-white/50 w-96.6675">

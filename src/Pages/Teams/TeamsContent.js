@@ -2,18 +2,6 @@ import React, { useState, useEffect } from "react";
 import md from "../../assets/mdmobile.png";
 import mdtab from "../../assets/mdtab.png";
 import mdweb from "../../assets/mdweb.png";
-import cfo from "../../assets/cfomobile.png";
-import cfotab from "../../assets/cfotab.png";
-import cfoweb from "../../assets/cfoweb.png";
-import hrm from "../../assets/hrmmobile.png";
-import hrmtab from "../../assets/hrmtab.png";
-import hrmweb from "../../assets/hrmweb.png";
-import hhr from "../../assets/hhrmobile.png";
-import hhrtab from "../../assets/hhrtab.png";
-import hhrweb from "../../assets/hhrweb.png";
-import hoo from "../../assets/hoomobile.png";
-import hootab from "../../assets/hootab.png";
-import hooweb from "../../assets/hooweb.png";
 import defaultimage from "../../assets/image.png";
 import defaultimagetab from "../../assets/imagetab.png";
 import defaultimageweb from "../../assets/imageweb.png";
@@ -45,90 +33,131 @@ const ManagementContent = () => (
           </div>
         </div>
         <div className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147">
-          <img src={cfo} alt="cfo" className="block md:hidden lg:hidden" />
           <img
-            src={cfotab}
-            alt="cfotab"
+            src={defaultimage}
+            alt="defaultimage"
+            className="block md:hidden lg:hidden"
+          />
+          <img
+            src={defaultimagetab}
+            alt="defaultimagetab"
             className="hidden md:block lg:hidden"
           />
           <img
-            src={cfoweb}
-            alt="cfoweb"
+            src={defaultimageweb}
+            alt="defaultimageweb"
             className="hidden md:hidden lg:block"
           />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Adewale Ogunlolu
+              Zenith Adeyemi
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Chief Financial Officer
+              Chief Business Officer
             </p>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-2">
         <div className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147">
-          <img src={hrm} alt="hrm" className="block md:hidden lg:hidden" />
           <img
-            src={hrmtab}
-            alt="hrmtab"
+            src={defaultimage}
+            alt="defaultimage"
+            className="block md:hidden lg:hidden"
+          />
+          <img
+            src={defaultimagetab}
+            alt="defaultimagetab"
             className="hidden md:block lg:hidden"
           />
           <img
-            src={hrmweb}
-            alt="hrmweb"
+            src={defaultimageweb}
+            alt="defaultimageweb"
             className="hidden md:hidden lg:block"
           />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Victor Udochi
+              Kazeem Alani
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Head, Risk Management
+              Chief Financial Officer
             </p>
           </div>
         </div>
         <div className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147">
-          <img src={hhr} alt="hhr" className="block md:hidden lg:hidden" />
           <img
-            src={hhrtab}
-            alt="hhrtab"
+            src={defaultimage}
+            alt="defaultimage"
+            className="block md:hidden lg:hidden"
+          />
+          <img
+            src={defaultimagetab}
+            alt="defaultimagetab"
             className="hidden md:block lg:hidden"
           />
           <img
-            src={hhrweb}
-            alt="hhrweb"
+            src={defaultimageweb}
+            alt="defaultimageweb"
             className="hidden md:hidden lg:block"
           />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Joy Anyanwu
+              Sewanu Alfred
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Head, Human Resources
+              Compliance Officer
             </p>
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-2">
         <div className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147">
-          <img src={hoo} alt="hoo" className="block md:hidden lg:hidden" />
           <img
-            src={hootab}
-            alt="hootab"
+            src={defaultimage}
+            alt="defaultimage"
+            className="block md:hidden lg:hidden"
+          />
+          <img
+            src={defaultimagetab}
+            alt="defaultimagetab"
             className="hidden md:block lg:hidden"
           />
           <img
-            src={hooweb}
-            alt="hooweb"
+            src={defaultimageweb}
+            alt="defaultimageweb"
             className="hidden md:hidden lg:block"
           />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Taiyelolu Adenusi
+              Abiodun Babalola
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
               Head of Operations
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147">
+          <img
+            src={defaultimage}
+            alt="defaultimage"
+            className="block md:hidden lg:hidden"
+          />
+          <img
+            src={defaultimagetab}
+            alt="defaultimagetab"
+            className="hidden md:block lg:hidden"
+          />
+          <img
+            src={defaultimageweb}
+            alt="defaultimageweb"
+            className="hidden md:hidden lg:block"
+          />
+          <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
+            <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
+              Victor Orishade
+            </span>
+            <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
+              HR Manager
             </p>
           </div>
         </div>
@@ -150,15 +179,27 @@ const DirectorsContent = () => (
     <div className="flex flex-col gap-6 lg:gap-12 gap-x-3 md:gap-x-4 lg:gap-x-6 w-97.5 md:w-176 lg:w-300">
       <div className="grid grid-cols-2">
         <div className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147">
-          <img src={md} alt="md" className="block md:hidden lg:hidden" />
-          <img src={mdtab} alt="mdtab" className="hidden md:block lg:hidden" />
-          <img src={mdweb} alt="mdweb" className="hidden md:hidden lg:block" />
+          <img
+            src={defaultimage}
+            alt="defaultimage"
+            className="block md:hidden lg:hidden"
+          />
+          <img
+            src={defaultimagetab}
+            alt="defaultimageweb"
+            className="hidden md:block lg:hidden"
+          />
+          <img
+            src={defaultimageweb}
+            alt="defaultimageweb"
+            className="hidden md:hidden lg:block"
+          />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Ayo Banjoko, FCIB
+              Raliat Oyetunde
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Managing Director
+              Chairman
             </p>
           </div>
         </div>
@@ -180,10 +221,10 @@ const DirectorsContent = () => (
           />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Dr. Layi Fatona
+              Remilekun Lawal
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Group Managing Director
+              Non-Executive Director
             </p>
           </div>
         </div>
@@ -207,10 +248,10 @@ const DirectorsContent = () => (
           />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Bolaji Elulu
+              Amala Umeike
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Group Managing Director
+              Non-Executive Director
             </p>
           </div>
         </div>
@@ -232,37 +273,25 @@ const DirectorsContent = () => (
           />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Rita Tolulope Oke
+              Tolulope Oke
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Group Managing Director
+              Non-Executive Director
             </p>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-1">
         <div className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147">
-          <img
-            src={defaultimage}
-            alt="defaultimage"
-            className="block md:hidden lg:hidden"
-          />
-          <img
-            src={defaultimagetab}
-            alt="defaultimageweb"
-            className="hidden md:block lg:hidden"
-          />
-          <img
-            src={defaultimageweb}
-            alt="defaultimageweb"
-            className="hidden md:hidden lg:block"
-          />
+          <img src={md} alt="md" className="block md:hidden lg:hidden" />
+          <img src={mdtab} alt="mdtab" className="hidden md:block lg:hidden" />
+          <img src={mdweb} alt="mdweb" className="hidden md:hidden lg:block" />
           <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
             <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-              Amala Umeike
+              Ayo Banjoko, FCIB
             </span>
             <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-              Group Managing Director
+              Managing Director
             </p>
           </div>
         </div>

@@ -12,6 +12,7 @@ import AcceptTerms from "../Components/AcceptTerms";
 import AcctImageSlider from "../Components/acctImageSlider";
 import AcctTextSlider from "../Components/acctTextSlider";
 import logoweb from "../assets/logoweb.png";
+import Csignatory from "./AccountOpening/Corporate/Csignatory";
 
 const Corporate = () => {
   const [clickedSteps, setClickedSteps] = useState([]);
@@ -72,9 +73,25 @@ const Corporate = () => {
     idNumber: "",
     issueDate: "",
     expiryDate: "",
+    stitle: "",
+    ssurname: "",
+    sfirstName: "",
+    smiddleName: "",
+    spassportPhoto: null,
+    sdob: "",
+    spob: "",
+    semail: "",
+    sphoneNumber: "",
+    shomeAddress: "",
+    slga: "",
+    slandmark: "",
+    sbvn: "",
+    smeansofID: "",
+    sidNumber: "",
+    sissueDate: "",
+    sexpiryDate: "",
     signature: null,
     secondSignature: null,
-    thirdSignature: null,
   });
 
   const handleCorporateFormChange = (data) => {
@@ -102,6 +119,15 @@ const Corporate = () => {
     },
     {
       id: 2,
+      component: (
+        <Csignatory
+          formData={formData}
+          onFormChange={handleCorporateFormChange}
+        />
+      ),
+    },
+    {
+      id: 3,
       component: (
         <Cfinal formData={formData} onFormChange={handleCorporateFormChange} />
       ),
@@ -259,7 +285,7 @@ const Corporate = () => {
                     </button>
                     {activeSection === 1 && (
                       <p className="text-menuHover text-base">
-                        Signatory Information
+                        Signatory #1 Information
                       </p>
                     )}
                   </div>
@@ -273,6 +299,21 @@ const Corporate = () => {
                       3
                     </button>
                     {activeSection === 2 && (
+                      <p className="text-menuHover text-base">
+                        Signatory #2 Information
+                      </p>
+                    )}
+                  </div>
+                  <p className="text-mobileMenuColor">-</p>
+                  <div className="flex flex-row gap-1">
+                    <button
+                      className={`flex justify-center items-center rounded-full h-6 w-6 border ${getButtonClasses(
+                        3
+                      )}`}
+                    >
+                      4
+                    </button>
+                    {activeSection === 3 && (
                       <p className="text-menuHover text-base">
                         Final Confirmation
                       </p>

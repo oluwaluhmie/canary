@@ -35,19 +35,6 @@ const Cfinal = ({ formData }) => {
               (value) =>
                 value && ["image/jpeg", "image/png"].includes(value.type)
             ),
-          thirdSignature: Yup.mixed()
-            .required("A passport photo is required")
-            .test(
-              "fileSize",
-              "File too large",
-              (value) => value && value.size <= 1024 * 1024 // 1MB
-            )
-            .test(
-              "fileFormat",
-              "Unsupported format",
-              (value) =>
-                value && ["image/jpeg", "image/png"].includes(value.type)
-            ),
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values); // Handles form submission here
@@ -73,16 +60,6 @@ const Cfinal = ({ formData }) => {
                   );
                 }}
                 inputError={touched.secondSignature && errors.secondSignature}
-              />
-              <FileInput
-                labelName="Upload Signature (Signatory 3)"
-                onChange={(event) => {
-                  setFieldValue(
-                    "thirdSignature",
-                    event.currentTarget.files[0]
-                  );
-                }}
-                inputError={touched.thirdSignature && errors.thirdSignature}
               />
             </div>
           </Form>

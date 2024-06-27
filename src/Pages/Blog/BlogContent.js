@@ -506,7 +506,7 @@ const BlogContent = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col items-center md:flex-row md:justify-between gap-3">
+            <div className="flex flex-col items-center md:flex-row md:justify-between gap-3 w-full">
               <div className="flex gap-1">
                 <p className="text-menuHover text-lg">1</p>
                 <p className="text-textColor text-lg">/</p>
@@ -518,13 +518,13 @@ const BlogContent = () => {
               </div>
               <div className="flex gap-5">
                 <Link to="">
-                  <button className="flex justify-center items-center gap-2 text-lg rounded-full border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-46.25 md:w-49.75 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                  <button className="flex justify-center items-center gap-2 text-lg rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-46.25 md:w-49.75 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
                     <img src={arrowleft} alt="arrowleft" />
                     Previous Page
                   </button>
                 </Link>
                 <Link to="">
-                  <button className="flex justify-center items-center gap-2 text-lg rounded-full border-2 border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-46.25 md:w-49.75 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
+                  <button className="flex justify-center items-center gap-2 text-lg rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-46.25 md:w-49.75 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end">
                     Next Page
                     <img src={arrowright} alt="arrowright" />
                   </button>
