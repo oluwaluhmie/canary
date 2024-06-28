@@ -19,7 +19,7 @@ const Footer = () => {
           <span className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-2xl md:text-3xl lg:text-4xl w-80 md:w-135.5 lg:w-135.5">
             Stay updated with our weekly newsletter
           </span>
-          <div className="flex flex-col gap-3 md:flex-row md:w-106.5">
+          <div className="flex flex-col w-full gap-3 md:flex-row md:w-106.5">
             <TextBox placeholder="Enter your email" />
             <BlueButton buttonText="Subscribe" />
           </div>
