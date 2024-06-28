@@ -3,6 +3,18 @@ import { useLocation, useNavigate } from "react-router-dom";
 import md from "../../assets/mdmobile.png";
 import mdtab from "../../assets/mdtab.png";
 import mdweb from "../../assets/mdweb.png";
+import raliat from "../../assets/raliatmob.png";
+import raliattab from "../../assets/raliattab.png";
+import raliatweb from "../../assets/raliatweb.png";
+import amala from "../../assets/amalamob.png";
+import amalatab from "../../assets/amalatab.png";
+import amalaweb from "../../assets/amalaweb.png";
+import tolu from "../../assets/tolumob.png";
+import tolutab from "../../assets/tolutab.png";
+import toluweb from "../../assets/toluweb.png";
+import remi from "../../assets/remimob.png";
+import remitab from "../../assets/remitab.png";
+import remiweb from "../../assets/remiweb.png";
 import defaultimage from "../../assets/image.png";
 import defaultimagetab from "../../assets/imagetab.png";
 import defaultimageweb from "../../assets/imageweb.png";
@@ -133,7 +145,7 @@ const TeamsContent = () => {
       position: "Managing Director",
       details: (
         <p className="text-mobileMenuColor text-base text-justify">
-          "Ayo Banjoko is a seasoned finance executive with over 25 years of
+          Ayo Banjoko is a seasoned finance executive with over 25 years of
           diversified experience in banking, financial services, corporate
           finance, project finance, loan origination, international trade,
           equity investments, corporate strategy, and corporate governance. He
@@ -167,7 +179,7 @@ const TeamsContent = () => {
           <br /> With his extensive experience, financial acumen, and proven
           leadership capabilities, Ayo Banjoko is well-positioned to contribute
           significantly to the strategic direction and growth of Canary Point
-          Finance Company Ltd."
+          Finance Company Ltd.
         </p>
       ),
     },
@@ -243,71 +255,146 @@ const TeamsContent = () => {
                     </div>
                     <div className="flex flex-col gap-6 lg:gap-12 gap-x-3 md:gap-x-4 lg:gap-x-6 w-97.5 md:w-176 lg:w-300">
                       <div className="grid grid-cols-2">
-                        {directors.slice(0, 2).map((director, index) => (
-                          <div
-                            key={index}
-                            className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147 cursor-pointer"
-                            onClick={() => handleCardClick(director)}
-                          >
-                            <img
-                              src={defaultimage}
-                              alt="defaultimage"
-                              className="block md:hidden lg:hidden"
-                            />
-                            <img
-                              src={defaultimagetab}
-                              alt="defaultimageweb"
-                              className="hidden md:block lg:hidden"
-                            />
-                            <img
-                              src={defaultimageweb}
-                              alt="defaultimageweb"
-                              className="hidden md:hidden lg:block"
-                            />
-                            <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
-                              <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-                                {director.name}
-                              </span>
-                              <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-                                {director.position}
-                              </p>
+                        {/* Raliat */}
+                        <div>
+                          {directors.slice(0, 1).map((director, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147 cursor-pointer"
+                              onClick={() => handleCardClick(director)}
+                            >
+                              <img
+                                src={raliat}
+                                alt="raliat"
+                                className="block md:hidden lg:hidden"
+                              />
+                              <img
+                                src={raliattab}
+                                alt="raliattab"
+                                className="hidden md:block lg:hidden"
+                              />
+                              <img
+                                src={raliatweb}
+                                alt="raliatweb"
+                                className="hidden md:hidden lg:block"
+                              />
+                              <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
+                                <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
+                                  {director.name}
+                                </span>
+                                <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
+                                  {director.position}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
+                        {/* Remilekun */}
+                        <div>
+                          {directors.slice(1, 2).map((director, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147 cursor-pointer"
+                              onClick={() => handleCardClick(director)}
+                            >
+                              <img
+                                src={remi}
+                                alt="remi"
+                                className="block md:hidden lg:hidden"
+                              />
+                              <img
+                                src={remitab}
+                                alt="remitab"
+                                className="hidden md:block lg:hidden"
+                              />
+                              <img
+                                src={remiweb}
+                                alt="remiweb"
+                                className="hidden md:hidden lg:block"
+                              />
+                              <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
+                                <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
+                                  {director.name}
+                                </span>
+                                <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
+                                  {director.position}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <div className="grid grid-cols-2">
-                        {directors.slice(2, 4).map((director, index) => (
-                          <div
-                            key={index}
-                            className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147 cursor-pointer"
-                            onClick={() => handleCardClick(director)}
-                          >
-                            <img
-                              src={defaultimage}
-                              alt="defaultimage"
-                              className="block md:hidden lg:hidden"
-                            />
-                            <img
-                              src={defaultimagetab}
-                              alt="defaultimageweb"
-                              className="hidden md:block lg:hidden"
-                            />
-                            <img
-                              src={defaultimageweb}
-                              alt="defaultimageweb"
-                              className="hidden md:hidden lg:block"
-                            />
-                            <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
-                              <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
-                                {director.name}
-                              </span>
-                              <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
-                                {director.position}
-                              </p>
+                        {/* Amala */}
+                        <div>
+                          {directors.slice(2, 3).map((director, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147 cursor-pointer"
+                              onClick={() => handleCardClick(director)}
+                            >
+                              <img
+                                src={amala}
+                                alt="amala"
+                                className="block md:hidden lg:hidden"
+                              />
+                              <img
+                                src={amalatab}
+                                alt="amalaweb"
+                                className="hidden md:block lg:hidden"
+                              />
+                              <img
+                                src={amalaweb}
+                                alt="amalaweb"
+                                className="hidden md:hidden lg:block"
+                              />
+                              <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
+                                <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
+                                  {director.name}
+                                </span>
+                                <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
+                                  {director.position}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
+                        {/* Tolulope */}
+                        <div>
+                          {directors.slice(3, 4).map((director, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-col bg-teamsBg hover:bg-menuTextHover border-b-2 border-productsBorder md:border-productsBorder/0 hover:border-b-2 hover:border-productsBorder hover:shadow-products transition-all duration-300 ease-out w-43.5 md:w-85 lg:w-147 cursor-pointer"
+                              onClick={() => handleCardClick(director)}
+                            >
+                              <img
+                                src={tolu}
+                                alt="tolu"
+                                className="block md:hidden lg:hidden"
+                              />
+                              <img
+                                src={tolutab}
+                                alt="toluweb"
+                                className="hidden md:block lg:hidden"
+                              />
+                              <img
+                                src={toluweb}
+                                alt="toluweb"
+                                className="hidden md:hidden lg:block"
+                              />
+                              <div className="md:flex md:flex-col md:gap-1 px-3 md:px-4 lg:px-6 py-3 md:pt-4 lg:pt-8 md:pb-5 lg:pb-10">
+                                <span className="font-gotham text-sm md:text-xl lg:text-2xl text-menuTextColor">
+                                  {director.name}
+                                </span>
+                                <p className="text-mobileMenuColor text-xs md:text-sm lg:text-base">
+                                  {director.position}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
+                      {/* Ayo */}
                       <div className="grid grid-cols-1">
                         {directors.slice(4).map((director, index) => (
                           <div
