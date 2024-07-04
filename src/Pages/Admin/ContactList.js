@@ -1,25 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ContactList = () => {
-  const contacts = [
-    {
-      id: 1,
-      firstName: "Ebenezer",
-      lastName: "Olajide",
-      phoneNumber: "08030000000",
-      email: "oeolumide@gmail.com",
-      message: "I am interested and I want to discuss over a call",
-    },
-    {
-      id: 2,
-      firstName: "John",
-      lastName: "Doe",
-      phoneNumber: "08030000001",
-      email: "johndoe@example.com",
-      message: "This is another message",
-    },
-  ];
+  const [contacts, setContacts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const fetchContacts = async (page) => {
+    try {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: `https://api.canaryfinance.canarypointfcl.com/v1/api/list_messages?page=${page}`,
+        headers: {
+          "x-api-key": "22062024",
+        },
+      };
+
+      const response = await axios.request(config);
+
+      const { result, total = 1, per_page = result.length } = response.data;
+      setContacts(result || []);
+      setTotalPages(Math.ceil(total / per_page));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchContacts(currentPage);
+  }, [currentPage]);
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
 
   return (
     <div className="flex flex-col w-full">
@@ -65,16 +88,16 @@ const ContactList = () => {
                         {index + 1}
                       </td>
                       <td className="flex justify-start w-31  px-6">
-                        {contact.firstName}
+                        {contact.firstname}
                       </td>
                       <td className="flex justify-start w-31 px-6">
-                        {contact.lastName}
+                        {contact.lastname}
                       </td>
                       <td className="flex justify-start w-37.5 px-6">
-                        {contact.phoneNumber}
+                        {contact.phone_number}
                       </td>
                       <td className="flex justify-start w-48 px-6">
-                        {contact.email}
+                        {contact.email_address}
                       </td>
                       <td className="flex justify-start w-67 px-6">
                         <p className="h-5 overflow-hidden">{contact.message}</p>
@@ -96,25 +119,25 @@ const ContactList = () => {
           {/* Buttons */}
           <div className="flex flex-row justify-between">
             <div className="flex gap-1">
-              <p className="text-menuHover text-lg">1</p>
+              <p className="text-menuHover text-lg">{currentPage}</p>
               <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">2</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">....</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">25</p>{" "}
+              <p className="text-textColor text-lg">{totalPages}</p>
             </div>
             <div className="flex gap-5">
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Previous
-                </button>
-              </Link>
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Next
-                </button>
-              </Link>
+              <button
+                onClick={handlePrevious}
+                disabled={currentPage === 1}
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white cursor-pointer w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleNext}
+                disabled={currentPage === totalPages}
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white cursor-pointer w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>

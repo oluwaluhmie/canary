@@ -1,36 +1,91 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const SubscriptionList = () => {
-  const subscriptions = [
-    {
-      id: 1,
-      email: "oeolumide@gmail.com",
-    },
-    {
-      id: 2,
-      email: "johndoe@example.com",
-    },
-  ];
+  const [subscriptions, setSubscriptions] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; // Set the number of items per page
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.canaryfinance.canarypointfcl.com/v1/api/list_subscriber",
+          {
+            headers: {
+              "x-api-key": "22062024", // Replace with your actual API key
+            },
+          }
+        );
+        if (Array.isArray(response.data.result)) {
+          setSubscriptions(response.data.result);
+        } else {
+          console.error("API returned non-array data:", response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleDownload = () => {
+    const doc = new jsPDF();
+    const columns = ["ID", "Email Address"];
+    const rows = subscriptions.map((subscription) => [
+      subscription.id,
+      subscription.email_address,
+    ]);
+    doc.setFont("times", "normal");
+    doc.setFontSize(12);
+    doc.text("Email Subscription List", 14, 15);
+    doc.autoTable({
+      head: [columns],
+      body: rows,
+      startY: 20,
+    });
+    doc.save("subscription_list.pdf");
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentSubscriptions = subscriptions.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+
+  const totalPages = Math.ceil(subscriptions.length / itemsPerPage);
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <div className="flex flex-col w-full">
-      {/* Header */}
       <div className="flex items-center bg-white px-12 border-b border-borderStroke h-28 shadow-investment">
         <p className="font-gotham text-2xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end leading-tight lg:leading-snug">
           Subscriptions
         </p>
       </div>
-      {/* Content */}
       <div className="flex flex-col px-12 py-8">
         <div className="flex flex-col gap-6">
-          {/* Download button */}
-          <Link>
-            <button className="flex items-center justify-center text-sm rounded-full border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-33.5 h-10 hover:from-orangeButton-start hover:to-orangeButton-end">
-              Download List
-            </button>
-          </Link>
-          {/* Table */}
+          <button
+            onClick={handleDownload}
+            className="flex items-center justify-center text-sm rounded-full border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-33.5 h-10 hover:from-orangeButton-start hover:to-orangeButton-end"
+          >
+            Download List
+          </button>
           <div className="flex">
             <div className="flex flex-row w-full">
               <table className="border border-borderStroke w-full shadow-investment">
@@ -43,7 +98,7 @@ const SubscriptionList = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {subscriptions.map((subscription, index) => (
+                  {currentSubscriptions.map((subscription, index) => (
                     <tr
                       key={subscription.id}
                       className="flex flex-row w-full bg-white h-16 items-center text-sm text-mobileMenuColor"
@@ -52,7 +107,7 @@ const SubscriptionList = () => {
                         {subscription.id}
                       </td>
                       <td className="flex justify-start items-center px-6">
-                        {subscription.email}
+                        {subscription.email_address}
                       </td>
                     </tr>
                   ))}
@@ -63,25 +118,25 @@ const SubscriptionList = () => {
           {/* Buttons */}
           <div className="flex flex-row justify-between w-full">
             <div className="flex gap-1">
-              <p className="text-menuHover text-lg">1</p>
+              <p className="text-menuHover text-lg">{currentPage}</p>
               <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">2</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">....</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">25</p>{" "}
+              <p className="text-textColor text-lg">{totalPages}</p>
             </div>
             <div className="flex gap-5">
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Previous
-                </button>
-              </Link>
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Next
-                </button>
-              </Link>
+              <button
+                onClick={handlePrevious}
+                disabled={currentPage === 1}
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white cursor-pointer w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleNext}
+                disabled={currentPage === totalPages}
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white cursor-pointer w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>
