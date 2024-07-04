@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import TextBox from "../Components/textBox";
 import logo from "../assets/logo.png";
 import instagram from "../assets/instagram.svg";
 import facebook from "../assets/facebook.svg";
 import linkedin from "../assets/linkedin.svg";
 import twitter from "../assets/twitter.svg";
-import BlueButton from "../Components/blueButton";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "https://api.canaryfinance.canarypointfcl.com/v1/api/email_subscriber",
+        { emailAddress: email },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "22062024",
+          },
+        }
+      );
+      console.log("Subscription successful:", response.data);
+      // Clear the email input after successful subscription
+      setEmail("");
+    } catch (error) {
+      console.error("Error subscribing:", error);
+    }
+  };
+
   return (
     <footer
       id="footerSection"
@@ -19,10 +46,25 @@ const Footer = () => {
           <span className="font-gotham text-transparent bg-clip-text bg-gradient-to-b from-footerGradient-start to-footerGradient-end text-2xl md:text-3xl lg:text-4xl w-80 md:w-135.5 lg:w-135.5">
             Stay updated with our weekly newsletter
           </span>
-          <div className="flex flex-col w-full gap-3 md:flex-row md:w-106.5">
-            <TextBox placeholder="Enter your email" />
-            <BlueButton buttonText="Subscribe" />
-          </div>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col w-full gap-3 md:flex-row md:w-106.5"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={handleEmailChange}
+              className="border border-textboxBorder px-3 py-3 text-menuHover w-full h-11"
+              required
+            />
+            <button
+              type="submit"
+              className="text-base items-center justify-center lg:text-lg border-2 border-blueBorderStroke text-white bg-gradient-to-b from-blueGradient-start to-blueGradient-end w-full md:w-33.5 lg:w-37.5 h-11 hover:bg-gradient-to-b hover:from-blueButton-start hover:to-blueButton-end"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
         <div className="flex flex-col py-12 gap-12 md:gap-12 lg:gap-20">
           <div className="flex flex-col gap-6 md:gap-12 lg:flex-row lg:gap-12">

@@ -7,19 +7,20 @@ const ContactList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
+  // Function to fetch contacts
   const fetchContacts = async (page) => {
     try {
       let config = {
         method: "get",
         maxBodyLength: Infinity,
-        url: `https://api.canaryfinance.canarypointfcl.com/v1/api/list_messages?page=${page}`,
+        url: "https://api.canaryfinance.canarypointfcl.com/v1/api/list_messages",
         headers: {
           "x-api-key": "22062024",
         },
       };
 
       const response = await axios.request(config);
-
+      console.log("API response:", response.data);
       const { result, total = 1, per_page = result.length } = response.data;
       setContacts(result || []);
       setTotalPages(Math.ceil(total / per_page));
@@ -29,9 +30,10 @@ const ContactList = () => {
   };
 
   useEffect(() => {
-    fetchContacts(currentPage);
-  }, [currentPage]);
+    fetchContacts(currentPage); // Fetch contacts when component mounts
+  }, [currentPage]); // Fetch contacts when currentPage changes
 
+  // Pagination handlers
   const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -127,14 +129,14 @@ const ContactList = () => {
               <button
                 onClick={handlePrevious}
                 disabled={currentPage === 1}
-                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white cursor-pointer w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
               >
                 Previous
               </button>
               <button
                 onClick={handleNext}
                 disabled={currentPage === totalPages}
-                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white cursor-pointer w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end disabled:opacity-50"
               >
                 Next
               </button>

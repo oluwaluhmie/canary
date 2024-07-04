@@ -1,11 +1,50 @@
 import React from "react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 import InputWithLabel from "../../Components/inputWithLabel";
 import OrangeButtonWoutIcon from "../../Components/orangeButtonWoutIcon";
 import contactsimage from "../../assets/contactsimage.png";
 
 const ContactContent = ({ onFormChange = () => {} }) => {
+  const onSubmitHandler = async (values, { resetForm, setSubmitting }) => {
+    try {
+      const data = JSON.stringify(values);
+
+      const config = {
+        method: "post",
+        maxBodyLength: Infinity,
+        url: "https://api.canaryfinance.canarypointfcl.com/v1/api/contact_us_message",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "22062024",
+        },
+        data: data,
+      };
+
+      const response = await axios.request(config);
+      console.log("Form submission successful:", response.data);
+      resetForm(); // Clear form after successful submission
+
+      // Optionally, you can update state or perform any other actions upon success
+      // Example: onFormSubmitSuccess(response.data);
+    } catch (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        console.error("Server responded with an error:", error.response.data);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error("No response received:", error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error("Error setting up the request:", error.message);
+      }
+      console.error("Axios request failed:", error.config);
+    } finally {
+      setSubmitting(false); // Set submitting state back to false
+    }
+  };
+
   return (
     <div className="flex flex-col items-center bg-white lg:bg-contactsbg lg:bg-cover">
       <div className="flex flex-col items-center w-107.5 md:w-200 lg:w-341.5">
@@ -37,12 +76,9 @@ const ContactContent = ({ onFormChange = () => {} }) => {
                     .required("Phone number is required"),
                   message: Yup.string().required("Message is required"),
                 })}
-                onSubmit={(values, { resetForm }) => {
-                  console.log(values); // Handles form submission here
-                  resetForm(); // Clear form after submission
-                }}
+                onSubmit={onSubmitHandler}
               >
-                {({ values, errors, handleChange }) => (
+                {({ values, errors, handleChange, isSubmitting }) => (
                   <Form className="flex flex-col gap-6 md:gap-8">
                     <div className="grid grid-cols-1 gap-5 md:gap-6">
                       <div className="grid gap-5 md:grid md:grid-cols-2 md:gap-x-6">
@@ -108,7 +144,10 @@ const ContactContent = ({ onFormChange = () => {} }) => {
                         InputError={errors.message}
                       />
                     </div>
-                    <OrangeButtonWoutIcon buttonText="Send Message" />
+                    <OrangeButtonWoutIcon
+                      buttonText="Send Message"
+                      disabled={isSubmitting}
+                    />
                   </Form>
                 )}
               </Formik>

@@ -15,7 +15,7 @@ const SubscriptionList = () => {
           "https://api.canaryfinance.canarypointfcl.com/v1/api/list_subscriber",
           {
             headers: {
-              "x-api-key": "22062024", // Replace with your actual API key
+              "x-api-key": "22062024",
             },
           }
         );
@@ -34,9 +34,9 @@ const SubscriptionList = () => {
 
   const handleDownload = () => {
     const doc = new jsPDF();
-    const columns = ["ID", "Email Address"];
-    const rows = subscriptions.map((subscription) => [
-      subscription.id,
+    const columns = ["S/N", "Email Address"]; // Change "ID" to "S/N" for sequential numbering
+    const rows = subscriptions.map((subscription, index) => [
+      index + 1, // Start numbering from 1
       subscription.email_address,
     ]);
     doc.setFont("times", "normal");
@@ -104,7 +104,7 @@ const SubscriptionList = () => {
                       className="flex flex-row w-full bg-white h-16 items-center text-sm text-mobileMenuColor"
                     >
                       <td className="flex justify-center items-center w-18">
-                        {subscription.id}
+                        {(currentPage - 1) * itemsPerPage + index + 1}
                       </td>
                       <td className="flex justify-start items-center px-6">
                         {subscription.email_address}
