@@ -1,46 +1,15 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import InputWithLabel from "../Components/inputWithLabel";
 import ArrowRight from "../assets/arrowrighttwo.svg";
 import AdminOrangeButton from "../Components/AdminOrangeButton";
-import api from "../api/apiService"; // Import your API instance
 
 const Admin = ({ onFormChange = () => {} }) => {
-  const navigate = useNavigate();
-
-  const handleLogin = async (values) => {
-    try {
-      const response = await api.post(
-        "/admin_login",
-        {
-          emailAddress: values.emailAddress,
-          password: values.password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "22062024",
-          },
-        }
-      );
-
-      if (response.status === 200) {
-        // Assuming the login is successful if the status code is 200
-        navigate("/adminaccess");
-      } else {
-        alert("Login failed, please check your credentials.");
-      }
-    } catch (error) {
-      console.error("Error details:", error); // Log the full error details
-      alert("An error occurred during login. Please try again.");
-    }
-  };
-
   return (
-    <div className="flex flex-col items-center bg-adminbg bg-cover">
+    <div className="flex flex-col items-center bg-adminbg bg-contain">
       {/* Header */}
       <div className="flex items-center bg-white px-5 md:px-12 lg:px-32 pt-3 w-full h-25 shadow-investment">
         {/* Canary Logo */}
@@ -67,11 +36,11 @@ const Admin = ({ onFormChange = () => {} }) => {
           <div className="flex flex-col">
             <Formik
               initialValues={{
-                emailAddress: "",
+                email: "",
                 password: "",
               }}
               validationSchema={Yup.object({
-                emailAddress: Yup.string()
+                email: Yup.string()
                   .email("Invalid email address")
                   .required("Email Address is required"),
                 password: Yup.string()
@@ -79,7 +48,7 @@ const Admin = ({ onFormChange = () => {} }) => {
                   .required("Password is required"),
               })}
               onSubmit={(values, { resetForm }) => {
-                handleLogin(values); // Call the handleLogin function here
+                console.log(values); // Handles form submission here
                 resetForm(); // Clear form after submission
               }}
             >
@@ -91,12 +60,12 @@ const Admin = ({ onFormChange = () => {} }) => {
                       inputType="email"
                       inputName="email"
                       placeholder="Enter your email"
-                      inputValue={values.emailAddress}
+                      inputValue={values.email}
                       inputOnChange={(event) => {
                         handleChange(event);
-                        onFormChange({ emailAddress: event.target.value });
+                        onFormChange({ email: event.target.value });
                       }}
-                      InputError={errors.emailAddress}
+                      InputError={errors.email}
                     />
                     <InputWithLabel
                       labelName="Password"
@@ -111,17 +80,18 @@ const Admin = ({ onFormChange = () => {} }) => {
                       InputError={errors.password}
                     />
                   </div>
-                  <div className="flex flex-col items-end mt-4">
-                    <AdminOrangeButton
-                      buttonText="Next"
-                      imgSrc={ArrowRight}
-                      alt="arrowright"
-                      type="submit" // Make sure the button submits the form
-                    />
-                  </div>
                 </Form>
               )}
             </Formik>
+          </div>
+          <div className="flex flex-col items-end">
+            <Link to="/adminaccess">
+              <AdminOrangeButton
+                buttonText="Next"
+                imgSrc={ArrowRight}
+                alt="arrowright"
+              />
+            </Link>
           </div>
         </div>
       </div>

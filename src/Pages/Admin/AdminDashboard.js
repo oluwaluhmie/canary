@@ -22,9 +22,6 @@ const AdminDashboard = () => {
 
       try {
         const response = await axios.request(config);
-        console.log("Response data:", response.data); // Log response data
-
-        // Adjust this according to your actual API response structure
         const responseData = response.data.result; // Access 'result' object
         setData({
           corporateAccounts: responseData.noOfCorporateAccounts || 0,

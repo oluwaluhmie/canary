@@ -9,9 +9,15 @@ import contactsimage from "../../assets/contactsimage.png";
 const ContactContent = ({ onFormChange = () => {} }) => {
   const onSubmitHandler = async (values, { resetForm, setSubmitting }) => {
     try {
-      const data = JSON.stringify(values);
+      const data = JSON.stringify({
+        firstName: values.firstName,
+        lastName: values.lastName,
+        emailAddress: values.emailAddress,
+        phoneNumber: values.phoneNumber,
+        message: values.message,
+      });
 
-      const config = {
+      let config = {
         method: "post",
         maxBodyLength: Infinity,
         url: "https://api.canaryfinance.canarypointfcl.com/v1/api/contact_us_message",
@@ -22,24 +28,18 @@ const ContactContent = ({ onFormChange = () => {} }) => {
         data: data,
       };
 
-      const response = await axios.request(config);
-      console.log("Form submission successful:", response.data);
+      const response = await axios(config);
+
+      if (response.status !== 200) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = response.data;
+      console.log("Form submission successful:", result);
       resetForm(); // Clear form after successful submission
 
-      // Optionally, you can update state or perform any other actions upon success
-      // Example: onFormSubmitSuccess(response.data);
     } catch (error) {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        console.error("Server responded with an error:", error.response.data);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error("No response received:", error.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.error("Error setting up the request:", error.message);
-      }
-      console.error("Axios request failed:", error.config);
+      console.error("Fetch request failed:", error.message);
     } finally {
       setSubmitting(false); // Set submitting state back to false
     }
@@ -58,14 +58,14 @@ const ContactContent = ({ onFormChange = () => {} }) => {
                 initialValues={{
                   firstName: "",
                   lastName: "",
-                  email: "",
+                  emailAddress: "",
                   phoneNumber: "",
                   message: "",
                 }}
                 validationSchema={Yup.object({
                   firstName: Yup.string().required("First name is required"),
                   lastName: Yup.string().required("Last name is required"),
-                  email: Yup.string()
+                  emailAddress: Yup.string()
                     .email("Invalid email address")
                     .required("Email Address is required"),
                   phoneNumber: Yup.string()
@@ -110,14 +110,14 @@ const ContactContent = ({ onFormChange = () => {} }) => {
                       <InputWithLabel
                         labelName="Email"
                         inputType="email"
-                        inputName="email"
+                        inputName="emailAddress"
                         placeholder="e.g. segun@gmail.com"
-                        inputValue={values.email}
+                        inputValue={values.emailAddress}
                         inputOnChange={(event) => {
                           handleChange(event);
-                          onFormChange({ email: event.target.value });
+                          onFormChange({ emailAddress: event.target.value });
                         }}
-                        InputError={errors.email}
+                        InputError={errors.emailAddress}
                       />
                       <InputWithLabel
                         labelName="Phone Number"

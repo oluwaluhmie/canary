@@ -1,10 +1,43 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import arrowleft from "../../assets/arrowleft.svg";
+import jsPDF from "jspdf";
 
 const CorporatePage = () => {
-  const location = useLocation();
-  const { corporate } = location.state || {};
+  const { id: corporateId } = useParams();
+  const [corporate, setCorporate] = useState(null);
+
+  useEffect(() => {
+    const fetchCorporate = async () => {
+      try {
+        const config = {
+          method: "get",
+          maxBodyLength: Infinity,
+          url: `https://api.canaryfinance.canarypointfcl.com/v1/api/single_corporate_account/${corporateId}`,
+          headers: {
+            "x-api-key": "22062024",
+          },
+        };
+        const response = await axios.request(config);
+        if (
+          response.data &&
+          response.data.result &&
+          response.data.result.length > 0
+        ) {
+          setCorporate(response.data.result[0]);
+        } else {
+          setCorporate(null);
+        }
+      } catch (error) {
+        setCorporate(null);
+      }
+    };
+
+    if (corporateId) {
+      fetchCorporate();
+    }
+  }, [corporateId]);
 
   if (!corporate) {
     return <p className="text-menuHover text-lg p-5">Account not found.</p>;
@@ -37,7 +70,9 @@ const CorporatePage = () => {
                   Corporate Account Opening Form
                 </p>
                 <p className="text-countBorder">/</p>
-                <p className="text-menuHover text-sm">{corporate.lastName}</p>
+                <p className="text-menuHover text-sm">
+                  {corporate.organization_name}
+                </p>
               </div>
             </div>
             {/* Download button */}
@@ -61,13 +96,13 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Type of Account:</p>
                     <p className="text-mobileMenuColor">
-                      {corporate.caccountType}
+                      {corporate.account_type}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">Type of Institution:</p>
                     <p className="text-mobileMenuColor">
-                      {corporate.institutionType}
+                      {corporate.institution_type}
                     </p>
                   </div>
                 </div>
@@ -76,22 +111,22 @@ const CorporatePage = () => {
                   <div className="w-full">
                     <p className="text-footerText">Name of Organization:</p>
                     <p className="text-mobileMenuColor">
-                      {corporate.organizationName}
+                      {corporate.organization_name}
                     </p>
                   </div>
                 </div>
                 <hr />
                 <div className="flex gap-6">
                   <div className="w-80">
-                    <p className="text-footerText">Passport Photograph:</p>
+                    <p className="text-footerText">RC No/Business Reg. No:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.rcNo}
+                      {corporate.business_reg_number}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">Tax ID Number:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.taxNo}
+                      {corporate.tax_id_number}
                     </p>
                   </div>
                 </div>
@@ -100,7 +135,7 @@ const CorporatePage = () => {
                   <div className="w-full">
                     <p className="text-footerText">Business Address:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.businessAddress}
+                      {corporate.business_address}
                     </p>
                   </div>
                 </div>
@@ -109,13 +144,13 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Email Address:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.email}
+                      {corporate.business_email_address}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">Web Address:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.webAddress}
+                      {corporate.web_address}
                     </p>
                   </div>
                 </div>
@@ -133,27 +168,25 @@ const CorporatePage = () => {
                 <div className="flex gap-6">
                   <div className="w-80">
                     <p className="text-footerText">Title:</p>
-                    <p className="text-mobileMenuColor">
-                      {corporate.title}
-                    </p>
+                    <p className="text-mobileMenuColor">{corporate.title}</p>
                   </div>
                 </div>
                 <hr />
                 <div className="flex gap-6">
                   <div className="w-80">
                     <p className="text-footerText">Last Name:</p>
-                    <p className="text-mobileMenuColor">{corporate.lastName}</p>
+                    <p className="text-mobileMenuColor">{corporate.surname}</p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">First Name:</p>
                     <p className="text-mobileMenuColor">
-                      {corporate.firstName}
+                      {corporate.firstname}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">Middle Name:</p>
                     <p className="text-mobileMenuColor">
-                      {corporate.middleName}
+                      {corporate.middle_name}
                     </p>
                   </div>
                 </div>
@@ -162,7 +195,7 @@ const CorporatePage = () => {
                   <div className="w-full">
                     <p className="text-footerText">Passport Photograph:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.passportPhoto}
+                      {corporate.passport}
                     </p>
                   </div>
                 </div>
@@ -171,13 +204,13 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Date of Birth:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.dob}
+                      {corporate.date_of_birth}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">Place of Birth:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.pob}
+                      {corporate.place_of_birth}
                     </p>
                   </div>
                 </div>
@@ -186,13 +219,13 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Email Address:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.pemail}
+                      {corporate.email_address}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">Phone Number:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.phoneNumber}
+                      {corporate.phone_number}
                     </p>
                   </div>
                 </div>
@@ -201,7 +234,7 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Home Address:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.homeAddress}
+                      {corporate.home_address}
                     </p>
                   </div>
                 </div>
@@ -210,7 +243,7 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">LGA:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.lga}
+                      {corporate.home_address_lga}
                     </p>
                   </div>
                   <div className="w-80">
@@ -234,13 +267,13 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Means of Identification:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.meansofID}
+                      {corporate.means_of_identification}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">ID Card Number:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.idNumber}
+                      {corporate.id_card_number}
                     </p>
                   </div>
                 </div>
@@ -249,13 +282,13 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Issue Date:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.issueDate}
+                      {corporate.issue_date}
                     </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">Expiry Date:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {corporate.expiryDate}
+                      {corporate.expiry_date}
                     </p>
                   </div>
                 </div>
@@ -273,16 +306,16 @@ const CorporatePage = () => {
                 <div className="flex gap-6">
                   <div className="w-80">
                     <p className="text-footerText">Title:</p>
-                    <p className="text-mobileMenuColor">
-                      {corporate.stitle}
-                    </p>
+                    <p className="text-mobileMenuColor">{corporate.stitle}</p>
                   </div>
                 </div>
                 <hr />
                 <div className="flex gap-6">
                   <div className="w-80">
                     <p className="text-footerText">Last Name:</p>
-                    <p className="text-mobileMenuColor">{corporate.slastName}</p>
+                    <p className="text-mobileMenuColor">
+                      {corporate.slastName}
+                    </p>
                   </div>
                   <div className="w-80">
                     <p className="text-footerText">First Name:</p>
@@ -420,7 +453,7 @@ const CorporatePage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Signatory #2 Signature</p>
                     <p className="text-mobileMenuColor">
-                      {corporate.secondSignature}
+                      {corporate.signature_two}
                     </p>
                   </div>
                 </div>

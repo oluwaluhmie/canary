@@ -1,56 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const CorporateList = () => {
-  const corporates = [
-    {
-      id: 1,
-      caccountType: "Fixed Deposit",
-      institutionType: "Sole Proprietorship",
-      organizationName: "Olumide Enterprises",
-      rcNo: "111111111",
-      taxNo: "111111111",
-      businessAddress: "Eleyele, Ibadan",
-      email: "oeolumide@gmail.com",
-      webAddress: "olumide.com",
-      title: "Mr.",
-      lastName: "Olajide",
-      firstName: "Ebenezer",
-      middleName: "Olumide",
-      passportPhoto: null,
-      dob: "11/02/1998",
-      pob: "Ibadan",
-      pemail: "oeolumide@gmail.com",
-      phoneNumber: "08131223306",
-      homeAddress: "Olopomewa, Ibadan",
-      lga: "Ibadan North West",
-      landmark: "Eleyele",
-      bvn: "22288444777",
-      meansofID: "NIN",
-      idNumber: "61354861223",
-      issueDate: "11/02/2024",
-      expiryDate: "11/02/2029",
-      stitle: "Mr.",
-      slastName: "Doe",
-      sfirstName: "John",
-      smiddleName: "Oluwaseun",
-      spassportPhoto: null,
-      sdob: "17/10/1998",
-      spob: "Ibadan",
-      semail: "johndoe@example.com",
-      sphoneNumber: "07084806812",
-      shomeAddress: "Olopomewa, Ibadan",
-      slga: "Ibadan North West",
-      slandmark: "Eleyele",
-      sbvn: "22288444777",
-      smeansofID: "NIN",
-      sidNumber: "61354861223",
-      sissueDate: "17/10/2024",
-      sexpiryDate: "17/10/2029",
-      signature: null,
-      secondSignature: null,
-    },
-  ];
+  const [corporates, setCorporates] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  useEffect(() => {
+    const fetchCorporates = async () => {
+      try {
+        const config = {
+          method: "get",
+          maxBodyLength: Infinity,
+          url: "https://api.canaryfinance.canarypointfcl.com/v1/api/list_corporate_account",
+          headers: {
+            "x-api-key": "22062024",
+          },
+        };
+
+        const response = await axios.request(config);
+
+        if (response.data && response.data.result) {
+          setCorporates(response.data.result);
+          setTotalPages(Math.ceil(response.data.result.length / 10)); // Assuming 10 items per page
+        } else {
+          console.error("API response does not contain result property");
+        }
+      } catch (error) {
+        console.error("Error fetching corporates:", error);
+      }
+    };
+
+    fetchCorporates();
+  }, [currentPage]);
 
   return (
     <div className="flex flex-col w-full">
@@ -98,19 +81,19 @@ const CorporateList = () => {
                         {index + 1}
                       </td>
                       <td className="flex justify-start w-44 px-6">
-                        {corporate.caccountType}
+                        {corporate.account_type}
                       </td>
                       <td className="flex justify-start w-52 px-6">
-                        {corporate.organizationName}
+                        {corporate.organization_name}
                       </td>
                       <td className="flex justify-start w-30 px-6">
-                        {corporate.rcNo}
+                        {corporate.business_reg_number}
                       </td>
                       <td className="flex justify-start w-30 px-6">
-                        {corporate.taxNo}
+                        {corporate.tax_id_number}
                       </td>
                       <td className="flex justify-start w-58 px-6">
-                        {corporate.email}
+                        {corporate.email_address}
                       </td>
                       <td className="flex justify-start text-menuHover w-29 px-6">
                         <Link
@@ -129,25 +112,27 @@ const CorporateList = () => {
           {/* Buttons */}
           <div className="flex flex-row justify-between">
             <div className="flex gap-1">
-              <p className="text-menuHover text-lg">1</p>
+              <p className="text-menuHover text-lg">{currentPage}</p>
               <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">2</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">....</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">25</p>{" "}
+              <p className="text-textColor text-lg">{totalPages}</p>
             </div>
             <div className="flex gap-5">
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Previous
-                </button>
-              </Link>
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Next
-                </button>
-              </Link>
+              <button
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end"
+                disabled={currentPage === 1}
+              >
+                Previous
+              </button>
+              <button
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end"
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>

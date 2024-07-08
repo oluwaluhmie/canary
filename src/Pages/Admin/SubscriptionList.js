@@ -11,7 +11,7 @@ const SubscriptionList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
+        let response = await axios.get(
           "https://api.canaryfinance.canarypointfcl.com/v1/api/list_subscriber",
           {
             headers: {

@@ -9,6 +9,7 @@ import twitter from "../assets/twitter.svg";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -24,15 +25,15 @@ const Footer = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "22062024",
+            "x-api-key": "22062024", // your API key
           },
         }
       );
       console.log("Subscription successful:", response.data);
-      // Clear the email input after successful subscription
-      setEmail("");
+      setEmail(""); // Clear the email input after successful subscription
     } catch (error) {
       console.error("Error subscribing:", error);
+      setError("Failed to subscribe. Please try again later.");
     }
   };
 
@@ -65,6 +66,7 @@ const Footer = () => {
               Subscribe
             </button>
           </form>
+          {error && <p className="text-red-500 mt-2">{error}</p>}
         </div>
         <div className="flex flex-col py-12 gap-12 md:gap-12 lg:gap-20">
           <div className="flex flex-col gap-6 md:gap-12 lg:flex-row lg:gap-12">

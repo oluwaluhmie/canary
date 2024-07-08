@@ -1,45 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const IndividualList = () => {
-  const individuals = [
-    {
-      id: 1,
-      accountType: "Single Account",
-      title: "Mr.",
-      lastName: "Olajide",
-      firstName: "Ebenezer",
-      middleName: "Olumide",
-      passportPhoto: null,
-      dob: "11/02/1998",
-      pob: "Ibadan",
-      gender: "Male",
-      email: "oeolumide@gmail.com",
-      phoneNumber: "08030000000",
-      homeAddress: "6, Alhaji Lasisi Ogo-oluwa street, Olopomewa, Eleyele, Ibadan",
-      lga: "Ibadan North West",
-      landmark: "Eleyele",
-      bvn: "22289444777",
-      maritalStatus: "Single",
-      soo: "Osun State",
-      lgaoo: "Ilesa West",
-      occupation: "Frontend Developer",
-      moi: "NIN",
-      idNumber: "1234567890",
-      issueDate: "11/02/1924",
-      expiryDate: "11/02/2029",
-      ntitle: "Mr.",
-      nsurname: "Doe",
-      nfirstName: "John",
-      nmiddleName: "Oluwaseun",
-      nphoneNumber: "07084806812",
-      relationship: "Senior man",
-      nemail: "oluwaseunfj@gmail.com",
-      noccupation: "Product Designer",
-      signature: null,
-      secondSignature: null,
-    },
-  ];
+  const [individuals, setIndividuals] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  useEffect(() => {
+    const fetchIndividuals = async () => {
+      try {
+        const config = {
+          method: "get",
+          maxBodyLength: Infinity,
+          url: "https://api.canaryfinance.canarypointfcl.com/v1/api/list_individual_account",
+          headers: {
+            "x-api-key": "22062024",
+          },
+        };
+
+        const response = await axios.request(config);
+
+        if (response.data && response.data.result) {
+          setIndividuals(response.data.result);
+          setTotalPages(Math.ceil(response.data.result.length / 10)); // Assuming 10 items per page
+        } else {
+          console.error("API response does not contain result property");
+        }
+      } catch (error) {
+        console.error("Error fetching individuals:", error);
+      }
+    };
+
+    fetchIndividuals();
+  }, [currentPage]);
 
   return (
     <div className="flex flex-col w-full">
@@ -78,39 +72,41 @@ const IndividualList = () => {
                 </thead>
                 {/* Table Body */}
                 <tbody>
-                  {individuals.map((individual, index) => (
-                    <tr
-                      key={individual.id}
-                      className="flex flex-row justify-between bg-white h-16 w-full items-center text-sm text-mobileMenuColor"
-                    >
-                      <td className="flex justify-center items-center w-16">
-                        {index + 1}
-                      </td>
-                      <td className="flex justify-start w-44 px-6">
-                        {individual.accountType}
-                      </td>
-                      <td className="flex justify-start w-34 px-6">
-                        {individual.lastName}
-                      </td>
-                      <td className="flex justify-start w-34 px-6">
-                        {individual.firstName}
-                      </td>
-                      <td className="flex justify-start w-40 px-6">
-                        {individual.phoneNumber}
-                      </td>
-                      <td className="flex justify-start w-62 px-6">
-                        {individual.email}
-                      </td>
-                      <td className="flex justify-start text-menuHover w-29 px-6">
-                        <Link
-                          to={`/adminaccess/individual/${individual.id}`}
-                          state={{ individual }}
-                        >
-                          view more
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
+                  {individuals
+                    .slice((currentPage - 1) * 10, currentPage * 10)
+                    .map((individual, index) => (
+                      <tr
+                        key={individual.id}
+                        className="flex flex-row justify-between bg-white h-16 w-full items-center text-sm text-mobileMenuColor"
+                      >
+                        <td className="flex justify-center items-center w-16">
+                          {index + 1}
+                        </td>
+                        <td className="flex justify-start w-44 px-6">
+                          {individual.account_type}
+                        </td>
+                        <td className="flex justify-start w-34 px-6">
+                          {individual.surname}
+                        </td>
+                        <td className="flex justify-start w-34 px-6">
+                          {individual.firstname}
+                        </td>
+                        <td className="flex justify-start w-40 px-6">
+                          {individual.phone_number}
+                        </td>
+                        <td className="flex justify-start w-62 px-6">
+                          {individual.email_address}
+                        </td>
+                        <td className="flex justify-start text-menuHover w-29 px-6">
+                          <Link
+                            to={`/adminaccess/individual/${individual.id}`}
+                            state={{ individual }}
+                          >
+                            view more
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
             </div>
@@ -118,25 +114,27 @@ const IndividualList = () => {
           {/* Buttons */}
           <div className="flex flex-row justify-between">
             <div className="flex gap-1">
-              <p className="text-menuHover text-lg">1</p>
+              <p className="text-menuHover text-lg">{currentPage}</p>
               <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">2</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">....</p>
-              <p className="text-textColor text-lg">/</p>
-              <p className="text-textColor text-lg">25</p>{" "}
+              <p className="text-textColor text-lg">{totalPages}</p>
             </div>
             <div className="flex gap-5">
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Previous
-                </button>
-              </Link>
-              <Link to="">
-                <button className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end">
-                  Next
-                </button>
-              </Link>
+              <button
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end"
+                disabled={currentPage === 1}
+              >
+                Previous
+              </button>
+              <button
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                className="flex justify-center items-center text-base rounded-full border border-menuHover text-transparent bg-clip-text bg-gradient-to-b from-linkOrangeButtonText-start to-linkOrangeButtonText-end bg-white w-38 h-11 hover:from-orangeButton-start hover:to-orangeButton-end"
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>

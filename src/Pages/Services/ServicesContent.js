@@ -8,8 +8,47 @@ import * as Yup from "yup";
 import InputWithLabel from "../../Components/inputWithLabel";
 import OrangeButtonWoutIcon from "../../Components/orangeButtonWoutIcon";
 import contactsimage from "../../assets/contactsimage.png";
+import axios from "axios"; 
 
 const ServicesContent = ({ onFormChange = () => {} }) => {
+  const handleSubmit = async (values, { resetForm, setSubmitting }) => {
+    try {
+      const data = JSON.stringify({
+        firstName: values.firstName,
+        lastName: values.lastName,
+        emailAddress: values.emailAddress,
+        phoneNumber: values.phoneNumber,
+        message: values.message,
+      });
+
+      let config = {
+        method: "post",
+        maxBodyLength: Infinity,
+        url: "https://api.canaryfinance.canarypointfcl.com/v1/api/contact_us_message",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "22062024",
+        },
+        data: data,
+      };
+
+      const response = await axios(config);
+
+      if (response.status !== 200) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = response.data;
+      console.log("Form submission successful:", result);
+      resetForm(); // Clear form after successful submission
+
+    } catch (error) {
+      console.error("Fetch request failed:", error.message);
+    } finally {
+      setSubmitting(false); // Set submitting state back to false
+    }
+  };
+
   return (
     <div className="flex flex-col items-center bg-servicesbgwhite bg-cover">
       <div className="flex flex-col w-107.5 md:w-200 lg:w-341.5">
@@ -96,14 +135,14 @@ const ServicesContent = ({ onFormChange = () => {} }) => {
                 initialValues={{
                   firstName: "",
                   lastName: "",
-                  email: "",
+                  emailAddress: "",
                   phoneNumber: "",
                   message: "",
                 }}
                 validationSchema={Yup.object({
                   firstName: Yup.string().required("First name is required"),
                   lastName: Yup.string().required("Last name is required"),
-                  email: Yup.string()
+                  emailAddress: Yup.string()
                     .email("Invalid email address")
                     .required("Email Address is required"),
                   phoneNumber: Yup.string()
@@ -114,12 +153,9 @@ const ServicesContent = ({ onFormChange = () => {} }) => {
                     .required("Phone number is required"),
                   message: Yup.string().required("Message is required"),
                 })}
-                onSubmit={(values, { resetForm }) => {
-                  console.log(values); // Handles form submission here
-                  resetForm(); // Clear form after submission
-                }}
+                onSubmit={handleSubmit}
               >
-                {({ values, errors, handleChange }) => (
+                {({ values, errors, handleChange, isSubmitting }) => (
                   <Form className="flex flex-col gap-6 md:gap-8">
                     <div className="grid grid-cols-1 gap-5 md:gap-6">
                       <div className="grid gap-5 md:grid md:grid-cols-2 md:gap-x-6">
@@ -151,14 +187,14 @@ const ServicesContent = ({ onFormChange = () => {} }) => {
                       <InputWithLabel
                         labelName="Email"
                         inputType="email"
-                        inputName="email"
+                        inputName="emailAddress"
                         placeholder="e.g. segun@gmail.com"
-                        inputValue={values.email}
+                        inputValue={values.emailAddress}
                         inputOnChange={(event) => {
                           handleChange(event);
-                          onFormChange({ email: event.target.value });
+                          onFormChange({ emailAddress: event.target.value });
                         }}
-                        InputError={errors.email}
+                        InputError={errors.emailAddress}
                       />
                       <InputWithLabel
                         labelName="Phone Number"
@@ -185,7 +221,10 @@ const ServicesContent = ({ onFormChange = () => {} }) => {
                         InputError={errors.message}
                       />
                     </div>
-                    <OrangeButtonWoutIcon buttonText="Send Message" />
+                    <OrangeButtonWoutIcon
+                      buttonText="Send Message"
+                      disabled={isSubmitting}
+                    />
                   </Form>
                 )}
               </Formik>
