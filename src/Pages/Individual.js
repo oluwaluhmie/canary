@@ -13,6 +13,7 @@ import AcceptTerms from "../Components/AcceptTerms";
 import AcctImageSlider from "../Components/acctImageSlider";
 import AcctTextSlider from "../Components/acctTextSlider";
 import logoweb from "../assets/logoweb.png";
+import axios from "axios";
 
 const Individual = () => {
   const [clickedSteps, setClickedSteps] = useState([]);
@@ -48,44 +49,55 @@ const Individual = () => {
   };
 
   const [formData, setFormData] = useState({
-    accountType: "",
-    title: "",
-    surname: "",
-    firstName: "",
-    middleName: "",
-    passportPhoto: null,
-    dob: "",
-    pob: "",
-    gender: "",
-    email: "",
-    phoneNumber: "",
-    homeAddress: "",
-    lga: "",
-    landmark: "",
-    bvn: "",
-    maritalStatus: "",
-    soo: "",
-    lgaoo: "",
-    occupation: "",
-    moi: "",
-    idNumber: "",
-    issueDate: "",
-    expiryDate: "",
-    ntitle: "",
-    nsurname: "",
-    nfirstName: "",
-    nmiddleName: "",
-    nphoneNumber: "",
-    relationship: "",
-    nemail: "",
-    noccupation: "",
-    signature: null,
-    secondSignature: null,
+    personal: {
+      account_type: "",
+      title: "",
+      surname: "",
+      firstname: "",
+      middle_name: "",
+      passport: null,
+      date_of_birth: "",
+      place_of_birth: "",
+      gender: "",
+      email_address: "",
+      phone_number: "",
+      home_address: "",
+      home_address_lga: "",
+      landmark: "",
+      bvn: "",
+      marital_status: "",
+      origin: "",
+      origin_lga: "",
+    },
+    work: {
+      occupation: "",
+      means_of_identification: "",
+      id_card_number: "",
+      issue_date: "",
+      expiry_date: "",
+    },
+    nextKin: {
+      next_of_kin_title: "",
+      next_of_kin_surname: "",
+      next_of_kin_firstname: "",
+      next_of_kin_middle_name: "",
+      next_of_kin_phone_number: "",
+      next_of_kin_relationship: "",
+      next_of_kin_email: "",
+      next_of_kin_occupation: "",
+    },
+    final: {
+      signature: null,
+      signature_two: null,
+    },
     acceptedTerms: false,
   });
 
-  const handleIndividualFormChange = (data) => {
-    setFormData({ ...formData, ...data });
+  const handleIndividualFormChange = (formName, data) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [formName]: data,
+    }));
   };
 
   const sections = [
@@ -93,30 +105,36 @@ const Individual = () => {
       id: 0,
       component: (
         <Personal
-          formData={formData}
-          onFormChange={handleIndividualFormChange}
+          formData={formData.personal}
+          onFormChange={(data) => handleIndividualFormChange("personal", data)}
         />
       ),
     },
     {
       id: 1,
       component: (
-        <Work formData={formData} onFormChange={handleIndividualFormChange} />
+        <Work
+          formData={formData.work}
+          onFormChange={(data) => handleIndividualFormChange("work", data)}
+        />
       ),
     },
     {
       id: 2,
       component: (
         <NextKin
-          formData={formData}
-          onFormChange={handleIndividualFormChange}
+          formData={formData.nextKin}
+          onFormChange={(data) => handleIndividualFormChange("nextKin", data)}
         />
       ),
     },
     {
       id: 3,
       component: (
-        <Final formData={formData} onFormChange={handleIndividualFormChange} />
+        <Final
+          formData={formData.final}
+          onFormChange={(data) => handleIndividualFormChange("final", data)}
+        />
       ),
     },
   ];
@@ -128,56 +146,131 @@ const Individual = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    // Handle form submission here
-    console.log("Form Data:", formData);
+  const handleSubmit = async () => {
+    // Convert formData to FormData instance
+    const data = new FormData();
+    data.append("accountType", formData.personal.account_type);
+    data.append("title", formData.personal.title);
+    data.append("surname", formData.personal.surname);
+    data.append("firstname", formData.personal.firstname);
+    data.append("middleName", formData.personal.middle_name);
+    data.append("dateOfBirth", formData.personal.date_of_birth);
+    data.append("placeOfBirth", formData.personal.place_of_birth);
+    data.append("gender", formData.personal.gender);
+    data.append("emailAddress", formData.personal.email_address);
+    data.append("phoneNumber", formData.personal.phone_number);
+    data.append("homeAddress", formData.personal.home_address);
+    data.append("homeAddressLga", formData.personal.home_address_lga);
+    data.append("landmark", formData.personal.landmark);
+    data.append("bvn", formData.personal.bvn);
+    data.append("maritalStatus", formData.personal.marital_status);
+    data.append("origin", formData.personal.origin);
+    data.append("originLga", formData.personal.origin_lga);
+    data.append("occupation", formData.work.occupation);
+    data.append("meansOfIdentification", formData.work.means_of_identification);
+    data.append("idCardNumber", formData.work.id_card_number);
+    data.append("issueDate", formData.work.issue_date);
+    data.append("expiryDate", formData.work.expiry_date);
+    data.append("nextOfKinTitle", formData.nextKin.next_of_kin_title);
+    data.append("nextOfKinSurname", formData.nextKin.next_of_kin_surname);
+    data.append("nextOfKinFirstname", formData.nextKin.next_of_kin_firstname);
+    data.append(
+      "nextOfKinMiddlename",
+      formData.nextKin.next_of_kin_middle_name
+    );
+    data.append(
+      "nextOfKinPhoneNumber",
+      formData.nextKin.next_of_kin_phone_number
+    );
+    data.append(
+      "nextOfKinRelationship",
+      formData.nextKin.next_of_kin_relationship
+    );
+    data.append("nextOfKinEmailAddress", formData.nextKin.next_of_kin_email);
+    data.append("nextOfKinOccupation", formData.nextKin.next_of_kin_occupation);
 
-    // Reset all form fields to initial values except acceptedTerms
-    setFormData({
-      accountType: "",
-      title: "",
-      surname: "",
-      firstName: "",
-      middleName: "",
-      passportPhoto: null,
-      dob: "",
-      pob: "",
-      gender: "",
-      email: "",
-      phoneNumber: "",
-      homeAddress: "",
-      lga: "",
-      landmark: "",
-      bvn: "",
-      maritalStatus: "",
-      soo: "",
-      lgaoo: "",
-      occupation: "",
-      moi: "",
-      idNumber: "",
-      issueDate: "",
-      expiryDate: "",
-      ntitle: "",
-      nsurname: "",
-      nfirstName: "",
-      nmiddleName: "",
-      nphoneNumber: "",
-      relationship: "",
-      nemail: "",
-      noccupation: "",
-      signature: null,
-      secondSignature: null,
-      acceptedTerms: formData.acceptedTerms, // Keep the acceptedTerms value
-    });
+    // Append file inputs if they exist
+    if (formData.personal.passport) {
+      data.append("passport", formData.personal.passport);
+    }
+    if (formData.final.signature) {
+      data.append("signature", formData.final.signature);
+    }
+    if (formData.final.signature_two) {
+      data.append("signatureTwo", formData.final.signature_two);
+    }
 
-    // Clear clickedSteps state
-    setClickedSteps([]);
+    // Send form data to the API
+    try {
+      const response = await axios.post(
+        "https://api.canaryfinance.canarypointfcl.com/v1/api/create_individual_account",
+        data,
+        {
+          headers: {
+            "x-api-key": "22062024",
+            "Content-Type": "multipart/form-data",
+          },
+          maxBodyLength: Infinity,
+        }
+      );
 
-    // Show alert
-    alert("Form submitted successfully!");
+      console.log("Form submitted successfully:", response.data);
 
-    // Set active section back to the first section
-    setActiveSection(0);
+      // Reset all form fields to initial values except acceptedTerms
+      setFormData({
+        personal: {
+          account_type: "",
+          title: "",
+          surname: "",
+          firstname: "",
+          middle_name: "",
+          passport: null,
+          date_of_birth: "",
+          place_of_birth: "",
+          gender: "",
+          email_address: "",
+          phone_number: "",
+          home_address: "",
+          home_address_lga: "",
+          landmark: "",
+          bvn: "",
+          marital_status: "",
+          origin: "",
+          origin_lga: "",
+        },
+        work: {
+          occupation: "",
+          means_of_identification: "",
+          id_card_number: "",
+          issue_date: "",
+          expiry_date: "",
+        },
+        nextKin: {
+          next_of_kin_title: "",
+          next_of_kin_surname: "",
+          next_of_kin_firstname: "",
+          next_of_kin_middle_name: "",
+          next_of_kin_phone_number: "",
+          next_of_kin_relationship: "",
+          next_of_kin_email: "",
+          next_of_kin_occupation: "",
+        },
+        final: {
+          signature: null,
+          signature_two: null,
+        },
+        acceptedTerms: formData.acceptedTerms, // Keep the acceptedTerms value
+      });
+
+      // Clear clickedSteps state
+      setClickedSteps([]);
+
+      // Navigate back to the first section
+      setActiveSection(0);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form. Please try again.");
+    }
   };
 
   return (
@@ -322,9 +415,8 @@ const Individual = () => {
                   )}
                   {activeSection === sections.length - 1 && (
                     <AcceptTerms
-                      formData={formData}
-                      checked={formData.acceptedTerms}
-                      onChange={handleCheckboxChange} // Pass the handleCheckboxChange function
+                      acceptedTerms={formData.acceptedTerms}
+                      onChange={handleCheckboxChange}
                     />
                   )}
                 </div>

@@ -5,12 +5,12 @@ import InputWithLabel from "../../../Components/inputWithLabel";
 import InputWithDropdown from "../../../Components/InputWithDropdown";
 
 const Work = ({ formData, onFormChange }) => {
-  const moi = [
-    { value: "international passport", label: "International Passport" },
-    { value: "driver's license", label: "Driver's License" },
-    { value: "voter's card", label: "Voter's Card" },
-    { value: "national ID", label: "National ID" },
-    { value: "nin", label: "NIN" },
+  const means_of_identification = [
+    { value: "International Passport", label: "International Passport" },
+    { value: "Driver's License", label: "Driver's License" },
+    { value: "Voter's Card", label: "Voter's Card" },
+    { value: "National ID", label: "National ID" },
+    { value: "NIN", label: "NIN" },
   ];
 
   return (
@@ -19,15 +19,15 @@ const Work = ({ formData, onFormChange }) => {
         initialValues={formData}
         validationSchema={Yup.object({
           occupation: Yup.string().required("Occupation is required"),
-          moi: Yup.string().required("Select an option"),
-          idNumber: Yup.string().required("ID Card Number is required"),
-          issueDate: Yup.date()
+          means_of_identification: Yup.string().required("Select an option"),
+          id_card_number: Yup.string().required("ID Card Number is required"),
+          issue_date: Yup.date()
             .required("Issue Date is required")
             .max(new Date(), "Issue Date cannot be in the future"),
-          expiryDate: Yup.date()
+          expiry_date: Yup.date()
             .required("Expiry Date is required")
             .min(
-              Yup.ref("issueDate"),
+              Yup.ref("issue_date"),
               "Expiry Date cannot be before Issue Date"
             )
             .test(
@@ -41,10 +41,11 @@ const Work = ({ formData, onFormChange }) => {
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values); // Handles form submission here
+          onFormChange(values); // Send updated form data to parent component
           resetForm(); // Clear form after submission
         }}
       >
-        {({ values, errors, setFieldValue, touched, handleChange }) => (
+        {({ values, errors, touched, handleChange }) => (
           <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
               <InputWithLabel
@@ -55,61 +56,73 @@ const Work = ({ formData, onFormChange }) => {
                 inputValue={values.occupation}
                 inputOnChange={(event) => {
                   handleChange(event);
-                  onFormChange({ occupation: event.target.value });
+                  onFormChange({ ...values, occupation: event.target.value });
                 }}
-                inputError={errors.occupation}
+                inputError={touched.occupation && errors.occupation}
               />
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithDropdown
                   labelName="Means of Identification"
-                  options={moi}
-                  selectedValue={values.moi}
+                  options={means_of_identification}
+                  selectedValue={values.means_of_identification}
                   onChange={(event) => {
                     handleChange({
                       target: {
-                        name: "moi",
+                        name: "means_of_identification",
                         value: event.target.value,
                       },
                     });
-                    onFormChange({ moi: event.target.value });
+                    onFormChange({
+                      ...values,
+                      means_of_identification: event.target.value,
+                    });
                   }}
-                  inputError={errors.moi}
+                  inputError={
+                    touched.means_of_identification &&
+                    errors.means_of_identification
+                  }
                 />
                 <InputWithLabel
                   labelName="ID Card Number"
                   inputType="text"
-                  inputName="idNumber"
+                  inputName="id_card_number"
                   placeholder="Enter your ID Card Number"
-                  inputValue={values.idNumber}
+                  inputValue={values.id_card_number}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ idNumber: event.target.value });
+                    onFormChange({
+                      ...values,
+                      id_card_number: event.target.value,
+                    });
                   }}
-                  inputError={errors.idNumber}
+                  inputError={touched.id_card_number && errors.id_card_number}
                 />
               </div>
               <div className="grid grid-cols-2 gap-5">
                 <InputWithLabel
                   labelName="Issue Date"
                   inputType="date"
-                  inputName="issueDate"
-                  inputValue={values.issueDate}
+                  inputName="issue_date"
+                  inputValue={values.issue_date}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ issueDate: event.target.value });
+                    onFormChange({ ...values, issue_date: event.target.value });
                   }}
-                  inputError={errors.issueDate}
+                  inputError={touched.issue_date && errors.issue_date}
                 />
                 <InputWithLabel
                   labelName="Expiry Date"
                   inputType="date"
-                  inputName="expiryDate"
-                  inputValue={values.expiryDate}
+                  inputName="expiry_date"
+                  inputValue={values.expiry_date}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ expiryDate: event.target.value });
+                    onFormChange({
+                      ...values,
+                      expiry_date: event.target.value,
+                    });
                   }}
-                  inputError={errors.expiryDate}
+                  inputError={touched.expiry_date && errors.expiry_date}
                 />
               </div>
             </div>

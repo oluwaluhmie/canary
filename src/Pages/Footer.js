@@ -29,10 +29,8 @@ const Footer = () => {
           },
         }
       );
-      console.log("Subscription successful:", response.data);
       setEmail(""); // Clear the email input after successful subscription
     } catch (error) {
-      console.error("Error subscribing:", error);
       setError("Failed to subscribe. Please try again later.");
     }
   };

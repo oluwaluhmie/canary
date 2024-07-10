@@ -5,8 +5,10 @@ const FileInput = ({ labelName, onChange, inputError }) => {
     <div className="flex flex-col gap-1.5">
       <span className="text-mobileMenuColor text-base">{labelName}</span>
       <input
+        id="fileInput"
+        name="fileInput"
         type="file"
-        accept="image/*"
+        accept=".jpg, .jpeg, .png"
         onChange={onChange}
         className="h-11 border border-textboxBorder text-searchBoxText px-3 py-2 self-stretch"
       />
