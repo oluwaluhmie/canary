@@ -55,7 +55,7 @@ function App() {
         <Route path="/corporatecomplete" element={<Ccomplete />} />
         <Route path="/individual-account" element={<Individual />} />
         <Route path="/corporate-account" element={<Corporate />} />
-        <Route path="/accesscontrol" element={<Admin />} />
+        <Route path="/accesscontrol/*" element={<Admin />} />
         <Route path="/adminaccess/*" element={<CentralAdmin />} />
         <Route path="/subscriptions" element={<SubscriptionList />} />
         <Route path="/contactus" element={<ContactList />} />

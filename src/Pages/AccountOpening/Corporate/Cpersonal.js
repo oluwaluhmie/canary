@@ -7,17 +7,17 @@ import FileInput from "../../../Components/FileInput";
 
 const Cpersonal = ({ formData, onFormChange }) => {
   const title = [
-    { value: "miss", label: "Miss." },
-    { value: "mr", label: "Mr." },
-    { value: "mrs", label: "Mrs." },
+    { value: "Miss", label: "Miss." },
+    { value: "Mr", label: "Mr." },
+    { value: "Mrs", label: "Mrs." },
   ];
 
-  const meansofID = [
-    { value: "international passport", label: "International Passport" },
-    { value: "driver's license", label: "Driver's License" },
-    { value: "voter's card", label: "Voter's Card" },
-    { value: "national ID", label: "National ID" },
-    { value: "nin", label: "NIN" },
+  const means_of_identification = [
+    { value: "International Passport", label: "International Passport" },
+    { value: "Driver's License", label: "Driver's License" },
+    { value: "Voter's Card", label: "Voter's Card" },
+    { value: "National ID", label: "National ID" },
+    { value: "NIN", label: "NIN" },
   ];
 
   return (
@@ -27,9 +27,9 @@ const Cpersonal = ({ formData, onFormChange }) => {
         validationSchema={Yup.object({
           title: Yup.string().required("Select an option"),
           surname: Yup.string().required("Surname is required"),
-          firstName: Yup.string().required("First name is required"),
-          middleName: Yup.string().required("Middle name is required"),
-          passportPhoto: Yup.mixed()
+          firstname: Yup.string().required("First name is required"),
+          middle_name: Yup.string().required("Middle name is required"),
+          passport: Yup.mixed()
             .required("A passport photo is required")
             .test(
               "fileSize",
@@ -42,7 +42,7 @@ const Cpersonal = ({ formData, onFormChange }) => {
               (value) =>
                 value && ["image/jpeg", "image/png"].includes(value.type)
             ),
-          dob: Yup.date()
+          date_of_birth: Yup.date()
             .required("Date of birth is required")
             .max(new Date(), "Date of birth cannot be in the future")
             .test(
@@ -58,25 +58,29 @@ const Cpersonal = ({ formData, onFormChange }) => {
                 return value <= minimumDate;
               }
             ),
-          pob: Yup.string().required("Place of Birth is required"),
-          email: Yup.string()
+          place_of_birth: Yup.string().required("Place of Birth is required"),
+          email_address: Yup.string()
             .email("Invalid email address")
             .required("Email Address is required"),
-          phoneNumber: Yup.string()
+          phone_number: Yup.string()
             .matches(/^\d{11}$/, "Phone number must be exactly 11 digits")
             .required("Phone number is required"),
-          homeAddress: Yup.string().required("Home Address is required"),
-          lga: Yup.string().required("Local Government is required"),
+          home_address: Yup.string().required("Home Address is required"),
+          home_address_lga: Yup.string().required(
+            "Local Government is required"
+          ),
           landmark: Yup.string().required("Landmark is required"),
           bvn: Yup.string()
             .matches(/^\d{11}$/, "BVN must be exactly 11 digits")
             .required("BVN is required"),
-          meansofID: Yup.string().required("Means of Identification is required"),
-          idNumber: Yup.string().required("ID number is required"),
-          issueDate: Yup.date()
+          means_of_identification: Yup.string().required(
+            "Means of Identification is required"
+          ),
+          id_card_number: Yup.string().required("ID number is required"),
+          issue_date: Yup.date()
             .required("Issue Date is required")
             .max(new Date(), "Issue Date cannot be in the future"),
-          expiryDate: Yup.date()
+          expiry_date: Yup.date()
             .required("Expiry Date is required")
             .min(
               Yup.ref("issueDate"),
@@ -93,6 +97,7 @@ const Cpersonal = ({ formData, onFormChange }) => {
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values); // Handles form submission here
+          onFormChange(values); // Send updated form data to parent component
           resetForm(); // Clear form after submission
         }}
       >
@@ -111,7 +116,7 @@ const Cpersonal = ({ formData, onFormChange }) => {
                         value: event.target.value,
                       },
                     });
-                    onFormChange({ title: event.target.value });
+                    onFormChange({ ...values, title: event.target.value });
                   }}
                   inputError={errors.title}
                 />
@@ -123,7 +128,7 @@ const Cpersonal = ({ formData, onFormChange }) => {
                   inputValue={values.surname}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ surname: event.target.value });
+                    onFormChange({ ...values, surname: event.target.value });
                   }}
                   inputError={errors.surname}
                 />
@@ -132,110 +137,132 @@ const Cpersonal = ({ formData, onFormChange }) => {
                 <InputWithLabel
                   labelName="First Name"
                   inputType="text"
-                  inputName="firstName"
+                  inputName="firstname"
                   placeholder="Enter your first name"
-                  inputValue={values.firstName}
+                  inputValue={values.firstname}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ firstName: event.target.value });
+                    onFormChange({ ...values, firstname: event.target.value });
                   }}
-                  inputError={errors.firstName}
+                  inputError={errors.firstname}
                 />
                 <InputWithLabel
                   labelName="Middle Name"
                   inputType="text"
-                  inputName="middleName"
+                  inputName="middle_name"
                   placeholder="Enter your middle name"
-                  inputValue={values.middleName}
+                  inputValue={values.middle_name}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ middleName: event.target.value });
+                    onFormChange({
+                      ...values,
+                      middle_name: event.target.value,
+                    });
                   }}
-                  inputError={errors.middleName}
+                  inputError={errors.middle_name}
                 />
               </div>
               <FileInput
                 labelName="Upload Passport Photograph"
                 onChange={(event) => {
-                  setFieldValue("passportPhoto", event.currentTarget.files[0]);
+                  setFieldValue("passport", event.currentTarget.files[0]);
+                  onFormChange({
+                    ...values,
+                    passport: event.currentTarget.files[0],
+                  });
                 }}
-                inputError={touched.passportPhoto && errors.passportPhoto}
+                inputError={touched.passport && errors.passport}
               />
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithLabel
                   labelName="Date of Birth"
                   inputType="date"
-                  inputName="dob"
-                  inputValue={values.dob}
+                  inputName="date_of_birth"
+                  inputValue={values.date_of_birth}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ dob: event.target.value });
+                    onFormChange({
+                      ...values,
+                      date_of_birth: event.target.value,
+                    });
                   }}
-                  inputError={errors.dob}
+                  inputError={errors.date_of_birth}
                 />
                 <InputWithLabel
                   labelName="Place of Birth"
                   inputType="text"
-                  inputName="pob"
+                  inputName="place_of_birth"
                   placeholder="Enter place of birth"
-                  inputValue={values.pob}
+                  inputValue={values.place_of_birth}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ pob: event.target.value });
+                    onFormChange({
+                      ...values,
+                      place_of_birth: event.target.value,
+                    });
                   }}
-                  inputError={errors.pob}
+                  inputError={errors.place_of_birth}
                 />
               </div>
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithLabel
                   labelName="Email Address"
                   inputType="email"
-                  inputName="pemail"
+                  inputName="email_address"
                   placeholder="e.g. segun@gmail.com"
-                  inputValue={values.pemail}
+                  inputValue={values.email_address}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ pemail: event.target.value });
+                    onFormChange({
+                      ...values,
+                      email_address: event.target.value,
+                    });
                   }}
-                  inputError={errors.pemail}
+                  inputError={errors.email_address}
                 />
                 <InputWithLabel
                   labelName="Phone Number"
                   inputType="text"
-                  inputName="phoneNumber"
+                  inputName="phone_number"
                   placeholder="+234 (806) 000-0000"
-                  inputValue={values.phoneNumber}
+                  inputValue={values.phone_number}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ phoneNumber: event.target.value });
+                    onFormChange({
+                      ...values,
+                      phone_number: event.target.value,
+                    });
                   }}
-                  inputError={errors.phoneNumber}
+                  inputError={errors.phone_number}
                 />
               </div>
               <InputWithLabel
                 labelName="Home Address"
                 inputType="text"
-                inputName="homeAddress"
+                inputName="home_address"
                 placeholder="Enter your address here"
-                inputValue={values.homeAddress}
+                inputValue={values.home_address}
                 inputOnChange={(event) => {
                   handleChange(event);
-                  onFormChange({ homeAddress: event.target.value });
+                  onFormChange({ ...values, home_address: event.target.value });
                 }}
-                inputError={errors.homeAddress}
+                inputError={errors.home_address}
               />
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithLabel
                   labelName="LGA"
                   inputType="text"
-                  inputName="lga"
+                  inputName="home_address_lga"
                   placeholder="Enter your local government area"
-                  inputValue={values.lga}
+                  inputValue={values.home_address_lga}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ lga: event.target.value });
+                    onFormChange({
+                      ...values,
+                      home_address_lga: event.target.value,
+                    });
                   }}
-                  inputError={errors.lga}
+                  inputError={errors.home_address_lga}
                 />
                 <InputWithLabel
                   labelName="Landmark"
@@ -245,7 +272,7 @@ const Cpersonal = ({ formData, onFormChange }) => {
                   inputValue={values.landmark}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ landmark: event.target.value });
+                    onFormChange({ ...values, landmark: event.target.value });
                   }}
                   inputError={errors.landmark}
                 />
@@ -258,61 +285,70 @@ const Cpersonal = ({ formData, onFormChange }) => {
                 inputValue={values.bvn}
                 inputOnChange={(event) => {
                   handleChange(event);
-                  onFormChange({ bvn: event.target.value });
+                  onFormChange({ ...values, bvn: event.target.value });
                 }}
                 inputError={errors.bvn}
               />
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithDropdown
                   labelName="Means of Identification"
-                  options={meansofID}
-                  selectedValue={values.meansofID}
+                  options={means_of_identification}
+                  selectedValue={values.means_of_identification}
                   onChange={(event) => {
                     handleChange({
                       target: {
-                        name: "meansofID",
+                        name: "means_of_identification",
                         value: event.target.value,
                       },
                     });
-                    onFormChange({ meansofID: event.target.value });
+                    onFormChange({
+                      ...values,
+                      means_of_identification: event.target.value,
+                    });
                   }}
-                  inputError={errors.meansofID}
+                  inputError={errors.means_of_identification}
                 />
                 <InputWithLabel
                   labelName="ID Card Number"
                   inputType="text"
-                  inputName="idNumber"
+                  inputName="id_card_number"
                   placeholder="Enter your ID Card Number"
-                  inputValue={values.idNumber}
+                  inputValue={values.id_card_number}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ idNumber: event.target.value });
+                    onFormChange({
+                      ...values,
+                      id_card_number: event.target.value,
+                    });
                   }}
-                  inputError={errors.idNumber}
+                  inputError={errors.id_card_number}
                 />
               </div>
               <div className="grid grid-cols-2 gap-5">
                 <InputWithLabel
                   labelName="Issue Date"
                   inputType="date"
-                  inputName="issueDate"
-                  inputValue={values.issueDate}
+                  inputName="issue_date"
+                  inputValue={values.issue_date}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ issueDate: event.target.value });
+                    onFormChange({ ...values, issue_date: event.target.value });
                   }}
-                  inputError={errors.issueDate}
+                  inputError={errors.issue_date}
                 />
                 <InputWithLabel
                   labelName="Expiry Date"
                   inputType="date"
-                  inputName="expiryDate"
-                  inputValue={values.expiryDate}
+                  inputName="expiry_date"
+                  inputValue={values.expiry_date}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ expiryDate: event.target.value });
+                    onFormChange({
+                      ...values,
+                      expiry_date: event.target.value,
+                    });
                   }}
-                  inputError={errors.expiryDate}
+                  inputError={errors.expiry_date}
                 />
               </div>
             </div>

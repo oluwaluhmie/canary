@@ -1,13 +1,49 @@
 import React from "react";
+import axios from "axios";
 import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import InputWithLabel from "../Components/inputWithLabel";
 import ArrowRight from "../assets/arrowrighttwo.svg";
-import AdminOrangeButton from "../Components/AdminOrangeButton";
 
 const Admin = ({ onFormChange = () => {} }) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (values, { resetForm }) => {
+    const data = JSON.stringify({
+      emailAddress: values.email,
+      password: values.password,
+    });
+
+    const config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "https://api.canaryfinance.canarypointfcl.com/v1/api/admin_login",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": "22062024",
+      },
+      data: data,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        console.log("Login Response: ", JSON.stringify(response.data));
+        const userDetails = response.data.user_detail;
+        console.log("User Details: ", userDetails);
+        // Navigate to /adminaccess after successful login with user details
+        navigate("/adminaccess", { state: { userDetails } });
+      })
+      .catch((error) => {
+        console.log("Login Error: ", error);
+        // Handle login error, show an error message to the user
+      });
+
+    resetForm(); // Clear form after submission
+  };
+
   return (
     <div className="flex flex-col items-center bg-adminbg bg-contain">
       {/* Header */}
@@ -47,10 +83,7 @@ const Admin = ({ onFormChange = () => {} }) => {
                   .min(4, "Password must be at least 4 characters")
                   .required("Password is required"),
               })}
-              onSubmit={(values, { resetForm }) => {
-                console.log(values); // Handles form submission here
-                resetForm(); // Clear form after submission
-              }}
+              onSubmit={handleSubmit}
             >
               {({ values, errors, handleChange }) => (
                 <Form className="flex flex-col">
@@ -80,18 +113,18 @@ const Admin = ({ onFormChange = () => {} }) => {
                       InputError={errors.password}
                     />
                   </div>
+                  <div className="flex flex-col items-end mt-4">
+                    <button
+                      type="submit"
+                      className="flex items-center justify-center text-base border-2 border-menuHover text-white bg-gradient-to-b from-buttonGradient-start to-buttonGradient-end w-35.25 gap-2 h-12 hover:bg-gradient-to-b hover:from-orangeButton-start hover:to-orangeButton-end"
+                    >
+                      Next
+                      <img src={ArrowRight} alt="arrowright" />
+                    </button>
+                  </div>
                 </Form>
               )}
             </Formik>
-          </div>
-          <div className="flex flex-col items-end">
-            <Link to="/adminaccess">
-              <AdminOrangeButton
-                buttonText="Next"
-                imgSrc={ArrowRight}
-                alt="arrowright"
-              />
-            </Link>
           </div>
         </div>
       </div>

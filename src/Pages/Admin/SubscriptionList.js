@@ -47,7 +47,7 @@ const SubscriptionList = () => {
       body: rows,
       startY: 20,
     });
-    doc.save("subscription_list.pdf");
+    doc.save("Subscription_list.pdf");
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;

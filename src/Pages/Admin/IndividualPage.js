@@ -5,7 +5,7 @@ import arrowleft from "../../assets/arrowleft.svg";
 import jsPDF from "jspdf";
 
 const IndividualPage = () => {
-  const { id: individualId } = useParams(); 
+  const { id: individualId } = useParams();
   const [individual, setIndividual] = useState(null);
 
   useEffect(() => {
@@ -44,124 +44,156 @@ const IndividualPage = () => {
       const doc = new jsPDF();
       const lineHeight = 10;
 
+      // Function to add bold text
+      const addBoldText = (text, x, y) => {
+        doc.setFont("times", "bold");
+        doc.setFontSize(12);
+        doc.text(text, x, y);
+        doc.setFont("times", "normal"); // Reset font to normal
+      };
+
       doc.text(`Individual Account Form`, 10, lineHeight);
-      doc.setFont("times", "normal");
-      doc.setFontSize(12);
+
+      // Personal Information
+      addBoldText("Personal Information", 10, lineHeight + 10);
       doc.text(
         `Type of Account: ${individual.account_type}`,
         10,
-        lineHeight + 10
-      );
-      doc.text(`Title: ${individual.title}`, 10, lineHeight + 20);
-      doc.text(`Last Name: ${individual.surname}`, 10, lineHeight + 30);
-      doc.text(`First Name: ${individual.firstname}`, 10, lineHeight + 40);
-      doc.text(`Middle Name: ${individual.middle_name}`, 10, lineHeight + 50);
-      doc.text(
-        doc.splitTextToSize(`Passport: ${individual.passport}`, 180),
-        10,
-        lineHeight + 60
-      );
-      doc.text(
-        `Date of Birth: ${individual.date_of_birth}`,
-        10,
-        lineHeight + 75
-      );
-      doc.text(
-        `Place of Birth: ${individual.place_of_birth}`,
-        10,
-        lineHeight + 85
-      );
-      doc.text(`Gender: ${individual.gender}`, 10, lineHeight + 95);
-      doc.text(
-        `Email Address: ${individual.email_address}`,
-        10,
-        lineHeight + 105
-      );
-      doc.text(
-        `Phone Number: ${individual.phone_number}`,
-        10,
-        lineHeight + 115
-      );
-      doc.text(
-        `Home Address: ${individual.home_address}`,
-        10,
-        lineHeight + 125
-      );
-      doc.text(`LGA: ${individual.home_address_lga}`, 10, lineHeight + 135);
-      doc.text(`Landmark: ${individual.landmark}`, 10, lineHeight + 145);
-      doc.text(`BVN: ${individual.bvn}`, 10, lineHeight + 155);
-      doc.text(
-        `Marital Status: ${individual.marital_status}`,
-        10,
-        lineHeight + 165
-      );
-      doc.text(`State of Origin: ${individual.origin}`, 10, lineHeight + 175);
-      doc.text(`LGA of Origin: ${individual.origin_lga}`, 10, lineHeight + 185);
-      doc.text(`Occupation: ${individual.occupation}`, 10, lineHeight + 195);
-      doc.text(
-        `Means of Identification: ${individual.means_of_identification}`,
-        10,
-        lineHeight + 205
-      );
-      doc.text(
-        `ID Card Number: ${individual.id_card_number}`,
-        10,
-        lineHeight + 215
-      );
-      doc.text(`Issue Date: ${individual.issue_date}`, 10, lineHeight + 225);
-      doc.text(`Expiry Date: ${individual.expiry_date}`, 10, lineHeight + 235);
-
-      doc.addPage();
-      doc.text(
-        `Next of Kin Title: ${individual.next_of_kin_title}`,
-        10,
-        lineHeight + 10
-      );
-      doc.text(
-        `Next of Kin Last Name: ${individual.next_of_kin_surname}`,
-        10,
         lineHeight + 20
       );
+      doc.text(`Title: ${individual.title}`, 10, lineHeight + 30);
+      doc.text(`Last Name: ${individual.surname}`, 10, lineHeight + 40);
+      doc.text(`First Name: ${individual.firstname}`, 10, lineHeight + 50);
+      doc.text(`Middle Name: ${individual.middle_name}`, 10, lineHeight + 60);
+      doc.text(`Passport: `, 10, lineHeight + 70);
+
+      // Create a clickable link for the passport image
+      doc.setTextColor(88, 116, 183);
+      doc.textWithLink("Click here to view passport", 30, lineHeight + 70, {
+        url: individual.passport,
+      });
+      doc.setTextColor(0, 0, 0); // Reset color to black
+
       doc.text(
-        `Next of Kin First Name: ${individual.next_of_kin_firstname}`,
-        10,
-        lineHeight + 30
-      );
-      doc.text(
-        `Next of Kin Middle Name: ${individual.next_of_kin_middle_name}`,
-        10,
-        lineHeight + 40
-      );
-      doc.text(
-        `Next of Kin Phone Number: ${individual.next_of_kin_phone_number}`,
-        10,
-        lineHeight + 50
-      );
-      doc.text(
-        `Next of Kin Relationship: ${individual.next_of_kin_relationship}`,
-        10,
-        lineHeight + 60
-      );
-      doc.text(
-        `Next of Kin Email Address: ${individual.next_of_kin_email}`,
-        10,
-        lineHeight + 70
-      );
-      doc.text(
-        `Next of Kin Occupation: ${individual.next_of_kin_occupation}`,
+        `Date of Birth: ${individual.date_of_birth}`,
         10,
         lineHeight + 80
       );
       doc.text(
-        doc.splitTextToSize(`Signature: ${individual.signature}`, 180),
+        `Place of Birth: ${individual.place_of_birth}`,
         10,
         lineHeight + 90
       );
+      doc.text(`Gender: ${individual.gender}`, 10, lineHeight + 100);
       doc.text(
-        doc.splitTextToSize(`Joint Account Signature: ${individual.signature_two}`, 180),
+        `Email Address: ${individual.email_address}`,
         10,
-        lineHeight + 105
+        lineHeight + 110
       );
+      doc.text(
+        `Phone Number: ${individual.phone_number}`,
+        10,
+        lineHeight + 120
+      );
+      doc.text(
+        `Home Address: ${individual.home_address}`,
+        10,
+        lineHeight + 130
+      );
+      doc.text(`LGA: ${individual.home_address_lga}`, 10, lineHeight + 140);
+      doc.text(`Landmark: ${individual.landmark}`, 10, lineHeight + 150);
+      doc.text(`BVN: ${individual.bvn}`, 10, lineHeight + 160);
+      doc.text(
+        `Marital Status: ${individual.marital_status}`,
+        10,
+        lineHeight + 170
+      );
+      doc.text(`State of Origin: ${individual.origin}`, 10, lineHeight + 180);
+      doc.text(`LGA of Origin: ${individual.origin_lga}`, 10, lineHeight + 190);
+
+      // Work Information
+      addBoldText("Work Information", 10, lineHeight + 200);
+      doc.text(`Occupation: ${individual.occupation}`, 10, lineHeight + 210);
+      doc.text(
+        `Means of Identification: ${individual.means_of_identification}`,
+        10,
+        lineHeight + 220
+      );
+      doc.text(
+        `ID Card Number: ${individual.id_card_number}`,
+        10,
+        lineHeight + 230
+      );
+      doc.text(`Issue Date: ${individual.issue_date}`, 10, lineHeight + 240);
+      doc.text(`Expiry Date: ${individual.expiry_date}`, 10, lineHeight + 250);
+
+      doc.addPage();
+      doc.text(`Individual Account Form - 1`, 10, lineHeight);
+
+      // Next of Kin Information
+      addBoldText("Next of Kin Information", 10, lineHeight + 10);
+      doc.text(
+        `Next of Kin Title: ${individual.next_of_kin_title}`,
+        10,
+        lineHeight + 20
+      );
+      doc.text(
+        `Next of Kin Last Name: ${individual.next_of_kin_surname}`,
+        10,
+        lineHeight + 30
+      );
+      doc.text(
+        `Next of Kin First Name: ${individual.next_of_kin_firstname}`,
+        10,
+        lineHeight + 40
+      );
+      doc.text(
+        `Next of Kin Middle Name: ${individual.next_of_kin_middle_name}`,
+        10,
+        lineHeight + 50
+      );
+      doc.text(
+        `Next of Kin Phone Number: ${individual.next_of_kin_phone_number}`,
+        10,
+        lineHeight + 60
+      );
+      doc.text(
+        `Next of Kin Relationship: ${individual.next_of_kin_relationship}`,
+        10,
+        lineHeight + 70
+      );
+      doc.text(
+        `Next of Kin Email Address: ${individual.next_of_kin_email}`,
+        10,
+        lineHeight + 80
+      );
+      doc.text(
+        `Next of Kin Occupation: ${individual.next_of_kin_occupation}`,
+        10,
+        lineHeight + 90
+      );
+
+      // Final Information
+      addBoldText("Final Information", 10, lineHeight + 100);
+
+      doc.text(`Signature: `, 10, lineHeight + 110);
+      // Create a clickable link for the signature image
+      doc.setTextColor(88, 116, 183);
+      doc.textWithLink("Click here to view signature", 30, lineHeight + 110, {
+        url: individual.signature,
+      });
+      doc.setTextColor(0, 0, 0); // Reset color to black
+
+      doc.text(`Joint Account Signature: `, 10, lineHeight + 120);
+      // Create a clickable link for the joint account signature image
+      doc.setTextColor(88, 116, 183);
+      doc.textWithLink(
+        "Click here to view joint account signature",
+        55,
+        lineHeight + 120,
+        { url: individual.signature_two }
+      );
+      doc.setTextColor(0, 0, 0); // Reset color to black
 
       doc.save(
         `Individual_Account_${individual.surname}_${individual.firstname}.pdf`
@@ -260,7 +292,11 @@ const IndividualPage = () => {
                   <div className="w-80">
                     <p className="text-footerText">Passport Photograph:</p>
                     <p className="text-mobileMenuColor text-sm">
-                      {individual.passport}
+                      <img
+                        src={individual.passport}
+                        alt="individual-passport"
+                        className="w-24 h-24"
+                      />
                     </p>
                   </div>
                 </div>
@@ -484,17 +520,25 @@ const IndividualPage = () => {
                 </p>
               </div>
               <div className="flex flex-col px-8 py-6 gap-8 bg-white">
-                <div className="flex gap-6">
-                  <div className="w-1/2">
-                    <p className="text-footerText">Signature:</p>
+                <div className="flex gap-6 justify-between">
+                  <div className="w-full">
+                    <p className="text-footerText">Signatory One Signature:</p>
                     <p className="text-mobileMenuColor">
-                      {individual.signature}
+                      <img
+                        src={individual.signature}
+                        alt="individual-signature"
+                        className="w-24 h-24"
+                      />
                     </p>
                   </div>
-                  <div className="w-1/2">
-                    <p className="text-footerText">Joint Account Signature</p>
-                    <p className="text-mobileMenuColor">
-                      {individual.signature_two}
+                  <div className="w-full">
+                    <p className="text-footerText">Signatory Two Signature:</p>
+                    <p className="text-mobileMenuColor text-sm">
+                      <img
+                        src={individual.signature_two}
+                        alt="individual-signature-two"
+                        className="w-24 h-24"
+                      />
                     </p>
                   </div>
                 </div>

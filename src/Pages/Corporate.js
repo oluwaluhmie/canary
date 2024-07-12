@@ -13,6 +13,7 @@ import AcctImageSlider from "../Components/acctImageSlider";
 import AcctTextSlider from "../Components/acctTextSlider";
 import logoweb from "../assets/logoweb.png";
 import Csignatory from "./AccountOpening/Corporate/Csignatory";
+import axios from "axios";
 
 const Corporate = () => {
   const [clickedSteps, setClickedSteps] = useState([]);
@@ -48,54 +49,66 @@ const Corporate = () => {
   };
 
   const [formData, setFormData] = useState({
-    caccountType: "",
-    institutionType: "",
-    organization: "",
-    businessNo: "",
-    taxNo: "",
-    businessAddress: "",
-    email: "",
-    webAddress: "",
-    title: "",
-    surname: "",
-    firstName: "",
-    middleName: "",
-    passportPhoto: null,
-    dob: "",
-    pob: "",
-    pemail: "",
-    phoneNumber: "",
-    homeAddress: "",
-    lga: "",
-    landmark: "",
-    bvn: "",
-    meansofID: "",
-    idNumber: "",
-    issueDate: "",
-    expiryDate: "",
-    stitle: "",
-    ssurname: "",
-    sfirstName: "",
-    smiddleName: "",
-    spassportPhoto: null,
-    sdob: "",
-    spob: "",
-    semail: "",
-    sphoneNumber: "",
-    shomeAddress: "",
-    slga: "",
-    slandmark: "",
-    sbvn: "",
-    smeansofID: "",
-    sidNumber: "",
-    sissueDate: "",
-    sexpiryDate: "",
-    signature: null,
-    secondSignature: null,
+    Caccount: {
+      account_type: "",
+      institution_type: "",
+      organization_name: "",
+      business_reg_number: "",
+      tax_id_number: "",
+      business_address: "",
+      business_email_address: "",
+      web_address: "",
+    },
+    Cpersonal: {
+      title: "",
+      surname: "",
+      firstname: "",
+      middle_name: "",
+      passport: null,
+      date_of_birth: "",
+      place_of_birth: "",
+      email_address: "",
+      phone_number: "",
+      home_address: "",
+      home_address_lga: "",
+      landmark: "",
+      bvn: "",
+      means_of_identification: "",
+      id_card_number: "",
+      issue_date: "",
+      expiry_date: "",
+    },
+    Csignatory: {
+      title_two: "",
+      surname_two: "",
+      firstname_two: "",
+      middle_name_two: "",
+      passport_two: null,
+      date_of_birth_two: "",
+      place_of_birth_two: "",
+      email_two: "",
+      phone_number_two: "",
+      home_address_two: "",
+      home_address_lga_two: "",
+      landmark_two: "",
+      bvn_two: "",
+      means_of_identification_two: "",
+      id_card_number_two: "",
+      issue_date_two: "",
+      expiry_date_two: "",
+    },
+    Cfinal: {
+      signature: null,
+      signature_two: null,
+    },
+    acceptedTerms: false,
   });
 
-  const handleCorporateFormChange = (data) => {
-    setFormData({ ...formData, ...data });
+  const handleCorporateFormChange = (formName, data) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [formName]: data,
+    }));
   };
 
   const sections = [
@@ -103,8 +116,8 @@ const Corporate = () => {
       id: 0,
       component: (
         <Caccount
-          formData={formData}
-          onFormChange={handleCorporateFormChange}
+          formData={formData.Caccount}
+          onFormChange={(data) => handleCorporateFormChange("Caccount", data)}
         />
       ),
     },
@@ -112,8 +125,8 @@ const Corporate = () => {
       id: 1,
       component: (
         <Cpersonal
-          formData={formData}
-          onFormChange={handleCorporateFormChange}
+          formData={formData.Cpersonal}
+          onFormChange={(data) => handleCorporateFormChange("Cpersonal", data)}
         />
       ),
     },
@@ -121,15 +134,18 @@ const Corporate = () => {
       id: 2,
       component: (
         <Csignatory
-          formData={formData}
-          onFormChange={handleCorporateFormChange}
+          formData={formData.Csignatory}
+          onFormChange={(data) => handleCorporateFormChange("Csignatory", data)}
         />
       ),
     },
     {
       id: 3,
       component: (
-        <Cfinal formData={formData} onFormChange={handleCorporateFormChange} />
+        <Cfinal
+          formData={formData.Cfinal}
+          onFormChange={(data) => handleCorporateFormChange("Cfinal", data)}
+        />
       ),
     },
   ];
@@ -141,51 +157,157 @@ const Corporate = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    // Handle form submission here
-    console.log("Form Data:", formData);
+  const handleSubmit = async () => {
+    // Convert formData to FormData instance
+    const data = new FormData();
+    data.append("accountType", formData.Caccount.account_type);
+    data.append("institutionType", formData.Caccount.institution_type);
+    data.append("organizationName", formData.Caccount.organization_name);
+    data.append("businessRegNumber", formData.Caccount.business_reg_number);
+    data.append("taxIdNumber", formData.Caccount.tax_id_number);
+    data.append("businessAddress", formData.Caccount.business_address);
+    data.append(
+      "businessEmailAddress",
+      formData.Caccount.business_email_address
+    );
+    data.append("webAddress", formData.Caccount.web_address);
+    data.append("title", formData.Cpersonal.title);
+    data.append("surname", formData.Cpersonal.surname);
+    data.append("firstname", formData.Cpersonal.firstname);
+    data.append("middleName", formData.Cpersonal.middle_name);
+    data.append("dateOfBirth", formData.Cpersonal.date_of_birth);
+    data.append("placeOfBirth", formData.Cpersonal.place_of_birth);
+    data.append("emailAddress", formData.Cpersonal.email_address);
+    data.append("phoneNumber", formData.Cpersonal.phone_number);
+    data.append("homeAddress", formData.Cpersonal.home_address);
+    data.append("homeAddressLga", formData.Cpersonal.home_address_lga);
+    data.append("landmark", formData.Cpersonal.landmark);
+    data.append("bvn", formData.Cpersonal.bvn);
+    data.append(
+      "meansOfIdentification",
+      formData.Cpersonal.means_of_identification
+    );
+    data.append("idCardNumber", formData.Cpersonal.id_card_number);
+    data.append("issueDate", formData.Cpersonal.issue_date);
+    data.append("expiryDate", formData.Cpersonal.expiry_date);
+    data.append("titleTwo", formData.Csignatory.title_two);
+    data.append("surnameTwo", formData.Csignatory.surname_two);
+    data.append("firstnameTwo", formData.Csignatory.firstname_two);
+    data.append("middleNameTwo", formData.Csignatory.middle_name_two);
+    data.append("dateOfBirthTwo", formData.Csignatory.date_of_birth_two);
+    data.append("placeOfBirthTwo", formData.Csignatory.place_of_birth_two);
+    data.append("emailAddressTwo", formData.Csignatory.email_two);
+    data.append("phoneNumberTwo", formData.Csignatory.phone_number_two);
+    data.append("homeAddressTwo", formData.Csignatory.home_address_two);
+    data.append("homeAddressLgaTwo", formData.Csignatory.home_address_lga_two);
+    data.append("landmarkTwo", formData.Csignatory.landmark_two);
+    data.append("bvnTwo", formData.Csignatory.bvn_two);
+    data.append(
+      "meansOfIdentificationTwo",
+      formData.Csignatory.means_of_identification_two
+    );
+    data.append("idCardNumberTwo", formData.Csignatory.id_card_number_two);
+    data.append("issueDateTwo", formData.Csignatory.issue_date_two);
+    data.append("expiryDateTwo", formData.Csignatory.expiry_date_two);
 
-    // Reset all form fields to initial values except acceptedTerms
-    setFormData({
-      caccountType: "",
-      institutionType: "",
-      organization: "",
-      businessNo: "",
-      taxNo: "",
-      businessAddress: "",
-      email: "",
-      webAddress: "",
-      title: "",
-      surname: "",
-      firstName: "",
-      middleName: "",
-      passportPhoto: null,
-      dob: "",
-      pob: "",
-      pemail: "",
-      phoneNumber: "",
-      homeAddress: "",
-      lga: "",
-      landmark: "",
-      bvn: "",
-      meansofID: "",
-      idNumber: "",
-      issueDate: "",
-      expiryDate: "",
-      signature: null,
-      secondSignature: null,
-      thirdSignature: null,
-      acceptedTerms: formData.acceptedTerms, // Keep the acceptedTerms value
-    });
+    // Append file inputs if they exist
+    if (formData.Cpersonal.passport) {
+      data.append("passport", formData.Cpersonal.passport);
+    }
+    if (formData.Csignatory.passport_two) {
+      data.append("passportTwo", formData.Csignatory.passport_two);
+    }
+    if (formData.Cfinal.signature) {
+      data.append("signature", formData.Cfinal.signature);
+    }
+    if (formData.Cfinal.signature_two) {
+      data.append("signatureTwo", formData.Cfinal.signature_two);
+    }
 
-    // Clear clickedSteps state
-    setClickedSteps([]);
+    // Send form data to the API
+    try {
+      const response = await axios.post(
+        "https://api.canaryfinance.canarypointfcl.com/v1/api/create_corporate_account",
+        data,
+        {
+          headers: {
+            "x-api-key": "22062024",
+            "Content-Type": "multipart/form-data",
+          },
+          maxBodyLength: Infinity,
+        }
+      );
 
-    // Show alert
-    alert("Form submitted successfully!");
+      console.log("Form submitted successfully:", response.data);
 
-    // Set active section back to the first section
-    setActiveSection(0);
+      // Reset all form fields to initial values except acceptedTerms
+      setFormData({
+        Caccount: {
+          account_type: "",
+          institution_type: "",
+          organization_name: "",
+          business_reg_number: "",
+          tax_id_number: "",
+          business_address: "",
+          business_email_address: "",
+          web_address: "",
+        },
+        Cpersonal: {
+          title: "",
+          surname: "",
+          firstname: "",
+          middle_name: "",
+          passport: null,
+          date_of_birth: "",
+          place_of_birth: "",
+          gender: "",
+          email_address: "",
+          phone_number: "",
+          home_address: "",
+          home_address_lga: "",
+          landmark: "",
+          bvn: "",
+          means_of_identification: "",
+          id_card_number: "",
+          issue_date: "",
+          expiry_date: "",
+        },
+        Csignatory: {
+          title_two: "",
+          surname_two: "",
+          firstname_two: "",
+          middle_name_two: "",
+          passport_two: null,
+          date_of_birth_two: "",
+          place_of_birth_two: "",
+          gender_two: "",
+          email_two: "",
+          phone_number_two: "",
+          home_address_two: "",
+          home_address_lga_two: "",
+          landmark_two: "",
+          bvn_two: "",
+          means_of_identification_two: "",
+          id_card_number_two: "",
+          issue_date_two: "",
+          expiry_date_two: "",
+        },
+        Cfinal: {
+          signature: null,
+          signature_two: null,
+        },
+        acceptedTerms: formData.acceptedTerms, // Keep the acceptedTerms value
+      });
+
+      // Clear clickedSteps state
+      setClickedSteps([]);
+
+      // Navigate back to the first section
+      setActiveSection(0);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form. Please try again.");
+    }
   };
 
   return (
@@ -285,7 +407,7 @@ const Corporate = () => {
                     </button>
                     {activeSection === 1 && (
                       <p className="text-menuHover text-base">
-                        Signatory #1 Information
+                        Signatory One Information
                       </p>
                     )}
                   </div>
@@ -300,7 +422,7 @@ const Corporate = () => {
                     </button>
                     {activeSection === 2 && (
                       <p className="text-menuHover text-base">
-                        Signatory #2 Information
+                        Signatory Two Information
                       </p>
                     )}
                   </div>
@@ -330,9 +452,8 @@ const Corporate = () => {
                   )}
                   {activeSection === sections.length - 1 && (
                     <AcceptTerms
-                      formData={formData}
-                      checked={formData.acceptedTerms}
-                      onChange={handleCheckboxChange} // Pass the handleCheckboxChange function
+                      acceptedTerms={formData.acceptedTerms}
+                      onChange={handleCheckboxChange}
                     />
                   )}
                 </div>

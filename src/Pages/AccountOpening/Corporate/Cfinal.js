@@ -3,7 +3,7 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FileInput from "../../../Components/FileInput";
 
-const Cfinal = ({ formData }) => {
+const Cfinal = ({ formData, onFormChange }) => {
   return (
     <div className="overflow-hidden">
       <Formik
@@ -22,7 +22,7 @@ const Cfinal = ({ formData }) => {
               (value) =>
                 value && ["image/jpeg", "image/png"].includes(value.type)
             ),
-          secondSignature: Yup.mixed()
+          signature_two: Yup.mixed()
             .required("A passport photo is required")
             .test(
               "fileSize",
@@ -38,6 +38,7 @@ const Cfinal = ({ formData }) => {
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values); // Handles form submission here
+          onFormChange(values); // Send updated form data to parent component
           resetForm(); // Clear form after submission
         }}
       >
@@ -45,21 +46,26 @@ const Cfinal = ({ formData }) => {
           <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
               <FileInput
-                labelName="Upload Signature (Signatory 1)"
+                labelName="Upload your signature"
                 onChange={(event) => {
                   setFieldValue("signature", event.currentTarget.files[0]);
+                  onFormChange({
+                    ...values,
+                    signature: event.currentTarget.files[0],
+                  });
                 }}
                 inputError={touched.signature && errors.signature}
               />
               <FileInput
-                labelName="Upload Signature (Signatory 2)"
+                labelName="Upload Second Signature (For joint a/c)"
                 onChange={(event) => {
-                  setFieldValue(
-                    "secondSignature",
-                    event.currentTarget.files[0]
-                  );
+                  setFieldValue("signature_two", event.currentTarget.files[0]);
+                  onFormChange({
+                    ...values,
+                    signature_two: event.currentTarget.files[0],
+                  });
                 }}
-                inputError={touched.secondSignature && errors.secondSignature}
+                inputError={touched.signature_two && errors.signature_two}
               />
             </div>
           </Form>

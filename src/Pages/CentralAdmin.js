@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Link,
   Routes,
   Route,
   useResolvedPath,
   useLocation,
+  useNavigate,
   matchPath,
 } from "react-router-dom";
 import logo from "../assets/adminlogo.png";
@@ -22,6 +23,23 @@ import CorporatePage from "./Admin/CorporatePage";
 const CentralAdmin = () => {
   const resolvedPath = useResolvedPath("");
   const location = useLocation();
+  const navigate = useNavigate();
+  const { state } = location;
+  const userDetails =
+    state?.userDetails || JSON.parse(localStorage.getItem("userDetails"));
+
+  useEffect(() => {
+    if (!userDetails) {
+      navigate("/adminaccess", { replace: true });
+    } else {
+      localStorage.setItem("userDetails", JSON.stringify(userDetails));
+    }
+  }, [userDetails, navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("userDetails");
+    navigate("/accesscontrol", { replace: true });
+  };
 
   const isActive = (path) => {
     const fullPath = `${resolvedPath.pathname}${path}`;
@@ -32,15 +50,9 @@ const CentralAdmin = () => {
   };
 
   const isPathActive = (basePath) => {
-    return (
-      matchPath(
-        { path: `${resolvedPath.pathname}${basePath}`, exact: true },
-        location.pathname
-      ) ||
-      matchPath(
-        { path: `${resolvedPath.pathname}${basePath}/:id`, exact: false },
-        location.pathname
-      )
+    return matchPath(
+      { path: `${resolvedPath.pathname}${basePath}`, end: false },
+      location.pathname
     );
   };
 
@@ -145,12 +157,16 @@ const CentralAdmin = () => {
               <img src={avatar} alt="avatar" className="w-12 h-12" />
               <div>
                 <span className="font-gotham text-sm text-adminText">
-                  Olumide Olajide
+                  {userDetails?.firstname} {userDetails?.lastname}
                 </span>
-                <p className="text-adminSubtext text-xs">Admin</p>
               </div>
             </div>
-            <img src={logout} alt="logout" className="w-6 h-6" />
+            <img
+              src={logout}
+              alt="logout"
+              className="w-6 h-6 cursor-pointer"
+              onClick={handleLogout}
+            />
           </div>
         </div>
       </div>

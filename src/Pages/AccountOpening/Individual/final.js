@@ -42,7 +42,7 @@ const Final = ({ formData, onFormChange }) => {
           resetForm(); // Clear form after submission
         }}
       >
-        {({ values, errors, setFieldValue, touched, handleChange }) => (
+        {({ values, errors, setFieldValue, touched }) => (
           <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
               <FileInput

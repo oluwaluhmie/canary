@@ -5,17 +5,17 @@ import InputWithLabel from "../../../Components/inputWithLabel";
 import InputWithDropdown from "../../../Components/InputWithDropdown";
 
 const Caccount = ({ formData, onFormChange }) => {
-  const caccountType = [
-    { value: "fixed deposit", label: "Fixed Deposit" },
-    { value: "current account", label: "Current Account" },
+  const account_type = [
+    { value: "Fixed Deposit", label: "Fixed Deposit" },
+    { value: "Current Account", label: "Current Account" },
   ];
-  const institutionType = [
-    { value: "limited liability company", label: "Limited Liability Company" },
-    { value: "partnership", label: "Partnership" },
-    { value: "sole proprietorship", label: "Sole Proprietorship" },
-    { value: "public organization", label: "Public Organization" },
+  const institution_type = [
+    { value: "Limited Liability Company", label: "Limited Liability Company" },
+    { value: "Partnership", label: "Partnership" },
+    { value: "Sole Proprietorship", label: "Sole Proprietorship" },
+    { value: "Public Organization", label: "Public Organization" },
     {
-      value: "culds, association/unnicorporated societies",
+      value: "Culds, Association/Unnicorporated Societies",
       label: "Culds, Association/Unicorporated Societies",
     },
   ];
@@ -25,135 +25,160 @@ const Caccount = ({ formData, onFormChange }) => {
       <Formik
         initialValues={formData}
         validationSchema={Yup.object({
-          caccountType: Yup.string().required("Select an option"),
-          institutionType: Yup.string().required("Select an option"),
-          organization: Yup.string().required("Organization is required"),
-          businessNo: Yup.string().required(
+          account_type: Yup.string().required("Select an option"),
+          institution_type: Yup.string().required("Select an option"),
+          organization_name: Yup.string().required("Organization is required"),
+          business_reg_number: Yup.string().required(
             "RC No/Business Reg No is required"
           ),
-          taxNo: Yup.string().required("Tax ID Number is required"),
-          businessAddress: Yup.string().required(
+          tax_id_number: Yup.string().required("Tax ID Number is required"),
+          business_address: Yup.string().required(
             "Business Address is required"
           ),
-          email: Yup.string()
+          business_email_address: Yup.string()
             .email("Invalid email address")
             .required("Email Address is required"),
-          webAddress: Yup.string().required("Web Address is required"),
+          web_address: Yup.string().required("Web Address is required"),
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values); // Handles form submission here
+          onFormChange(values); // Send updated form data to parent component
           resetForm(); // Clear form after submission
         }}
       >
-        {({ values, errors, handleChange }) => (
+        {({ values, errors, handleChange}) => (
           <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithDropdown
                   labelName="Type of Account"
-                  options={caccountType}
-                  selectedValue={values.caccountType}
+                  options={account_type}
+                  selectedValue={values.account_type}
                   onChange={(event) => {
                     handleChange({
                       target: {
-                        name: "caccountType",
+                        name: "account_type",
                         value: event.target.value,
                       },
                     });
-                    onFormChange({ caccountType: event.target.value });
+                    onFormChange({
+                      ...values,
+                      account_type: event.target.value,
+                    });
                   }}
-                  inputError={errors.caccountType}
+                  inputError={errors.account_type}
                 />
                 <InputWithDropdown
                   labelName="Type of Institution"
-                  options={institutionType}
-                  selectedValue={values.institutionType}
+                  options={institution_type}
+                  selectedValue={values.institution_type}
                   onChange={(event) => {
                     handleChange({
                       target: {
-                        name: "institutionType",
+                        name: "institution_type",
                         value: event.target.value,
                       },
                     });
-                    onFormChange({ institutionType: event.target.value });
+                    onFormChange({
+                      ...values,
+                      institution_type: event.target.value,
+                    });
                   }}
-                  inputError={errors.institutionType}
+                  inputError={errors.institution_type}
                 />
               </div>
               <InputWithLabel
                 labelName="Name of Organization"
                 inputType="text"
-                inputName="organization"
+                inputName="organization_name"
                 placeholder="Enter your organization name"
-                inputValue={values.organization}
+                inputValue={values.organization_name}
                 inputOnChange={(event) => {
                   handleChange(event);
-                  onFormChange({ organization: event.target.value });
+                  onFormChange({
+                    ...values,
+                    organization_name: event.target.value,
+                  });
                 }}
-                inputError={errors.organization}
+                inputError={errors.organization_name}
               />
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithLabel
                   labelName="RC No./Business Reg No."
                   inputType="text"
-                  inputName="businessNo"
+                  inputName="business_reg_number"
                   placeholder="Enter RC No."
-                  inputValue={values.businessNo}
+                  inputValue={values.business_reg_number}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ businessNo: event.target.value });
+                    onFormChange({
+                      ...values,
+                      business_reg_number: event.target.value,
+                    });
                   }}
-                  inputError={errors.businessNo}
+                  inputError={errors.business_reg_number}
                 />
                 <InputWithLabel
                   labelName="Tax ID Number"
                   inputType="text"
-                  inputName="taxNo"
+                  inputName="tax_id_number"
                   placeholder="Enter tax ID number"
-                  inputValue={values.taxNo}
+                  inputValue={values.tax_id_number}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ taxNo: event.target.value });
+                    onFormChange({
+                      ...values,
+                      tax_id_number: event.target.value,
+                    });
                   }}
-                  inputError={errors.taxNo}
+                  inputError={errors.tax_id_number}
                 />
               </div>
               <InputWithLabel
                 labelName="Business Address"
                 inputType="text"
-                inputName="businessAddress"
+                inputName="business_address"
                 placeholder="Enter your address here"
-                inputValue={values.businessAddress}
+                inputValue={values.business_address}
                 inputOnChange={(event) => {
                   handleChange(event);
-                  onFormChange({ businessAddress: event.target.value });
+                  onFormChange({
+                    ...values,
+                    business_address: event.target.value,
+                  });
                 }}
-                inputError={errors.businessAddress}
+                inputError={errors.business_address}
               />
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
                 <InputWithLabel
-                  labelName="Email Address"
+                  labelName="Business Email Address"
                   inputType="email"
-                  inputName="email"
+                  inputName="business_email_address"
                   placeholder="e.g. segun@gmail.com"
-                  inputValue={values.email}
+                  inputValue={values.business_email_address}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ email: event.target.value });
+                    onFormChange({
+                      ...values,
+                      business_email_address: event.target.value,
+                    });
                   }}
-                  inputError={errors.email}
+                  inputError={errors.business_email_address}
                 />
                 <InputWithLabel
                   labelName="Web Address"
                   inputType="text"
-                  inputName="webAddress"
+                  inputName="web_address"
                   placeholder="e.g. www.yourbusiness.com"
-                  inputValue={values.webAddress}
+                  inputValue={values.web_address}
                   inputOnChange={(event) => {
                     handleChange(event);
-                    onFormChange({ webAddress: event.target.value });
+                    onFormChange({
+                      ...values,
+                      web_address: event.target.value,
+                    });
                   }}
-                  inputError={errors.webAddress}
+                  inputError={errors.web_address}
                 />
               </div>
             </div>

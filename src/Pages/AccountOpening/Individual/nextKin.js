@@ -43,7 +43,7 @@ const NextKin = ({ formData, onFormChange }) => {
           resetForm(); // Clear form after submission
         }}
       >
-        {({ values, errors, setFieldValue, touched, handleChange }) => (
+        {({ values, errors, touched, handleChange }) => (
           <Form className="flex flex-col bg-white w-full">
             <div className="grid grid-cols-1 gap-6">
               <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-6">
