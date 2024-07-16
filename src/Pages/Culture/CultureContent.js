@@ -34,9 +34,8 @@ const CultureContent = () => {
                 Our Vision
               </span>
               <p className="text-mobileMenuColor text-base md:text-xl lg:w-128">
-                To provide our clients with exceptional financial services that
-                meet their unique needs, while maintaining the highest standards
-                of professionalism and integrity.
+                To be the leading finance company in Nigeria, providing
+                innovative financial solutions to our clients.
               </p>
             </div>
             <div className="flex flex-col gap-1 md:gap-3 md:w-84 lg:w-146">
@@ -44,8 +43,9 @@ const CultureContent = () => {
                 Our Mission
               </span>
               <p className="text-mobileMenuColor text-base md:text-xl lg:w-128">
-                To be the leading finance company in Nigeria, providing
-                innovative financial solutions to our clients.
+                To provide our clients with exceptional financial services that
+                meet their unique needs, while maintaining the highest standards
+                of professionalism and integrity.
               </p>
             </div>
           </div>
@@ -199,35 +199,45 @@ const CultureContent = () => {
               </span>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 md:gap-6 lg:gap-5">
                 <div>
-                  <span className="text-menuHover text-base lg:text-xl">Proactive:</span>
+                  <span className="text-menuHover text-base lg:text-xl">
+                    Proactive:
+                  </span>
                   <p className="text-mobileMenuColor text-base">
                     Taking initiative, identifying opportunities, and seeking
                     solutions instead of waiting for direction.
                   </p>
                 </div>
                 <div>
-                  <span className="text-menuHover text-base lg:text-xl">Bold:</span>
+                  <span className="text-menuHover text-base lg:text-xl">
+                    Bold:
+                  </span>
                   <p className="text-mobileMenuColor text-base">
                     Challenging assumptions, questioning the status quo, and
                     proposing innovative solutions.
                   </p>
                 </div>
                 <div>
-                  <span className="text-menuHover text-base lg:text-xl">Empathetic:</span>
+                  <span className="text-menuHover text-base lg:text-xl">
+                    Empathetic:
+                  </span>
                   <p className="text-mobileMenuColor text-base">
                     Understanding client needs, offering personalized solutions,
                     and building strong relationships.
                   </p>
                 </div>
                 <div>
-                  <span className="text-menuHover text-base lg:text-xl">Agile:</span>
+                  <span className="text-menuHover text-base lg:text-xl">
+                    Agile:
+                  </span>
                   <p className="text-mobileMenuColor text-base">
                     Adapting to change quickly, embracing new challenges, and
                     learning from mistakes.
                   </p>
                 </div>
                 <div>
-                  <span className="text-menuHover text-base lg:text-xl">Transparent:</span>
+                  <span className="text-menuHover text-base lg:text-xl">
+                    Transparent:
+                  </span>
                   <p className="text-mobileMenuColor text-base">
                     Communicating openly and honestly, sharing information
                     freely, and providing constructive feedback.
@@ -259,7 +269,7 @@ const CultureContent = () => {
             <div className="flex flex-col gap-6 md:gap-12 lg:gap-16 lg:w-300">
               <span className="font-gotham text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-orangeTextGradient-start to-orangeTextGradient-end">
                 Practices and Policies
-              </span> 
+              </span>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
                 <div className="flex flex-col gap-3 lg:gap-5 px-4 lg:px-5 py-5 lg:py-7 bg-white shadow-culture">
                   <img

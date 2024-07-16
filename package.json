@@ -1,5 +1,6 @@
 {
-  "name": "canary",
+  "name": "canaryfinance",
+  "homepage": "http://canaryfinancefcl.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
