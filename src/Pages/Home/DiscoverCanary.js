@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const DiscoverCanary = () => {
   return (
     <div className="flex flex-col items-center bg-menuTextHover overflow-hidden">
-      <div className="flex flex-col w-97.5 md:w-176 lg:w-300">
+      <div className="flex flex-col items-center w-107.5 md:w-200 lg:w-341.5">
         <div className="flex flex-col md:flex-row gap-8 md:gap-8 lg:gap-24 py-16 md:py-16 lg:py-24 w-97.5 md:w-176 lg:w-300">
           <img
             src={discovermobile}

@@ -14,7 +14,7 @@ const BusinessGrowth = () => {
 
   return (
     <div className="flex flex-col items-center bg-businessbg bg-cover overflow-hidden">
-      <div className="flex flex-col w-97.5 md:w-176 lg:w-300">
+      <div className="flex flex-col items-center w-107.5 md:w-200 lg:w-341.5">
         <div className="flex flex-col items-center py-16 md:py-12 lg:py-32 gap-12 md:gap-12 lg:gap-16 w-97.5 md:w-176 lg:w-300">
           <div className="flex flex-col gap-6 md:gap-6 lg:gap-x-3">
             {/* Mobile & Tab */}
