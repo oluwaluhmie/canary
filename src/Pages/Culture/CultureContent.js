@@ -27,7 +27,7 @@ const CultureContent = () => {
   return (
     <div className="flex flex-col items-center bg-white md:bg-culturebg md:bg-cover">
       <div className="flex flex-col items-center w-107.5 md:w-200 lg:w-341.5">
-        <div className="flex flex-col px-5 md:px-12 lg:px-0 pt-12 pb-16 md:py-16 lg:py-24 gap-12 md:gap-16 lg:gap-24 w-97.5 md:w-176 lg:w-300">
+        <div className="flex flex-col items-center pt-12 pb-16 md:py-16 lg:py-24 gap-12 md:gap-16 lg:gap-24 w-97.5 md:w-176 lg:w-300">
           <div className="flex flex-col md:flex-row gap-8 lg:gap-16 w-97.5 md:w-176 lg:w-300">
             <div className="flex flex-col gap-1 md:gap-3 md:w-84 lg:w-146">
               <span className="font-gotham text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-b from-blueTextGradient-start to-blueTextGradient-end">
